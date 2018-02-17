@@ -1,0 +1,16 @@
+title: Jeff Technical Nots
+description: Some technical notes that could be used to help learning new language or methods
+exclude:
+  - LICENSE.adoc
+  - README.adoc
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+asciidoc: {}
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe
+  attributes:
+    - idseparator=_
+    - source-highlighter=coderay
+    - icons=font
