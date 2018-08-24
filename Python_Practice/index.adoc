@@ -18,7 +18,7 @@ The program will:
 * Read from log of plane traffic leaving from an airport
 * Generate a ranking of the flights and airlines based on take-off time
 
-_4 files_:"
+_4 files_:
 
 * *airlines.py*: Description of class "*Airline*"   (c.f. details later)
 * *processRecords.py*: Main program that processes data from input file to generate a report
@@ -72,22 +72,30 @@ __Example__:
 
 === Class *Airline* (_airline.py_)
 
-4 attributes:
+*4 attributes*:
 
 * "*name*" (e.g. "Air France")
-* "*code*" (e.g. "AF")
-* "*flights*": dictionary, key="code flight", value = list of take-off records
+* "*code*" made of 2 letters (e.g. "AF")
+* "*flights*": dictionary, key="code flight", value = list of take-off records +
+  _Example_: `{'AF123': {'date':"2018-02-29", 'time':"12:13", "delay":45} }`
 +
 NOTE: A record is a dictionary with 3 keys: *date*, *time* (expected), *delay*
-* "*destination*": dictionary with key = "code flight", value = "destination airport"
+* "*destination*": dictionary with key = "code flight", value = "destination airport" +
+  _Example_: `{'AF123': "Paris Orly"}`
 +
 NOTE: `delay` = <take-off> - <time> (measured in *minutes*)
 
+
+{blank}
+
 TIP: We recommend to create a function `get_delay` to compute the delay (in minutes).
 
-3 methods:
+{blank}
 
-* *add_info*: add flight information, create flight if it does not exist
+*3 methods*:
+
+* *add_info*: add flight information and store in attributes `flights` and `destination`. +
+  Create flight if it does not exist
 * *get_rating_flight*: return tuple (*% late*, *average delay*) for a flight
 * *get_rating_airline*: return tuple (*% late*, *average delay*) for airline
 

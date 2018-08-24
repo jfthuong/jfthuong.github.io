@@ -550,7 +550,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p><em>4 files</em>:"</p>
+<p><em>4 files</em>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -645,7 +645,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_class_airline_airline_py">1.2. Class <strong>Airline</strong> (<em>airline.py</em>)</h3>
 <div class="paragraph">
-<p>4 attributes:</p>
+<p><strong>4 attributes</strong>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -653,10 +653,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>"<strong>name</strong>" (e.g. "Air France")</p>
 </li>
 <li>
-<p>"<strong>code</strong>" (e.g. "AF")</p>
+<p>"<strong>code</strong>" made of 2 letters (e.g. "AF")</p>
 </li>
 <li>
-<p>"<strong>flights</strong>": dictionary, key="code flight", value = list of take-off records</p>
+<p>"<strong>flights</strong>": dictionary, key="code flight", value = list of take-off records<br>
+<em>Example</em>: <code>{'AF123': {'date':"2018-02-29", 'time':"12:13", "delay":45} }</code></p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -671,7 +672,8 @@ A record is a dictionary with 3 keys: <strong>date</strong>, <strong>time</stron
 </div>
 </li>
 <li>
-<p>"<strong>destination</strong>": dictionary with key = "code flight", value = "destination airport"</p>
+<p>"<strong>destination</strong>": dictionary with key = "code flight", value = "destination airport"<br>
+<em>Example</em>: <code>{'AF123': "Paris Orly"}</code></p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -687,6 +689,9 @@ A record is a dictionary with 3 keys: <strong>date</strong>, <strong>time</stron
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p></p>
+</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -700,12 +705,16 @@ We recommend to create a function <code>get_delay</code> to compute the delay (i
 </table>
 </div>
 <div class="paragraph">
-<p>3 methods:</p>
+<p></p>
+</div>
+<div class="paragraph">
+<p><strong>3 methods</strong>:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>add_info</strong>: add flight information, create flight if it does not exist</p>
+<p><strong>add_info</strong>: add flight information and store in attributes <code>flights</code> and <code>destination</code>.<br>
+Create flight if it does not exist</p>
 </li>
 <li>
 <p><strong>get_rating_flight</strong>: return tuple (<strong>% late</strong>, <strong>average delay</strong>) for a flight</p>
@@ -1238,7 +1247,7 @@ default value of <code>&lt;nb_ranking&gt;</code> is 10
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-24 15:08:25 China Standard Time
+Last updated 2018-08-24 15:45:42 China Standard Time
 </div>
 </div>
 </body>
