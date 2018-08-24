@@ -81,7 +81,9 @@ __Example__:
 NOTE: A record is a dictionary with 3 keys: *date*, *time* (expected), *delay*
 * "*destination*": dictionary with key = "code flight", value = "destination airport"
 +
-NOTE: `delay` = <take-off> - <time>
+NOTE: `delay` = <take-off> - <time> (measured in *minutes*)
+
+TIP: We recommend to create a function `get_delay` to compute the delay (in minutes).
 
 3 methods:
 

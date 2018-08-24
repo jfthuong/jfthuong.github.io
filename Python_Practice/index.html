@@ -679,13 +679,25 @@ A record is a dictionary with 3 keys: <strong>date</strong>, <strong>time</stron
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>delay</code> = &lt;take-off&gt; - &lt;time&gt;
+<code>delay</code> = &lt;take-off&gt; - &lt;time&gt; (measured in <strong>minutes</strong>)
 </td>
 </tr>
 </table>
 </div>
 </li>
 </ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+We recommend to create a function <code>get_delay</code> to compute the delay (in minutes).
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>3 methods:</p>
@@ -904,7 +916,7 @@ default value of <code>&lt;nb_ranking&gt;</code> is 10
 <span class="tok-c1"># #-- CALCULATION OF TIME DELTA --##</span>
 <span class="tok-k">def</span> <span class="tok-nf">get_delay</span><span class="tok-p">(</span><span class="tok-n">expected</span><span class="tok-p">:</span><span class="tok-nb">str</span><span class="tok-p">,</span> <span class="tok-n">takeoff</span><span class="tok-p">:</span><span class="tok-nb">str</span><span class="tok-p">)</span> <span class="tok-o">-&gt;</span> <span class="tok-nb">int</span><span class="tok-p">:</span>
     <span class="tok-sd">&quot;&quot;&quot;\</span>
-<span class="tok-sd">    Measure the time difference between two times:</span>
+<span class="tok-sd">    Measure the time difference in minutes between two times</span>
 <span class="tok-sd">    delay = &lt;take-off&gt; - &lt;expected&gt;</span>
 
 <span class="tok-sd">    Args:</span>
@@ -992,7 +1004,7 @@ default value of <code>&lt;nb_ranking&gt;</code> is 10
 <span class="tok-c1">##############</span>
 <span class="tok-c1"># HOW TO RUN #</span>
 <span class="tok-c1">##############</span>
-<span class="tok-c1"># 1. Install Nose Tests</span>
+<span class="tok-c1"># 1. Install Pytest</span>
 <span class="tok-s2">&quot;pip install pytest&quot;</span>
 <span class="tok-c1"># 2. Run Tests</span>
 <span class="tok-s2">&quot;pytest -v test_airlines.py&quot;</span>
@@ -1226,7 +1238,7 @@ default value of <code>&lt;nb_ranking&gt;</code> is 10
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-24 14:38:51 China Standard Time
+Last updated 2018-08-24 15:08:25 China Standard Time
 </div>
 </div>
 </body>

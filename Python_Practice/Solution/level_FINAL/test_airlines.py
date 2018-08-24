@@ -3,7 +3,7 @@
 ##############
 # HOW TO RUN #
 ##############
-# 1. Install Nose Tests
+# 1. Install Pytest
 "pip install pytest"
 # 2. Run Tests
 "pytest -v test_airlines.py"
