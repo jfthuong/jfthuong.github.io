@@ -437,8 +437,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">Jeff Thuong</span><br>
 <span id="email" class="email"><a href="mailto:jean-francois.thuong@ansys.com">jean-francois.thuong@ansys.com</a></span><br>
-<span id="revdate">Unresolved directive in index.adoc - include</span>
-<br><span id="revremark">:../themes/ansys_theme.adoc[]</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -451,13 +449,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_test">1. Test</h2>
 <div class="sectionbody">
+<div class="listingblock">
+<div class="title">airlines.py</div>
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">#!/python
 
+import datetime
+
+def get_delay(exp_time, takeoff):
+    """Calculate a delay: delay = &lt;take-off&gt; - &lt;time&gt;"""
+    format = "%H:%M"
+    pass
+
+
+class Airline():
+    """Class for recording information on Airline"""
+    def __init__(self, name, code):
+        self.name = name
+        self.code = code
+        self.flights = dict()
+        self.destination = dict()
+
+    def add_info(self, info):
+        """Add flight information, create flight if it does not exist
+        """
+        pass
+
+    def get_rating_flight(self, flight):
+        """return tuple ('% late', 'average delay') for a flight"""
+        pass
+
+    def get_rating_flight(self):
+        """return tuple ('% late', 'average delay') for the airline"""
+        pass</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-24 10:52:26 China Standard Time
+Last updated 2018-08-24 11:24:10 China Standard Time
 </div>
 </div>
 </body>

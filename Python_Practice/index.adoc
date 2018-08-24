@@ -1,15 +1,16 @@
 = Python Practice (Day #5)
 Jeff Thuong <jean-francois.thuong@ansys.com>
-:imagesdir: images
-:revealjsdir: ../reveal.js
-//:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0
-:themedir: ../themes
-include::{themedir}/ansys_theme.adoc[]
 :experimental:
-ifndef::backend-revealjs[:sectnums:]
-ifndef::backend-revealjs[:toc: left]
+:sectnums:
+:toc: left
 :source-language: python
 
 == Test
+
+.airlines.py
+[source]
+----
+include::Solution/New/airlines.py[]
+----
 
  
