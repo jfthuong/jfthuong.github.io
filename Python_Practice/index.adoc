@@ -16,4 +16,10 @@ Jeff Thuong <jean-francois.thuong@ansys.com>
 include::Solution/New/airlines.py[]
 ----
 
- 
+== Test Airline
+
+.test_airlines.py
+[source]
+----
+include::Solution/New/test_arilines.py[]
+----

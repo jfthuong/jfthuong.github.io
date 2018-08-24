@@ -513,6 +513,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_airline_class">1. Airline Class</a></li>
+<li><a href="#_test_airline">2. Test Airline</a></li>
 </ul>
 </div>
 </div>
@@ -557,10 +558,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_test_airline">2. Test Airline</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">test_airlines.py</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span>
+<span class="tok-kn">from</span> <span class="tok-nn">airlines</span> <span class="tok-kn">import</span> <span class="tok-n">Airline</span><span class="tok-p">,</span> <span class="tok-n">get_delay</span>
+
+<span class="tok-k">def</span> <span class="tok-nf">test_delay</span><span class="tok-p">():</span>
+    <span class="tok-k">assert</span> <span class="tok-n">get_delay</span><span class="tok-p">(</span><span class="tok-s1">&#39;12:10&#39;</span><span class="tok-p">,</span><span class="tok-s1">&#39;12:45&#39;</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-mi">35</span>
+    <span class="tok-c1"># assert get_delay(&#39;12:10&#39;,&#39;11:45&#39;) == -25</span></code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-24 11:26:36 China Standard Time
+Last updated 2018-08-24 11:29:09 China Standard Time
 </div>
 </div>
 </body>
