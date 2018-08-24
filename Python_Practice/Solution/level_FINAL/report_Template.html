@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<STYLE>
+th {background:#CCCCFF;padding:10px;font-size:18px;}
+td {background:#efefef;}
+</STYLE>
+<title>Ranking of Airlines and Flights based on delay for taking off</title>
+</head>
+<body>
+
+<div>
+<b>Ranking for Shanghai airports</b><br/>
+<i>Date of Generation:</i> {date}, {time}
+<div/>
+
+<h1>Ranking of Airlines (sorted by delay to take off)</h1>
+<table id="TestCaseList" width="100%" border="1" cellspacing="1">
+<tr><th>Best Airlines</th><th>Worse Airlines</th></tr>
+<tr>
+	<td><ol>
+<li>{best_airlines}</li>
+	</ol></td>
+	<td><ol>
+<li>{worse_airlines}</li>
+	</ol></td>
+</tr>
+</table>
+
+<h1>Ranking of Flights (sorted by delay to take off)</h1>
+<table id="TestCaseList" width="100%" border="1" cellspacing="1">
+<tr><th>Best Flights</th><th>Worse Flights</th></tr>
+<tr>
+	<td><ol>
+<li>{best_flights}</li>
+	</ol></td>
+	<td><ol>
+<li>{worse_flights}</li>
+	</ol></td>
+</tr>
+</table>
+
+</body>
+</html>
