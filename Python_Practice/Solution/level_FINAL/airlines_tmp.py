@@ -81,7 +81,20 @@ class Airline():
         Returns:
             ('% late', 'average delay') for a flight, both int
         """
-        pass
+        # Flight unknown
+        if flight not in self.flights:
+            return None, None
+        # Known flight: calculate number of flights late and total delay
+        nb_late, total_delay = 0.0, 0.0
+        for record in self.flights[flight]:
+            total_delay += record["delay"]
+            if record["delay"] > 30:
+                nb_late += 1
+
+        nb_flights = len(self.flights[flight])
+        percent = int(nb_late / nb_flights * 100)
+        average = int(total_delay / nb_flights)
+        return percent, average
 
     def get_rating_airline(self):
         """Get the rating of the airline

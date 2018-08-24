@@ -1012,7 +1012,20 @@ default value of <code>&lt;nb_ranking&gt;</code> is 10
 <span class="tok-sd">        Returns:</span>
 <span class="tok-sd">            (&#39;% late&#39;, &#39;average delay&#39;) for a flight, both int</span>
 <span class="tok-sd">        &quot;&quot;&quot;</span>
-        <span class="tok-k">pass</span>
+        <span class="tok-c1"># Flight unknown</span>
+        <span class="tok-k">if</span> <span class="tok-n">flight</span> <span class="tok-ow">not</span> <span class="tok-ow">in</span> <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-p">:</span>
+            <span class="tok-k">return</span> <span class="tok-bp">None</span><span class="tok-p">,</span> <span class="tok-bp">None</span>
+        <span class="tok-c1"># Known flight: calculate number of flights late and total delay</span>
+        <span class="tok-n">nb_late</span><span class="tok-p">,</span> <span class="tok-n">total_delay</span> <span class="tok-o">=</span> <span class="tok-mf">0.0</span><span class="tok-p">,</span> <span class="tok-mf">0.0</span>
+        <span class="tok-k">for</span> <span class="tok-n">record</span> <span class="tok-ow">in</span> <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-p">[</span><span class="tok-n">flight</span><span class="tok-p">]:</span>
+            <span class="tok-n">total_delay</span> <span class="tok-o">+=</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">]</span>
+            <span class="tok-k">if</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">]</span> <span class="tok-o">&gt;</span> <span class="tok-mi">30</span><span class="tok-p">:</span>
+                <span class="tok-n">nb_late</span> <span class="tok-o">+=</span> <span class="tok-mi">1</span>
+
+        <span class="tok-n">nb_flights</span> <span class="tok-o">=</span> <span class="tok-nb">len</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-p">[</span><span class="tok-n">flight</span><span class="tok-p">])</span>
+        <span class="tok-n">percent</span> <span class="tok-o">=</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">nb_late</span> <span class="tok-o">/</span> <span class="tok-n">nb_flights</span> <span class="tok-o">*</span> <span class="tok-mi">100</span><span class="tok-p">)</span>
+        <span class="tok-n">average</span> <span class="tok-o">=</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">total_delay</span> <span class="tok-o">/</span> <span class="tok-n">nb_flights</span><span class="tok-p">)</span>
+        <span class="tok-k">return</span> <span class="tok-n">percent</span><span class="tok-p">,</span> <span class="tok-n">average</span>
 
     <span class="tok-k">def</span> <span class="tok-nf">get_rating_airline</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">):</span>
         <span class="tok-sd">&quot;&quot;&quot;Get the rating of the airline</span>
@@ -1276,7 +1289,7 @@ default value of <code>&lt;nb_ranking&gt;</code> is 10
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-24 16:54:23 China Standard Time
+Last updated 2018-08-24 17:04:07 China Standard Time
 </div>
 </div>
 </body>

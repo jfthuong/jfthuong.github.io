@@ -89,8 +89,9 @@ class Airline:
             if record["delay"] > 30:
                 nb_late += 1
 
-        percent = int(nb_late / len(self.flights[flight]) * 100)
-        average = int(total_delay / len(self.flights[flight]))
+        nb_flights = len(self.flights[flight])
+        percent = int(nb_late / nb_flights * 100)
+        average = int(total_delay / nb_flights)
         return percent, average
 
     def get_rating_airline(self):
