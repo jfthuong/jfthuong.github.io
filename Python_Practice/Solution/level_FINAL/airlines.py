@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 # #-- CALCULATION OF TIME DELTA --##
-def get_delay(expected:str, takeoff:str) -> int:
+def get_delay(expected: str, takeoff: str) -> int:
     """\
     Measure the time difference in minutes between two times
     delay = <take-off> - <expected>
@@ -16,7 +16,7 @@ def get_delay(expected:str, takeoff:str) -> int:
     """
     time_fmt = "%H:%M"
     # We convert with strptime and calculate the difference
-    # If "takeoff < expected", the result is {day = -1, sec = delta + 1 day} 
+    # If "takeoff < expected", the result is {day = -1, sec = delta + 1 day}
     # ... so we will have to deduct 1 day from the delta
     # However, we will calculate normally if delta is bigger than half-day
     t_real = datetime.strptime(takeoff, time_fmt)
@@ -24,16 +24,14 @@ def get_delay(expected:str, takeoff:str) -> int:
     delta = t_real - t_exp
     # Calculate delay (can be negative - first case)
     sec_in_day = 60 * 60 * 24
-    if delta.days < 0 and delta.seconds > sec_in_day/2:
+    if delta.days < 0 and delta.seconds > sec_in_day / 2:
         seconds = delta.seconds - sec_in_day
     else:
         seconds = delta.seconds
     return int(seconds / 60)
 
 
-
-
-class Airline():
+class Airline:
     """Class describing an airline with records"""
 
     def __init__(self, name, code):
@@ -54,9 +52,25 @@ class Airline():
                 * 'destination'
                 * 'take-off': real take-off time, stored as a string
         """
-        pass
+        code = record["code"]
 
-    def get_rating_flight(self, flight:str):
+        # Save destination
+        if code not in self.destination:
+            self.destination[code] = record["destination"]
+            # self.flights[code] = list()  # mandatory if defaultdict(list) is not used
+
+        # Record to save in the list of records
+        # saved_record = {k: record[k] for k in ("date", "time")}
+        saved_record = {
+            "date": record["date"],
+            "time": record["time"],
+            "delay": get_delay(record["time"], record["take-off"]),
+        }
+
+        # Save record (NOTE: defaultdict ensure to initialize the list)
+        self.flights[code].append(saved_record)
+
+    def get_rating_flight(self, flight: str):
         """Get the rating of a given flight
 
         Args:
@@ -65,7 +79,19 @@ class Airline():
         Returns:
             ('% late', 'average delay') for a flight, both int
         """
-        pass
+        # Flight unknown
+        if flight not in self.flights:
+            return None, None
+        # Known flight: calculate number of flights late and total delay
+        nb_late, total_delay = 0.0, 0.0
+        for record in self.flights[flight]:
+            total_delay += record["delay"]
+            if record["delay"] > 30:
+                nb_late += 1
+
+        percent = int(nb_late / len(self.flights[flight]) * 100)
+        average = int(total_delay / len(self.flights[flight]))
+        return percent, average
 
     def get_rating_airline(self):
         """Get the rating of the airline
@@ -73,11 +99,23 @@ class Airline():
         Returns:
             ('% late', 'average delay') for the airline, both int
         """
-        pass
+        nb_late, total_delay, total_flights = 0.0, 0.0, 0
+        # Get rating of airline based on ratings from flights
+        for flight, records in self.flights.items():
+            total_flights += len(records)
+            # Get ratings of each flight
+            percent, average = self.get_rating_flight(flight)
+            nb_late += percent / 100. * len(records)
+            total_delay += average * len(records)
+            # Return result
+        percent = int(nb_late / total_flights * 100)
+        average = int(total_delay / total_flights)
+        return percent, average
 
 
 if __name__ == "__main__":
 
     import doctest
+
     doctest.testmod()
 
