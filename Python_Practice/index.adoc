@@ -77,7 +77,7 @@ __Example__:
 * "*name*" (e.g. "Air France")
 * "*code*" made of 2 letters (e.g. "AF")
 * "*flights*": dictionary, key="code flight", value = list of take-off records +
-  _Example_: `{'AF123': {'date':"2018-02-29", 'time':"12:13", "delay":45} }`
+  _Example_: `{'AF123': [{'date':"2018-02-29", 'time':"12:13", "delay":45}] }`
 +
 NOTE: A record is a dictionary with 3 keys: *date*, *time* (expected), *delay*
 * "*destination*": dictionary with key = "code flight", value = "destination airport" +
