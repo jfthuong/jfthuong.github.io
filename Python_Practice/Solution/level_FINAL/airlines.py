@@ -7,22 +7,28 @@ from datetime import datetime
 # #-- CALCULATION OF TIME DELTA --##
 def get_delay(expected:str, takeoff:str) -> int:
     """\
-    Measure the time difference between two times
+    Measure the time difference between two times:
     delay = <take-off> - <expected>
 
     Args:
         expected: expected departure time (e.g. 23:45)
         takeoff: real departure time (e.g. 23:55)
     """
-    fmt = "%H:%M"
-    delta = datetime.strptime(takeoff, fmt) - datetime.strptime(expected, fmt)
+    time_fmt = "%H:%M"
+    # We convert with strptime and calculate the difference
+    # If "takeoff < expected", the result is {day = -1, sec = delta + 1 day} 
+    # ... so we will have to deduct 1 day from the delta
+    # However, we will calculate normally if delta is bigger than half-day
+    t_real = datetime.strptime(takeoff, time_fmt)
+    t_exp = datetime.strptime(expected, time_fmt)
+    delta = t_real - t_exp
     # Calculate delay (can be negative - first case)
-    if delta.days < 0:
-        sec_in_day = 60 * 60 * 24
-        delay = (delta.seconds - sec_in_day) / 60
+    sec_in_day = 60 * 60 * 24
+    if delta.days < 0 and delta.seconds > sec_in_day/2:
+        seconds = delta.seconds - sec_in_day
     else:
-        delay = delta.seconds / 60
-    return int(delay)
+        seconds = delta.seconds
+    return int(seconds / 60)
 
 
 
