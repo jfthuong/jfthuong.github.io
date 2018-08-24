@@ -1,0 +1,468 @@
+2015-08-20, 0:05, EK303, Emirates Airlines, Dubai, 0:41
+2015-08-20, 0:05, MU553, China Eastern Airlines, Paris Ch. de Gaulle, 0:15
+2015-08-20, 0:05, MU219, China Eastern Airlines, Frankfurt, 0:21
+2015-08-20, 0:15, CA833, China International Airlines, Paris Ch. de Gaulle, 0:54
+2015-08-20, 0:15, 5J075, Cebu Pacific Air, Kalibo, 0:34
+2015-08-20, 0:20, ET685, Ethiopian Airlines, Addis Abeba, 0:48
+2015-08-20, 0:30, EY867, Etihad Airways, Abu Dhabi, 0:56
+2015-08-20, 0:35, SQ825, Singapore Airlines, Singapore, 1:02
+2015-08-20, 0:50, QR871, Qatar Airways, Doha, 1:10
+2015-08-20, 1:00, CA827, China International Airlines, Munich, 1:12
+2015-08-20, 1:05, 5J679, Cebu Pacific Air, Manila Ninoy Aquin, 1:22
+2015-08-20, 1:20, D7331, Asia X, Kuala Lumpur, 1:55
+2015-08-20, 1:30, CA967, China International Airlines, Milan Malpensa, 1:32
+2015-08-20, 1:40, SU207, Aeroflot, Moskau Sheremetyevo, 2:00
+2015-08-20, 6:45, Z2029, Philippine Dragon Airlines, Kalibo, 7:17
+2015-08-20, 7:00, LV199, Mega Global Air, Male, 10:38
+2015-08-20, 7:15, EK305, Emirates Airlines, Dubai, 7:39
+2015-08-20, 7:20, LJ102, Korea really Airlines, Cheju, 8:23
+2015-08-20, 7:30, TG663, Thai Airways International, Bangkok, 8:36
+2015-08-20, 7:35, KA857, Dragonair, Hong Kong, 9:05
+2015-08-20, 7:45, 9C8569, China Spring Airlines, Cheju, 8:09
+2015-08-20, 7:55, HX235, Hong Kong Airlines, Hong Kong, 9:18
+2015-08-20, 8:00, MU269Y, China Eastern Airlines, Nagoya Intl Airport, 10:41
+2015-08-20, 8:05, SQ827, Singapore Airlines, Singapore, 9:08
+2015-08-20, 8:05, 9C8875, China Spring Airlines, Macau, 9:11
+2015-08-20, 8:15, MU279, China Eastern Airlines, Chitose Airport, 9:47
+2015-08-20, 8:20, HO1305, Auspicious Airlines, Hong Kong, 9:50
+2015-08-20, 8:20, KA871, Dragonair, Hong Kong, 9:32
+2015-08-20, 8:20, MU511, China Eastern Airlines, Osaka Kansai, 10:25
+2015-08-20, 8:25, 9C8589, China Spring Airlines, Osaka Kansai, 9:41
+2015-08-20, 8:30, CZ313, China Southern Airlines, SEOUL, 10:12
+2015-08-20, 8:30, MU721, China Eastern Airlines, SEOUL, 11:05
+2015-08-20, 8:35, CA803, China International Airlines, Fukuoka, 9:34
+2015-08-20, 8:40, KA831, Dragonair, Hong Kong, 9:56
+2015-08-20, 8:40, 9C8987, China Spring Airlines, Ibaraki, 9:55
+2015-08-20, 8:45, MU5053, China Eastern Airlines, taegu, 10:30
+2015-08-20, 8:45, 9C8889, China Spring Airlines, Takamatsu, 10:04
+2015-08-20, 8:50, KE896, Korean Air, SEOUL, 11:38
+2015-08-20, 8:50, 9C8951, China Spring Airlines, TAIPEI INTL AIRPORT, 9:45
+2015-08-20, 8:55, MU225, China Eastern Airlines, Osaka Kansai, 10:56
+2015-08-20, 8:55, FM839, Shanghai Airlines, Bangkok, 9:35
+2015-08-20, 9:00, MU2583, China Eastern Airlines, Kathmandu, 9:45
+2015-08-20, 9:00, JL872, Japan Airlines, Tokyo Narita, 10:22
+2015-08-20, 9:05, MU523, China Eastern Airlines, Tokyo Narita, 9:52
+2015-08-20, 9:05, FM815, Shanghai Airlines, Tokyo Haneda, 9:30
+2015-08-20, 9:05, MU5041, China Eastern Airlines, SEOUL, 10:48
+2015-08-20, 9:10, MU5043, China Eastern Airlines, KIMHAE ITNL, 11:21
+2015-08-20, 9:10, CA921, China International Airlines, Osaka Kansai, 11:27
+2015-08-20, 9:10, FM851, Shanghai Airlines, SUNGSHAN AIRPORT, 9:26
+2015-08-20, 9:15, NX137, Macau Airlines, Macau, 9:43
+2015-08-20, 9:20, AY058, Finnair, Helsinki Vantaa, 10:33
+2015-08-20, 9:20, MU501, China Eastern Airlines, Hong Kong, 10:07
+2015-08-20, 9:25, FM801, Shanghai Airlines, SUNGSHAN AIRPORT, 10:36
+2015-08-20, 9:25, MU557, China Eastern Airlines, Komatsu, 16:09
+2015-08-20, 9:30, MU529, China Eastern Airlines, Nagoya Intl Airport, 11:51
+2015-08-20, 9:30, LX189, Swiss International Air Lines, Zuerich, 10:48
+2015-08-20, 9:40, CX365, Cathay Pacific Airways, Hong Kong, 11:35
+2015-08-20, 9:40, MU537, China Eastern Airlines, Tokyo Haneda, 9:56
+2015-08-20, 9:50, HO1309, Auspicious Airlines, TAIPEI INTL AIRPORT, 12:40
+2015-08-20, 9:55, MU567, China Eastern Airlines, Singapore, 11:08
+2015-08-20, 9:55, CA405, China International Airlines, Nagoya Intl Airport, 11:33
+2015-08-20, 9:55, MU515, China Eastern Airlines, Osaka Kansai, 11:54
+2015-08-20, 10:00, MU205, China Eastern Airlines, Chiang Mai, 10:53
+2015-08-20, 10:00, CA929, China International Airlines, Tokyo Narita, 12:13
+2015-08-20, 10:05, GA895, Indonesia Airlines, Cengekareng, 10:57
+2015-08-20, 10:05, DL296, Delta Air Lines, Tokyo Narita, 12:27
+2015-08-20, 10:05, FM817, Shanghai Airlines, Macau, 10:30
+2015-08-20, 10:10, GE379, Taiwans TransAsia Airways, TAI ZHONG, 12:48
+2015-08-20, 10:10, MU517, China Eastern Airlines, Fukuoka, 12:46
+2015-08-20, 10:15, NH922, All Nippon Airways, Tokyo Narita, 12:20
+2015-08-20, 10:15, MU5059, China Eastern Airlines, Cheju, 12:09
+2015-08-20, 10:15, MH387, Malaysia Airlines, Kuala Lumpur, 12:00
+2015-08-20, 10:20, FM811, Shanghai Airlines, Hong Kong, 11:03
+2015-08-20, 10:20, AF117, Air France, Paris Ch. de Gaulle, 11:20
+2015-08-20, 10:30, 9C8601, China Spring Airlines, Nagoya Intl Airport, 12:35
+2015-08-20, 10:35, CA155, China International Airlines, Sendai, 13:30
+2015-08-20, 10:40, HO1389, Auspicious Airlines, Fukuoka, 12:53
+2015-08-20, 10:45, MU2085, China Eastern Airlines, NAHA, 11:43
+2015-08-20, 11:00, KE894, Korean Air, SEOUL, 13:47
+2015-08-20, 11:00, BA168, British Airways, London Heathrow, 11:52
+2015-08-20, 11:05, CA195, China International Airlines, TAIPEI INTL AIRPORT, 12:31
+2015-08-20, 11:10, KE876, Korean Air, KIMHAE ITNL, 15:05
+2015-08-20, 11:20, B7501, Airways, SUNGSHAN AIRPORT, 12:15
+2015-08-20, 11:30, KA803, Dragonair, Hong Kong, 13:28
+2015-08-20, 11:30, HO1315, Auspicious Airlines, GAOXIONG AIRPORT, 12:22
+2015-08-20, 11:30, MU587, China Eastern Airlines, New York John F. Ken, 12:51
+2015-08-20, 11:35, MU507, China Eastern Airlines, Hong Kong, 12:55
+2015-08-20, 11:40, VS251, Virgin Atlantic Airways, London Heathrow, 13:19
+2015-08-20, 11:40, SU209, Aeroflot, Moskau Sheremetyevo, 12:50
+2015-08-20, 11:40, OZ312, Asiana Airlines, KIMHAE ITNL, 15:10
+2015-08-20, 11:40, OZ362, Asiana Airlines, SEOUL, 14:04
+2015-08-20, 11:45, MU2019, China Eastern Airlines, SHIZUOKA, 14:32
+2015-08-20, 11:45, CA935, China International Airlines, Frankfurt, 12:24
+2015-08-20, 11:50, JL874, Japan Airlines, Tokyo Narita, 14:02
+2015-08-20, 11:50, HX237, Hong Kong Airlines, Hong Kong, 14:49
+2015-08-20, 11:55, MU5065, China Eastern Airlines, Moskau Sheremetyevo, 12:33
+2015-08-20, 12:00, CA857, China International Airlines, Osaka Kansai, 13:54
+2015-08-20, 12:00, DL588, Delta Air Lines, Seattle Washington, 15:20
+2015-08-20, 12:00, MU521, China Eastern Airlines, Tokyo Narita, 14:18
+2015-08-20, 12:05, MU207, China Eastern Airlines, Toronto, 17:34
+2015-08-20, 12:05, CI502, China Airlines Ltd., TAIPEI INTL AIRPORT, 13:00
+2015-08-20, 12:10, NH974, All Nippon Airways, Osaka Kansai, 15:00
+2015-08-20, 12:10, UA858, United Airlines, San Francisco, 14:43
+2015-08-20, 12:10, MU719, China Eastern Airlines, Nagoya Intl Airport, 14:22
+2015-08-20, 12:10, CA915, China International Airlines, Fukuoka, 13:35
+2015-08-20, 12:15, KL896, KLM Royal Dutch Airlines, Amsterdam Schiphol, 14:56
+2015-08-20, 12:20, CX367, Cathay Pacific Airways, Hong Kong, 16:25
+2015-08-20, 12:20, MU5007, China Eastern Airlines, TAIPEI INTL AIRPORT, 13:50
+2015-08-20, 12:25, MU541, China Eastern Airlines, Bangkok, 13:56
+2015-08-20, 12:25, MU2007, China Eastern Airlines, Macau, 17:18
+2015-08-20, 12:30, MU551, China Eastern Airlines, London Heathrow, 13:00
+2015-08-20, 12:30, MU787, China Eastern Airlines, Roma Fiumicino, 14:07
+2015-08-20, 12:30, MU503, China Eastern Airlines, Hong Kong, 13:59
+2015-08-20, 12:30, MU569, China Eastern Airlines, Paris Ch. de Gaulle, 13:42
+2015-08-20, 12:35, MU747, China Eastern Airlines, Osaka Kansai, 15:15
+2015-08-20, 12:35, MU5037, China Eastern Airlines, Cheju, 15:46
+2015-08-20, 12:40, MU5033, China Eastern Airlines, SEOUL, 14:38
+2015-08-20, 12:45, MU283, China Eastern Airlines, ASAHIKAWA, 16:03
+2015-08-20, 12:50, JL082, Japan Airlines, Tokyo Haneda, 13:10
+2015-08-20, 12:55, HO1335, Auspicious Airlines, Osaka Kansai, 15:53
+2015-08-20, 12:55, HU7955, Hainan Airlines, Seattle Washington, 14:47
+2015-08-20, 13:00, MU589, China Eastern Airlines, San Francisco, 14:27
+2015-08-20, 13:00, OZ364, Asiana Airlines, SEOUL, 15:38
+2015-08-20, 13:00, MU583, China Eastern Airlines, Los Angeles, 15:59
+2015-08-20, 13:00, KA865, Dragonair, Hong Kong, 16:53
+2015-08-20, 13:05, NH920, All Nippon Airways, Tokyo Narita, 15:35
+2015-08-20, 13:05, 9C8559, China Spring Airlines, SEOUL, 14:51
+2015-08-20, 13:10, BR711, Taiwans EVA Airways, TAIPEI INTL AIRPORT, 15:44
+2015-08-20, 13:15, LH729, Lufthansa, Frankfurt, 15:13
+2015-08-20, 13:20, KA859, Dragonair, Hong Kong, 14:11
+2015-08-20, 13:20, JL894, Japan Airlines, Osaka Kansai, 15:43
+2015-08-20, 13:20, NH940, All Nippon Airways, Nagoya Intl Airport, 15:49
+2015-08-20, 13:20, SK998, Scandinavian Airlines, Kopenhagen Kastrup, 14:22
+2015-08-20, 13:25, MU509, China Eastern Airlines, Hong Kong, 15:28
+2015-08-20, 13:30, MU581, China Eastern Airlines, Vancouver, 15:24
+2015-08-20, 13:35, AM099, Mexicana Airlines, Mexico City, 17:03
+2015-08-20, 13:35, KE898, Korean Air, SEOUL, 16:15
+2015-08-20, 13:35, KE898, Korean Air, SEOUL, 16:15
+2015-08-20, 13:40, MU287, China Eastern Airlines, NAHA, 14:55
+2015-08-20, 13:50, NH970, All Nippon Airways, Tokyo Haneda, 14:01
+2015-08-20, 13:50, 9C8959, China Spring Airlines, Hong Kong, 16:05
+2015-08-20, 13:55, FM829, Shanghai Airlines, KIMHAE ITNL, 17:16
+2015-08-20, 13:55, NX109, Macau Airlines, Macau, 14:30
+2015-08-20, 14:05, JL876, Japan Airlines, Tokyo Narita, 14:47
+2015-08-20, 14:10, 9C8877, China Spring Airlines, GAOXIONG AIRPORT, 16:46
+2015-08-20, 14:10, CZ3095, China Southern Airlines, TAIPEI INTL AIRPORT, 18:44
+2015-08-20, 14:15, CA919, China International Airlines, Tokyo Narita, 16:29
+2015-08-20, 14:20, MU5097, China Eastern Airlines, SUNGSHAN AIRPORT, 14:41
+2015-08-20, 14:25, FM855, Shanghai Airlines, Bangkok, 15:27
+2015-08-20, 14:30, KA805, Dragonair, Hong Kong, 17:05
+2015-08-20, 14:30, SQ831, Singapore Airlines, Singapore, 15:24
+2015-08-20, 14:40, 9C8791, China Spring Airlines, Chitose Airport, 16:20
+2015-08-20, 14:50, HO1339, Auspicious Airlines, Osaka Kansai, 17:20
+2015-08-20, 14:50, HO1331, Auspicious Airlines, NAHA, 16:34
+2015-08-20, 15:00, 9C8795, China Spring Airlines, Ibaraki, 17:12
+2015-08-20, 15:10, FM837, Shanghai Airlines, Hong Kong, 15:26
+2015-08-21, 0:05, EK303, Emirates Airlines, Dubai, 0:37
+2015-08-21, 0:05, MU553, China Eastern Airlines, Paris Ch. de Gaulle, 0:20
+2015-08-21, 0:05, MU219, China Eastern Airlines, Frankfurt, 0:18
+2015-08-21, 0:15, CA833, China International Airlines, Paris Ch. de Gaulle, 0:54
+2015-08-21, 0:15, 5J075, Cebu Pacific Air, Kalibo, 0:43
+2015-08-21, 0:20, ET685, Ethiopian Airlines, Addis Abeba, 0:54
+2015-08-21, 0:30, EY867, Etihad Airways, Abu Dhabi, 0:39
+2015-08-21, 0:35, SQ825, Singapore Airlines, Singapore, 1:03
+2015-08-21, 0:50, QR871, Qatar Airways, Doha, 1:13
+2015-08-21, 1:00, CA827, China International Airlines, Munich, 0:53
+2015-08-21, 1:05, 5J679, Cebu Pacific Air, Manila Ninoy Aquin, 1:34
+2015-08-21, 1:20, D7331, Asia X, Kuala Lumpur, 1:56
+2015-08-21, 1:30, CA967, China International Airlines, Milan Malpensa, 1:20
+2015-08-21, 1:40, SU207, Aeroflot, Moskau Sheremetyevo, 2:13
+2015-08-21, 6:45, Z2029, Philippine Dragon Airlines, Kalibo, 7:17
+2015-08-21, 7:00, LV199, Mega Global Air, Male, 10:52
+2015-08-21, 7:15, EK305, Emirates Airlines, Dubai, 7:29
+2015-08-21, 7:20, LJ102, Korea really Airlines, Cheju, 8:35
+2015-08-21, 7:30, TG663, Thai Airways International, Bangkok, 8:51
+2015-08-21, 7:35, KA857, Dragonair, Hong Kong, 8:50
+2015-08-21, 7:45, 9C8569, China Spring Airlines, Cheju, 7:57
+2015-08-21, 7:55, HX235, Hong Kong Airlines, Hong Kong, 9:24
+2015-08-21, 8:00, MU269Y, China Eastern Airlines, Nagoya Intl Airport, 11:00
+2015-08-21, 8:05, SQ827, Singapore Airlines, Singapore, 9:14
+2015-08-21, 8:05, 9C8875, China Spring Airlines, Macau, 9:15
+2015-08-21, 8:15, MU279, China Eastern Airlines, Chitose Airport, 9:48
+2015-08-21, 8:20, HO1305, Auspicious Airlines, Hong Kong, 10:06
+2015-08-21, 8:20, KA871, Dragonair, Hong Kong, 9:45
+2015-08-21, 8:20, MU511, China Eastern Airlines, Osaka Kansai, 10:12
+2015-08-21, 8:25, 9C8589, China Spring Airlines, Osaka Kansai, 9:57
+2015-08-21, 8:30, CZ313, China Southern Airlines, SEOUL, 9:55
+2015-08-21, 8:30, MU721, China Eastern Airlines, SEOUL, 11:15
+2015-08-21, 8:35, CA803, China International Airlines, Fukuoka, 9:37
+2015-08-21, 8:40, KA831, Dragonair, Hong Kong, 9:50
+2015-08-21, 8:40, 9C8987, China Spring Airlines, Ibaraki, 9:56
+2015-08-21, 8:45, MU5053, China Eastern Airlines, taegu, 10:18
+2015-08-21, 8:45, 9C8889, China Spring Airlines, Takamatsu, 9:44
+2015-08-21, 8:50, KE896, Korean Air, SEOUL, 11:36
+2015-08-21, 8:50, 9C8951, China Spring Airlines, TAIPEI INTL AIRPORT, 9:55
+2015-08-21, 8:55, MU225, China Eastern Airlines, Osaka Kansai, 10:59
+2015-08-21, 8:55, FM839, Shanghai Airlines, Bangkok, 9:20
+2015-08-21, 9:00, MU2583, China Eastern Airlines, Kathmandu, 9:35
+2015-08-21, 9:00, JL872, Japan Airlines, Tokyo Narita, 10:03
+2015-08-21, 9:05, MU523, China Eastern Airlines, Tokyo Narita, 10:04
+2015-08-21, 9:05, FM815, Shanghai Airlines, Tokyo Haneda, 9:33
+2015-08-21, 9:05, MU5041, China Eastern Airlines, SEOUL, 10:32
+2015-08-21, 9:10, MU5043, China Eastern Airlines, KIMHAE ITNL, 11:01
+2015-08-21, 9:10, CA921, China International Airlines, Osaka Kansai, 11:19
+2015-08-21, 9:10, FM851, Shanghai Airlines, SUNGSHAN AIRPORT, 9:33
+2015-08-21, 9:15, NX137, Macau Airlines, Macau, 9:24
+2015-08-21, 9:20, AY058, Finnair, Helsinki Vantaa, 10:16
+2015-08-21, 9:20, MU501, China Eastern Airlines, Hong Kong, 9:51
+2015-08-21, 9:25, FM801, Shanghai Airlines, SUNGSHAN AIRPORT, 10:27
+2015-08-21, 9:25, MU557, China Eastern Airlines, Komatsu, 15:50
+2015-08-21, 9:30, MU529, China Eastern Airlines, Nagoya Intl Airport, 11:49
+2015-08-21, 9:30, LX189, Swiss International Air Lines, Zuerich, 10:57
+2015-08-21, 9:40, CX365, Cathay Pacific Airways, Hong Kong, 11:48
+2015-08-21, 9:40, MU537, China Eastern Airlines, Tokyo Haneda, 10:13
+2015-08-21, 9:50, HO1309, Auspicious Airlines, TAIPEI INTL AIRPORT, 12:24
+2015-08-21, 9:55, MU567, China Eastern Airlines, Singapore, 11:23
+2015-08-21, 9:55, CA405, China International Airlines, Nagoya Intl Airport, 11:22
+2015-08-21, 9:55, MU515, China Eastern Airlines, Osaka Kansai, 11:45
+2015-08-21, 10:00, MU205, China Eastern Airlines, Chiang Mai, 10:49
+2015-08-21, 10:00, CA929, China International Airlines, Tokyo Narita, 12:05
+2015-08-21, 10:05, GA895, Indonesia Airlines, Cengekareng, 10:47
+2015-08-21, 10:05, DL296, Delta Air Lines, Tokyo Narita, 12:11
+2015-08-21, 10:05, FM817, Shanghai Airlines, Macau, 10:47
+2015-08-21, 10:10, GE379, Taiwans TransAsia Airways, TAI ZHONG, 13:00
+2015-08-21, 10:10, MU517, China Eastern Airlines, Fukuoka, 12:48
+2015-08-21, 10:15, NH922, All Nippon Airways, Tokyo Narita, 12:06
+2015-08-21, 10:15, MU5059, China Eastern Airlines, Cheju, 11:50
+2015-08-21, 10:15, MH387, Malaysia Airlines, Kuala Lumpur, 12:14
+2015-08-21, 10:20, FM811, Shanghai Airlines, Hong Kong, 11:00
+2015-08-21, 10:20, AF117, Air France, Paris Ch. de Gaulle, 11:31
+2015-08-21, 10:30, 9C8601, China Spring Airlines, Nagoya Intl Airport, 12:48
+2015-08-21, 10:35, CA155, China International Airlines, Sendai, 13:39
+2015-08-21, 10:40, HO1389, Auspicious Airlines, Fukuoka, 13:11
+2015-08-21, 10:45, MU2085, China Eastern Airlines, NAHA, 11:52
+2015-08-21, 11:00, KE894, Korean Air, SEOUL, 13:36
+2015-08-21, 11:00, BA168, British Airways, London Heathrow, 12:01
+2015-08-21, 11:05, CA195, China International Airlines, TAIPEI INTL AIRPORT, 12:43
+2015-08-21, 11:10, KE876, Korean Air, KIMHAE ITNL, 15:20
+2015-08-21, 11:20, B7501, Airways, SUNGSHAN AIRPORT, 12:02
+2015-08-21, 11:30, KA803, Dragonair, Hong Kong, 13:37
+2015-08-21, 11:30, HO1315, Auspicious Airlines, GAOXIONG AIRPORT, 12:25
+2015-08-21, 11:30, MU587, China Eastern Airlines, New York John F. Ken, 12:41
+2015-08-21, 11:35, MU507, China Eastern Airlines, Hong Kong, 12:51
+2015-08-21, 11:40, VS251, Virgin Atlantic Airways, London Heathrow, 13:04
+2015-08-21, 11:40, SU209, Aeroflot, Moskau Sheremetyevo, 12:39
+2015-08-21, 11:40, OZ312, Asiana Airlines, KIMHAE ITNL, 14:56
+2015-08-21, 11:40, OZ362, Asiana Airlines, SEOUL, 14:00
+2015-08-21, 11:45, MU2019, China Eastern Airlines, SHIZUOKA, 14:22
+2015-08-21, 11:45, CA935, China International Airlines, Frankfurt, 12:31
+2015-08-21, 11:50, JL874, Japan Airlines, Tokyo Narita, 14:04
+2015-08-21, 11:50, HX237, Hong Kong Airlines, Hong Kong, 14:38
+2015-08-21, 11:55, MU5065, China Eastern Airlines, Moskau Sheremetyevo, 12:29
+2015-08-21, 12:00, CA857, China International Airlines, Osaka Kansai, 13:59
+2015-08-21, 12:00, DL588, Delta Air Lines, Seattle Washington, 15:24
+2015-08-21, 12:00, MU521, China Eastern Airlines, Tokyo Narita, 14:31
+2015-08-21, 12:05, MU207, China Eastern Airlines, Toronto, 17:21
+2015-08-21, 12:05, CI502, China Airlines Ltd., TAIPEI INTL AIRPORT, 13:06
+2015-08-21, 12:10, NH974, All Nippon Airways, Osaka Kansai, 14:47
+2015-08-21, 12:10, UA858, United Airlines, San Francisco, 14:40
+2015-08-21, 12:10, MU719, China Eastern Airlines, Nagoya Intl Airport, 14:30
+2015-08-21, 12:10, CA915, China International Airlines, Fukuoka, 13:40
+2015-08-21, 12:15, KL896, KLM Royal Dutch Airlines, Amsterdam Schiphol, 14:37
+2015-08-21, 12:20, CX367, Cathay Pacific Airways, Hong Kong, 16:25
+2015-08-21, 12:20, MU5007, China Eastern Airlines, TAIPEI INTL AIRPORT, 14:04
+2015-08-21, 12:25, MU541, China Eastern Airlines, Bangkok, 13:44
+2015-08-21, 12:25, MU2007, China Eastern Airlines, Macau, 17:18
+2015-08-21, 12:30, MU551, China Eastern Airlines, London Heathrow, 12:47
+2015-08-21, 12:30, MU787, China Eastern Airlines, Roma Fiumicino, 14:18
+2015-08-21, 12:30, MU503, China Eastern Airlines, Hong Kong, 13:50
+2015-08-21, 12:30, MU569, China Eastern Airlines, Paris Ch. de Gaulle, 13:23
+2015-08-21, 12:35, MU747, China Eastern Airlines, Osaka Kansai, 15:02
+2015-08-21, 12:35, MU5037, China Eastern Airlines, Cheju, 15:28
+2015-08-21, 12:40, MU5033, China Eastern Airlines, SEOUL, 14:42
+2015-08-21, 12:45, MU283, China Eastern Airlines, ASAHIKAWA, 16:04
+2015-08-21, 12:50, JL082, Japan Airlines, Tokyo Haneda, 13:06
+2015-08-21, 12:55, HO1335, Auspicious Airlines, Osaka Kansai, 15:38
+2015-08-21, 12:55, HU7955, Hainan Airlines, Seattle Washington, 14:44
+2015-08-21, 13:00, MU589, China Eastern Airlines, San Francisco, 14:19
+2015-08-21, 13:00, OZ364, Asiana Airlines, SEOUL, 15:23
+2015-08-21, 13:00, MU583, China Eastern Airlines, Los Angeles, 15:43
+2015-08-21, 13:00, KA865, Dragonair, Hong Kong, 17:11
+2015-08-21, 13:05, NH920, All Nippon Airways, Tokyo Narita, 15:37
+2015-08-21, 13:05, 9C8559, China Spring Airlines, SEOUL, 14:58
+2015-08-21, 13:10, BR711, Taiwans EVA Airways, TAIPEI INTL AIRPORT, 15:45
+2015-08-21, 13:15, LH729, Lufthansa, Frankfurt, 15:07
+2015-08-21, 13:20, KA859, Dragonair, Hong Kong, 13:58
+2015-08-21, 13:20, JL894, Japan Airlines, Osaka Kansai, 15:39
+2015-08-21, 13:20, NH940, All Nippon Airways, Nagoya Intl Airport, 15:42
+2015-08-21, 13:20, SK998, Scandinavian Airlines, Kopenhagen Kastrup, 14:42
+2015-08-21, 13:25, MU509, China Eastern Airlines, Hong Kong, 15:28
+2015-08-21, 13:30, MU581, China Eastern Airlines, Vancouver, 15:28
+2015-08-21, 13:35, AM099, Mexicana Airlines, Mexico City, 16:58
+2015-08-21, 13:35, KE898, Korean Air, SEOUL, 16:06
+2015-08-21, 13:35, KE898, Korean Air, SEOUL, 16:31
+2015-08-21, 13:40, MU287, China Eastern Airlines, NAHA, 14:40
+2015-08-21, 13:50, NH970, All Nippon Airways, Tokyo Haneda, 14:14
+2015-08-21, 13:50, 9C8959, China Spring Airlines, Hong Kong, 16:24
+2015-08-21, 13:55, FM829, Shanghai Airlines, KIMHAE ITNL, 17:09
+2015-08-21, 13:55, NX109, Macau Airlines, Macau, 14:18
+2015-08-21, 14:05, JL876, Japan Airlines, Tokyo Narita, 14:34
+2015-08-21, 14:10, 9C8877, China Spring Airlines, GAOXIONG AIRPORT, 16:59
+2015-08-21, 14:10, CZ3095, China Southern Airlines, TAIPEI INTL AIRPORT, 18:48
+2015-08-21, 14:15, CA919, China International Airlines, Tokyo Narita, 16:10
+2015-08-21, 14:20, MU5097, China Eastern Airlines, SUNGSHAN AIRPORT, 14:22
+2015-08-21, 14:25, FM855, Shanghai Airlines, Bangkok, 15:30
+2015-08-21, 14:30, KA805, Dragonair, Hong Kong, 17:09
+2015-08-21, 14:30, SQ831, Singapore Airlines, Singapore, 15:18
+2015-08-21, 14:40, 9C8791, China Spring Airlines, Chitose Airport, 16:05
+2015-08-21, 14:50, HO1339, Auspicious Airlines, Osaka Kansai, 17:34
+2015-08-21, 14:50, HO1331, Auspicious Airlines, NAHA, 16:29
+2015-08-21, 15:00, 9C8795, China Spring Airlines, Ibaraki, 17:28
+2015-08-21, 15:10, FM837, Shanghai Airlines, Hong Kong, 15:36
+2015-08-22, 0:05, EK303, Emirates Airlines, Dubai, 0:27
+2015-08-22, 0:05, MU553, China Eastern Airlines, Paris Ch. de Gaulle, 0:19
+2015-08-22, 0:05, MU219, China Eastern Airlines, Frankfurt, 0:39
+2015-08-22, 0:15, CA833, China International Airlines, Paris Ch. de Gaulle, 0:49
+2015-08-22, 0:15, 5J075, Cebu Pacific Air, Kalibo, 0:51
+2015-08-22, 0:20, ET685, Ethiopian Airlines, Addis Abeba, 1:08
+2015-08-22, 0:30, EY867, Etihad Airways, Abu Dhabi, 0:44
+2015-08-22, 0:35, SQ825, Singapore Airlines, Singapore, 1:08
+2015-08-22, 0:50, QR871, Qatar Airways, Doha, 1:18
+2015-08-22, 1:00, CA827, China International Airlines, Munich, 1:21
+2015-08-22, 1:05, 5J679, Cebu Pacific Air, Manila Ninoy Aquin, 1:10
+2015-08-22, 1:20, D7331, Asia X, Kuala Lumpur, 1:46
+2015-08-22, 1:30, CA967, China International Airlines, Milan Malpensa, 1:12
+2015-08-22, 1:40, SU207, Aeroflot, Moskau Sheremetyevo, 2:03
+2015-08-22, 6:45, Z2029, Philippine Dragon Airlines, Kalibo, 7:31
+2015-08-22, 7:00, LV199, Mega Global Air, Male, 10:57
+2015-08-22, 7:15, EK305, Emirates Airlines, Dubai, 7:54
+2015-08-22, 7:20, LJ102, Korea really Airlines, Cheju, 8:37
+2015-08-22, 7:30, TG663, Thai Airways International, Bangkok, 8:32
+2015-08-22, 7:35, KA857, Dragonair, Hong Kong, 9:22
+2015-08-22, 7:45, 9C8569, China Spring Airlines, Cheju, 8:20
+2015-08-22, 7:55, HX235, Hong Kong Airlines, Hong Kong, 9:08
+2015-08-22, 8:00, MU269Y, China Eastern Airlines, Nagoya Intl Airport, 10:41
+2015-08-22, 8:05, SQ827, Singapore Airlines, Singapore, 9:06
+2015-08-22, 8:05, 9C8875, China Spring Airlines, Macau, 9:25
+2015-08-22, 8:15, MU279, China Eastern Airlines, Chitose Airport, 10:02
+2015-08-22, 8:20, HO1305, Auspicious Airlines, Hong Kong, 10:07
+2015-08-22, 8:20, KA871, Dragonair, Hong Kong, 9:13
+2015-08-22, 8:20, MU511, China Eastern Airlines, Osaka Kansai, 10:33
+2015-08-22, 8:25, 9C8589, China Spring Airlines, Osaka Kansai, 9:52
+2015-08-22, 8:30, CZ313, China Southern Airlines, SEOUL, 10:09
+2015-08-22, 8:30, MU721, China Eastern Airlines, SEOUL, 11:08
+2015-08-22, 8:35, CA803, China International Airlines, Fukuoka, 9:45
+2015-08-22, 8:40, KA831, Dragonair, Hong Kong, 9:36
+2015-08-22, 8:40, 9C8987, China Spring Airlines, Ibaraki, 9:52
+2015-08-22, 8:45, MU5053, China Eastern Airlines, taegu, 10:17
+2015-08-22, 8:45, 9C8889, China Spring Airlines, Takamatsu, 10:03
+2015-08-22, 8:50, KE896, Korean Air, SEOUL, 11:25
+2015-08-22, 8:50, 9C8951, China Spring Airlines, TAIPEI INTL AIRPORT, 9:36
+2015-08-22, 8:55, MU225, China Eastern Airlines, Osaka Kansai, 11:04
+2015-08-22, 8:55, FM839, Shanghai Airlines, Bangkok, 9:35
+2015-08-22, 9:00, MU2583, China Eastern Airlines, Kathmandu, 9:50
+2015-08-22, 9:00, JL872, Japan Airlines, Tokyo Narita, 10:26
+2015-08-22, 9:05, MU523, China Eastern Airlines, Tokyo Narita, 9:44
+2015-08-22, 9:05, FM815, Shanghai Airlines, Tokyo Haneda, 9:34
+2015-08-22, 9:05, MU5041, China Eastern Airlines, SEOUL, 10:35
+2015-08-22, 9:10, MU5043, China Eastern Airlines, KIMHAE ITNL, 11:32
+2015-08-22, 9:10, CA921, China International Airlines, Osaka Kansai, 11:14
+2015-08-22, 9:10, FM851, Shanghai Airlines, SUNGSHAN AIRPORT, 9:25
+2015-08-22, 9:15, NX137, Macau Airlines, Macau, 9:37
+2015-08-22, 9:20, AY058, Finnair, Helsinki Vantaa, 10:46
+2015-08-22, 9:20, MU501, China Eastern Airlines, Hong Kong, 10:23
+2015-08-22, 9:25, FM801, Shanghai Airlines, SUNGSHAN AIRPORT, 10:46
+2015-08-22, 9:25, MU557, China Eastern Airlines, Komatsu, 16:07
+2015-08-22, 9:30, MU529, China Eastern Airlines, Nagoya Intl Airport, 12:08
+2015-08-22, 9:30, LX189, Swiss International Air Lines, Zuerich, 10:49
+2015-08-22, 9:40, CX365, Cathay Pacific Airways, Hong Kong, 11:38
+2015-08-22, 9:40, MU537, China Eastern Airlines, Tokyo Haneda, 9:38
+2015-08-22, 9:50, HO1309, Auspicious Airlines, TAIPEI INTL AIRPORT, 12:46
+2015-08-22, 9:55, MU567, China Eastern Airlines, Singapore, 10:53
+2015-08-22, 9:55, CA405, China International Airlines, Nagoya Intl Airport, 11:21
+2015-08-22, 9:55, MU515, China Eastern Airlines, Osaka Kansai, 12:08
+2015-08-22, 10:00, MU205, China Eastern Airlines, Chiang Mai, 10:34
+2015-08-22, 10:00, CA929, China International Airlines, Tokyo Narita, 12:15
+2015-08-22, 10:05, GA895, Indonesia Airlines, Cengekareng, 11:17
+2015-08-22, 10:05, DL296, Delta Air Lines, Tokyo Narita, 12:42
+2015-08-22, 10:05, FM817, Shanghai Airlines, Macau, 10:39
+2015-08-22, 10:10, GE379, Taiwans TransAsia Airways, TAI ZHONG, 12:36
+2015-08-22, 10:10, MU517, China Eastern Airlines, Fukuoka, 12:52
+2015-08-22, 10:15, NH922, All Nippon Airways, Tokyo Narita, 12:19
+2015-08-22, 10:15, MU5059, China Eastern Airlines, Cheju, 11:58
+2015-08-22, 10:15, MH387, Malaysia Airlines, Kuala Lumpur, 12:12
+2015-08-22, 10:20, FM811, Shanghai Airlines, Hong Kong, 10:50
+2015-08-22, 10:20, AF117, Air France, Paris Ch. de Gaulle, 11:20
+2015-08-22, 10:30, 9C8601, China Spring Airlines, Nagoya Intl Airport, 12:54
+2015-08-22, 10:35, CA155, China International Airlines, Sendai, 13:41
+2015-08-22, 10:40, HO1389, Auspicious Airlines, Fukuoka, 13:12
+2015-08-22, 10:45, MU2085, China Eastern Airlines, NAHA, 11:43
+2015-08-22, 11:00, KE894, Korean Air, SEOUL, 13:29
+2015-08-22, 11:00, BA168, British Airways, London Heathrow, 11:56
+2015-08-22, 11:05, CA195, China International Airlines, TAIPEI INTL AIRPORT, 12:39
+2015-08-22, 11:10, KE876, Korean Air, KIMHAE ITNL, 14:47
+2015-08-22, 11:20, B7501, Airways, SUNGSHAN AIRPORT, 12:07
+2015-08-22, 11:30, KA803, Dragonair, Hong Kong, 13:14
+2015-08-22, 11:30, HO1315, Auspicious Airlines, GAOXIONG AIRPORT, 12:37
+2015-08-22, 11:30, MU587, China Eastern Airlines, New York John F. Ken, 12:33
+2015-08-22, 11:35, MU507, China Eastern Airlines, Hong Kong, 12:41
+2015-08-22, 11:40, VS251, Virgin Atlantic Airways, London Heathrow, 13:31
+2015-08-22, 11:40, SU209, Aeroflot, Moskau Sheremetyevo, 13:10
+2015-08-22, 11:40, OZ312, Asiana Airlines, KIMHAE ITNL, 15:05
+2015-08-22, 11:40, OZ362, Asiana Airlines, SEOUL, 13:53
+2015-08-22, 11:45, MU2019, China Eastern Airlines, SHIZUOKA, 14:44
+2015-08-22, 11:45, CA935, China International Airlines, Frankfurt, 12:31
+2015-08-22, 11:50, JL874, Japan Airlines, Tokyo Narita, 14:17
+2015-08-22, 11:50, HX237, Hong Kong Airlines, Hong Kong, 14:43
+2015-08-22, 11:55, MU5065, China Eastern Airlines, Moskau Sheremetyevo, 12:28
+2015-08-22, 12:00, CA857, China International Airlines, Osaka Kansai, 13:41
+2015-08-22, 12:00, DL588, Delta Air Lines, Seattle Washington, 15:04
+2015-08-22, 12:00, MU521, China Eastern Airlines, Tokyo Narita, 14:08
+2015-08-22, 12:05, MU207, China Eastern Airlines, Toronto, 17:30
+2015-08-22, 12:05, CI502, China Airlines Ltd., TAIPEI INTL AIRPORT, 12:40
+2015-08-22, 12:10, NH974, All Nippon Airways, Osaka Kansai, 15:16
+2015-08-22, 12:10, UA858, United Airlines, San Francisco, 14:57
+2015-08-22, 12:10, MU719, China Eastern Airlines, Nagoya Intl Airport, 14:41
+2015-08-22, 12:10, CA915, China International Airlines, Fukuoka, 13:22
+2015-08-22, 12:15, KL896, KLM Royal Dutch Airlines, Amsterdam Schiphol, 14:59
+2015-08-22, 12:20, CX367, Cathay Pacific Airways, Hong Kong, 16:32
+2015-08-22, 12:20, MU5007, China Eastern Airlines, TAIPEI INTL AIRPORT, 13:38
+2015-08-22, 12:25, MU541, China Eastern Airlines, Bangkok, 13:36
+2015-08-22, 12:25, MU2007, China Eastern Airlines, Macau, 17:03
+2015-08-22, 12:30, MU551, China Eastern Airlines, London Heathrow, 13:05
+2015-08-22, 12:30, MU787, China Eastern Airlines, Roma Fiumicino, 13:57
+2015-08-22, 12:30, MU503, China Eastern Airlines, Hong Kong, 14:06
+2015-08-22, 12:30, MU569, China Eastern Airlines, Paris Ch. de Gaulle, 13:34
+2015-08-22, 12:35, MU747, China Eastern Airlines, Osaka Kansai, 14:59
+2015-08-22, 12:35, MU5037, China Eastern Airlines, Cheju, 15:48
+2015-08-22, 12:40, MU5033, China Eastern Airlines, SEOUL, 14:32
+2015-08-22, 12:45, MU283, China Eastern Airlines, ASAHIKAWA, 15:55
+2015-08-22, 12:50, JL082, Japan Airlines, Tokyo Haneda, 13:12
+2015-08-22, 12:55, HO1335, Auspicious Airlines, Osaka Kansai, 15:44
+2015-08-22, 12:55, HU7955, Hainan Airlines, Seattle Washington, 14:36
+2015-08-22, 13:00, MU589, China Eastern Airlines, San Francisco, 14:11
+2015-08-22, 13:00, OZ364, Asiana Airlines, SEOUL, 15:26
+2015-08-22, 13:00, MU583, China Eastern Airlines, Los Angeles, 16:10
+2015-08-22, 13:00, KA865, Dragonair, Hong Kong, 16:51
+2015-08-22, 13:05, NH920, All Nippon Airways, Tokyo Narita, 15:37
+2015-08-22, 13:05, 9C8559, China Spring Airlines, SEOUL, 14:49
+2015-08-22, 13:10, BR711, Taiwans EVA Airways, TAIPEI INTL AIRPORT, 15:47
+2015-08-22, 13:15, LH729, Lufthansa, Frankfurt, 15:12
+2015-08-22, 13:20, KA859, Dragonair, Hong Kong, 14:21
+2015-08-22, 13:20, JL894, Japan Airlines, Osaka Kansai, 15:35
+2015-08-22, 13:20, NH940, All Nippon Airways, Nagoya Intl Airport, 16:06
+2015-08-22, 13:20, SK998, Scandinavian Airlines, Kopenhagen Kastrup, 14:31
+2015-08-22, 13:25, MU509, China Eastern Airlines, Hong Kong, 15:42
+2015-08-22, 13:30, MU581, China Eastern Airlines, Vancouver, 15:36
+2015-08-22, 13:35, AM099, Mexicana Airlines, Mexico City, 17:13
+2015-08-22, 13:35, KE898, Korean Air, SEOUL, 16:33
+2015-08-22, 13:35, KE898, Korean Air, SEOUL, 16:13
+2015-08-22, 13:40, MU287, China Eastern Airlines, NAHA, 15:12
+2015-08-22, 13:50, NH970, All Nippon Airways, Tokyo Haneda, 13:58
+2015-08-22, 13:50, 9C8959, China Spring Airlines, Hong Kong, 16:24
+2015-08-22, 13:55, FM829, Shanghai Airlines, KIMHAE ITNL, 17:36
+2015-08-22, 13:55, NX109, Macau Airlines, Macau, 14:30
+2015-08-22, 14:05, JL876, Japan Airlines, Tokyo Narita, 14:59
+2015-08-22, 14:10, 9C8877, China Spring Airlines, GAOXIONG AIRPORT, 17:03
+2015-08-22, 14:10, CZ3095, China Southern Airlines, TAIPEI INTL AIRPORT, 18:42
+2015-08-22, 14:15, CA919, China International Airlines, Tokyo Narita, 16:12
+2015-08-22, 14:20, MU5097, China Eastern Airlines, SUNGSHAN AIRPORT, 14:25
+2015-08-22, 14:25, FM855, Shanghai Airlines, Bangkok, 15:10
+2015-08-22, 14:30, KA805, Dragonair, Hong Kong, 17:11
+2015-08-22, 14:30, SQ831, Singapore Airlines, Singapore, 15:36
+2015-08-22, 14:40, 9C8791, China Spring Airlines, Chitose Airport, 16:04
+2015-08-22, 14:50, HO1339, Auspicious Airlines, Osaka Kansai, 17:15
+2015-08-22, 14:50, HO1331, Auspicious Airlines, NAHA, 16:41
+2015-08-22, 15:00, 9C8795, China Spring Airlines, Ibaraki, 17:00
+2015-08-22, 15:10, FM837, Shanghai Airlines, Hong Kong, 15:44
