@@ -77,7 +77,17 @@ __Example__:
 * "*name*" (e.g. "Air France")
 * "*code*" made of 2 letters (e.g. "AF")
 * "*flights*": dictionary, key="code flight", value = list of take-off records +
-  _Example_: `{'AF123': [{'date':"2018-02-29", 'time':"12:13", "delay":45}] }`
+  _Example_: +
++
+[source]
+----
+{
+    'AF123': [
+        {'date':"2018-02-29", 'time':"12:13", "delay":45},
+        {'date':"2018-02-30", 'time':"12:13", "delay":15}
+    ]
+}
+----
 +
 NOTE: A record is a dictionary with 3 keys: *date*, *time* (expected), *delay*
 * "*destination*": dictionary with key = "code flight", value = "destination airport" +
@@ -94,10 +104,13 @@ TIP: We recommend to create a function `get_delay` to compute the delay (in minu
 
 *3 methods*:
 
-* *add_info*: add flight information and store in attributes `flights` and `destination`. +
-  Create flight if it does not exist
-* *get_rating_flight*: return tuple (*% late*, *average delay*) for a flight
-* *get_rating_airline*: return tuple (*% late*, *average delay*) for airline
+* *add_info*: add flight information (dictionary) and store in attributes `flights` and `destination`. +
+  Create flight if it does not exist +
+  Prototype: `add_info(self, info) -> None  # info is a dictionary`
+* *get_rating_flight*: return tuple (*% late*, *average delay*) for a flight +
+  Prototype: `get_rating_flight(self, flight_code:str) -> Tuple[int, int]`
+* *get_rating_airline*: return tuple (*% late*, *average delay*) for airline +
+  Prototype: `get_rating_airline(self) -> Tuple[int, int]`
 
 [NOTE]
 ====

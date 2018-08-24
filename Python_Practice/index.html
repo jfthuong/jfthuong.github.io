@@ -657,7 +657,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>"<strong>flights</strong>": dictionary, key="code flight", value = list of take-off records<br>
-<em>Example</em>: <code>{'AF123': [{'date':"2018-02-29", 'time':"12:13", "delay":45}] }</code></p>
+<em>Example</em>:<br></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-p">{</span>
+    <span class="tok-s1">&#39;AF123&#39;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
+        <span class="tok-p">{</span><span class="tok-s1">&#39;date&#39;</span><span class="tok-p">:</span><span class="tok-s2">&quot;2018-02-29&quot;</span><span class="tok-p">,</span> <span class="tok-s1">&#39;time&#39;</span><span class="tok-p">:</span><span class="tok-s2">&quot;12:13&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">:</span><span class="tok-mi">45</span><span class="tok-p">},</span>
+        <span class="tok-p">{</span><span class="tok-s1">&#39;date&#39;</span><span class="tok-p">:</span><span class="tok-s2">&quot;2018-02-30&quot;</span><span class="tok-p">,</span> <span class="tok-s1">&#39;time&#39;</span><span class="tok-p">:</span><span class="tok-s2">&quot;12:13&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">:</span><span class="tok-mi">15</span><span class="tok-p">}</span>
+    <span class="tok-p">]</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -713,14 +723,17 @@ We recommend to create a function <code>get_delay</code> to compute the delay (i
 <div class="ulist">
 <ul>
 <li>
-<p><strong>add_info</strong>: add flight information and store in attributes <code>flights</code> and <code>destination</code>.<br>
-Create flight if it does not exist</p>
+<p><strong>add_info</strong>: add flight information (dictionary) and store in attributes <code>flights</code> and <code>destination</code>.<br>
+Create flight if it does not exist<br>
+Prototype: <code>add_info(self, info) &#8594; None  # info is a dictionary</code></p>
 </li>
 <li>
-<p><strong>get_rating_flight</strong>: return tuple (<strong>% late</strong>, <strong>average delay</strong>) for a flight</p>
+<p><strong>get_rating_flight</strong>: return tuple (<strong>% late</strong>, <strong>average delay</strong>) for a flight<br>
+Prototype: <code>get_rating_flight(self, flight_code:str) &#8594; Tuple[int, int]</code></p>
 </li>
 <li>
-<p><strong>get_rating_airline</strong>: return tuple (<strong>% late</strong>, <strong>average delay</strong>) for airline</p>
+<p><strong>get_rating_airline</strong>: return tuple (<strong>% late</strong>, <strong>average delay</strong>) for airline<br>
+Prototype: <code>get_rating_airline(self) &#8594; Tuple[int, int]</code></p>
 </li>
 </ul>
 </div>
@@ -1247,7 +1260,7 @@ default value of <code>&lt;nb_ranking&gt;</code> is 10
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-24 15:46:32 China Standard Time
+Last updated 2018-08-24 16:09:24 China Standard Time
 </div>
 </div>
 </body>
