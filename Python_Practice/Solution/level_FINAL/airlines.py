@@ -100,17 +100,20 @@ class Airline:
         Returns:
             ('% late', 'average delay') for the airline, both int
         """
-        nb_late, total_delay, total_flights = 0.0, 0.0, 0
-        # Get rating of airline based on ratings from flights
-        for flight, records in self.flights.items():
-            total_flights += len(records)
-            # Get ratings of each flight
-            percent, average = self.get_rating_flight(flight)
-            nb_late += percent / 100. * len(records)
-            total_delay += average * len(records)
-            # Return result
-        percent = int(nb_late / total_flights * 100)
-        average = int(total_delay / total_flights)
+        # We could use the previous version to avoid duplicate code
+        # HOWEVER, get_rating_flight returns "int" so the result would be inexact
+        # We will do a copy of the code with a loop on "flight" [arghhh :( duplicate code!!]
+        nb_late, total_delay = 0.0, 0.0
+        nb_flights = 0
+        for records in self.flights.values():
+            nb_flights += len(records)
+            for record in records:
+                total_delay += record["delay"]
+                if record["delay"] > 30:
+                    nb_late += 1
+
+        percent = int(nb_late / nb_flights * 100)
+        average = int(total_delay / nb_flights)
         return percent, average
 
 
