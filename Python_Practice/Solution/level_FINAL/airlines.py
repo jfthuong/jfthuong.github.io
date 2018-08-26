@@ -16,15 +16,17 @@ def get_delay(expected: str, takeoff: str) -> int:
     """
     time_fmt = "%H:%M"
     # We convert with strptime and calculate the difference
-    # If "takeoff < expected", the result is {day = -1, sec = delta + 1 day}
-    # ... so we will have to deduct 1 day from the delta
-    # However, we will calculate normally if delta is bigger than half-day
     t_real = datetime.strptime(takeoff, time_fmt)
     t_exp = datetime.strptime(expected, time_fmt)
     delta = t_real - t_exp
-    # Calculate delay (can be negative - first case)
+
+    # If "takeoff < expected", we will call recursively and multiply by "-1"
+    if delta.days < 0:
+        return -1 * get_delay(takeoff, expected)
+
+    # If delta is bigger than half-day, we will return (delta - 1 day)
     sec_in_day = 60 * 60 * 24
-    if delta.days < 0 and delta.seconds > sec_in_day / 2:
+    if delta.seconds > sec_in_day / 2:
         seconds = delta.seconds - sec_in_day
     else:
         seconds = delta.seconds
@@ -48,15 +50,14 @@ def get_delay_2(expected: str, takeoff: str) -> int:
     # We convert by doing HH * 60 + MM and calculate the difference
     # If "takeoff < expected", the result is we will have to deduct 1 day from delta
     # However, we will calculate normally if delta is bigger than half-day
-
-    delta = min_in_time(takeoff) - min_in_time(expected)
-    # Calculate delay (can be negative - first case)
     min_in_day = 60 * 24
-    if delta < 0 and delta < -min_in_day / 2:
-        minutes = delta + min_in_day
+    delta = min_in_time(takeoff) - min_in_time(expected)
+    if delta < 0:
+        return -1 * get_delay_2(takeoff, expected)
+    elif delta > min_in_day / 2:
+        return delta - min_in_day
     else:
-        minutes = delta
-    return minutes
+        return delta
 
 
 class Airline:

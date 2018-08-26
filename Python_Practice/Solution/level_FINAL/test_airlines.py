@@ -14,6 +14,10 @@ import pytest
 from typing import Dict, List, Any
 
 from airlines import Airline, get_delay
+try:
+    from airlines import get_delay_2
+except ImportError:
+    get_delay_2 = get_delay
 import processRecords as rec
 
 
@@ -21,6 +25,13 @@ def test_delay():
     assert get_delay("12:10", "12:45") == 35
     assert get_delay("12:10", "11:45") == -25
     assert get_delay("23:45", "00:45") == 60
+    assert get_delay("00:45", "23:45") == -60
+
+    # For alternate solution
+    assert get_delay_2("12:10", "12:45") == 35
+    assert get_delay_2("12:10", "11:45") == -25
+    assert get_delay_2("23:45", "00:45") == 60
+    assert get_delay_2("00:45", "23:45") == -60
 
 
 # Test class "Airline"
