@@ -31,6 +31,34 @@ def get_delay(expected: str, takeoff: str) -> int:
     return int(seconds / 60)
 
 
+def get_delay_2(expected: str, takeoff: str) -> int:
+    """\
+    Measure the time difference in minutes between two times
+    delay = <take-off> - <expected>
+
+    Args:
+        expected: expected departure time (e.g. 23:45)
+        takeoff: real departure time (e.g. 23:55)
+    """
+
+    def min_in_time(hhmm: str):
+        t = hhmm.split(":")
+        return int(t[0]) * 60 + int(t[1])
+
+    # We convert by doing HH * 60 + MM and calculate the difference
+    # If "takeoff < expected", the result is we will have to deduct 1 day from delta
+    # However, we will calculate normally if delta is bigger than half-day
+
+    delta = min_in_time(takeoff) - min_in_time(expected)
+    # Calculate delay (can be negative - first case)
+    min_in_day = 60 * 24
+    if delta < 0 and delta < -min_in_day / 2:
+        minutes = delta + min_in_day
+    else:
+        minutes = delta
+    return minutes
+
+
 class Airline:
     """Class describing an airline with records"""
 
