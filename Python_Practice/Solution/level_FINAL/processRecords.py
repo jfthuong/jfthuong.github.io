@@ -24,11 +24,13 @@ def read_flight_records(file_path: str):
     # Using "dict(...)" on this zipped list will create a dictionary with key and value
 
     # 2 solutions to split line in elements
-    # Solution #1: Using regular expression to ensure strict pattern matchin
+    # Solution #1: Using regular expression to ensure strict pattern matching
     pattern = (
         r"^([\d\-]+),\s*([\d:]+),\s*([A-Z0-9]+),\s*([\w ]+),\s*(\w.+?),\s*([\d:]+)"
     )
     # Solution #2: using <line>.split(",") and stripping all spaces around each element
+    # We then need to check the number of elements in split result
+
     try:
         with open(file_path) as f:
             for record in f:
@@ -110,13 +112,15 @@ def list_sorted_ratings(airlines_dic):
     for name, airline in airlines_dic.items():
         # Airline
         rating_airline = airline.get_rating_airline()
-        # NOTE: We add the name before the tuple by using "*args" to get elements of tuple
+        # TODO: add code of Airline in the ranking
         # name_code = f"{name} [{airline.code}]"
         # rating_airlines.append((name_code, *rating_airline))
+        # NOTE: We add the name before the tuple by using "*args" to get elements of tuple
         rating_airlines.append((name, *rating_airline))
         # Flights
         for flight in airline.flights.keys():
             rating_flight = airline.get_rating_flight(flight)
+            # TODO: add destination of flight in the ranking
             # code_dest = f"{flight} ({airline.destination[flight]})"
             # rating_flights.append((code_dest, *rating_flight))
             rating_flights.append((flight, *rating_flight))
@@ -149,17 +153,15 @@ def get_first_last_elem(sorted_list, nb_elem: int):
         return [], []
     else:
         first_elements = sorted_list[:nb_elem]
+
         last_elements = sorted_list[-nb_elem:]
         last_elements.reverse()
+
         return first_elements, last_elements
 
 
 ##=== MAIN PROGRAM ===##
 if __name__ == "__main__":
-    # Unit test
-    import doctest
-
-    doctest.testmod()
 
     # Main Program
     description = """processRecords.py - Generating a report of airines and flights based on their delay"""
@@ -168,9 +170,19 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("input_path")
     parser.add_argument(
-        "-o", "--output", dest="report_path", default="report_airlines.html"
+        "-o",
+        "--output",
+        dest="report_path",
+        default="report_airlines.html",
+        help="Path of HTML report to generate",
     )
-    parser.add_argument("-n", dest="nb_ranking", default=10, type=int)
+    parser.add_argument(
+        "-n",
+        dest="nb_ranking",
+        default=10,
+        type=int,
+        help="Number of best/worse airlines and flights",
+    )
     cmd = parser.parse_args()
     # =DEBUG=#
     # cmd = parser.parse_args(["list_records.txt"])
@@ -181,21 +193,19 @@ if __name__ == "__main__":
     rating_airlines, rating_flights = list_sorted_ratings(airlines_dic)
 
     # Generate list of  best and worse <nb_ranking> airlines/flights
-    rating_best_airlines, rating_worse_airlines = get_first_last_elem(
-        rating_airlines, cmd.nb_ranking
-    )
-    rating_best_flights, rating_worse_flights = get_first_last_elem(
-        rating_flights, cmd.nb_ranking
-    )
+    best_airlines, worse_airlines = get_first_last_elem(rating_airlines, cmd.nb_ranking)
+    best_flights, worse_flights = get_first_last_elem(rating_flights, cmd.nb_ranking)
 
     # Retrieve template of report
     try:
         with open("report_Template.html") as f:
             template = f.read()
-            template = template.replace("{background", "{{background")
-            template = template.replace(";}", ";}}")
+            # Replace single curly brackets by double ones in <STYLE> block
+            for block in re.findall(r"<style>.*?</style>", template, re.I | re.S):
+                updated_block = re.sub(r"([{}])\1*", r"\1" * 2, block)
+                template = template.replace(block, updated_block)
     except Exception as e:
-        msg = f"Error while trying to read template 'report_Template.html' ({e})"
+        msg = f"Error while reading template 'report_Template.html' ({e})"
         print(msg)
         template = f"<html><body>{msg}</body></html>"
 
@@ -209,10 +219,10 @@ if __name__ == "__main__":
         str_info = "<b>{0}</b> ({1}%, avg={2} min)"
         report[key] = "</li>\n<li>".join([str_info.format(*t) for t in ranking])
 
-    store_ranking("best_airlines", rating_best_airlines)
-    store_ranking("worse_airlines", rating_worse_airlines)
-    store_ranking("best_flights", rating_best_flights)
-    store_ranking("worse_flights", rating_worse_flights)
+    store_ranking("best_airlines", best_airlines)
+    store_ranking("worse_airlines", worse_airlines)
+    store_ranking("best_flights", best_flights)
+    store_ranking("worse_flights", worse_flights)
 
     # Generate the report
     report_content = template.format(**report)
@@ -222,4 +232,4 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error while trying to write in '{cmd.report_path}' ({e})")
     else:
-        print(f"Successfully wrote report {cmd.report_path}")
+        print(f"Successfully wrote report {cmd.report_path!r}")
