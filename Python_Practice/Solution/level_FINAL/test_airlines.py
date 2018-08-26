@@ -212,7 +212,7 @@ class TestMain(object):
             ("MU219", 100, 40),
         ]
 
-    def test_04_get_first_last_elem(self):
+    def test_05_get_first_last_elem(self):
         """Return lists with first/last <nb_elem> elements"""
         first, last = rec.get_first_last_elem(["f", "e", "d", "c", "b", "a"], 0)
         assert first == []
