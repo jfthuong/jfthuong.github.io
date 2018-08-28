@@ -457,6 +457,9 @@ include::Solution/level_FINAL/processRecords.py[tags=report_content]
 
 == Final Solution
 
+NOTE: The comments `#tag::...` and `#end::...` have been added to
+extract code in the current HTML file. They are not useful in the final code
+
 === airlines.py
 .airlines.py
 [source]
