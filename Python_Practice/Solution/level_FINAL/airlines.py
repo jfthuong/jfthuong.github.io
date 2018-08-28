@@ -5,6 +5,8 @@ from datetime import datetime
 
 
 # #-- CALCULATION OF TIME DELTA --##
+# tag::header[]
+# tag::get_delay[]
 def get_delay(expected: str, takeoff: str) -> int:
     """\
     Measure the time difference in minutes between two times
@@ -14,6 +16,7 @@ def get_delay(expected: str, takeoff: str) -> int:
         expected: expected departure time (e.g. 23:45)
         takeoff: real departure time (e.g. 23:55)
     """
+    # end::header[]
     time_fmt = "%H:%M"
     # We convert with strptime and calculate the difference
     t_real = datetime.strptime(takeoff, time_fmt)
@@ -58,6 +61,10 @@ def get_delay_2(expected: str, takeoff: str) -> int:
         return delta - min_in_day
     else:
         return delta
+# end::get_delay[]
+
+
+# tag::header[]
 
 
 class Airline:
@@ -67,9 +74,10 @@ class Airline:
         """Creation of an airline with records"""
         self.name = name
         self.code = code
-        self.flights = defaultdict(list)
+        self.flights = defaultdict(list)  # So ".append(...)" will work automatically
         self.destination = dict()
 
+    # tag::add_info[]
     def add_info(self, record):
         """Add flight information, create flight if it does not exist
 
@@ -81,6 +89,7 @@ class Airline:
                 * 'destination'
                 * 'take-off': real take-off time, stored as a string
         """
+        # end::header[]
         code = record["code"]
 
         # Save destination
@@ -99,6 +108,10 @@ class Airline:
         # Save record (NOTE: defaultdict ensure to initialize the list)
         self.flights[code].append(saved_record)
 
+    # end::add_info[]
+    # tag::header[]
+
+    # tag::get_rating_flight[]
     def get_rating_flight(self, flight: str):
         """Get the rating of a given flight
 
@@ -108,6 +121,7 @@ class Airline:
         Returns:
             ('% late', 'average delay') for a flight, both int
         """
+        # end::header[]
         # Flight unknown
         if flight not in self.flights:
             return None, None
@@ -123,12 +137,17 @@ class Airline:
         average = int(total_delay / nb_flights)
         return percent, average
 
+    # end::get_rating_flight[]
+    # tag::header[]
+
+    # tag::get_rating_airline[]
     def get_rating_airline(self):
         """Get the rating of the airline
 
         Returns:
             ('% late', 'average delay') for the airline, both int
         """
+        # end::header[]
         # We could use the previous version to avoid duplicate code
         # HOWEVER, get_rating_flight returns "int" so the result would be inexact
         # We will do a copy of the code with a loop on "flight" [arghhh :( duplicate code!!]
@@ -144,11 +163,5 @@ class Airline:
         percent = int(nb_late / nb_flights * 100)
         average = int(total_delay / nb_flights)
         return percent, average
-
-
-if __name__ == "__main__":
-
-    import doctest
-
-    doctest.testmod()
+    # end::get_rating_airline[]
 

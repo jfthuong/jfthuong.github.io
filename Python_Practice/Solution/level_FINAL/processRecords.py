@@ -3,6 +3,8 @@
 import airlines
 import re, argparse, datetime
 
+# tag::header[]
+
 
 def read_flight_records(file_path: str):
     """\
@@ -15,6 +17,7 @@ def read_flight_records(file_path: str):
     Returns:
         list of take off records
     """
+    # end::header[]
     list_records = list()
     record_keys = ["date", "time", "code", "airline", "destination", "take-off"]
 
@@ -64,6 +67,9 @@ def read_flight_records(file_path: str):
     return list_records
 
 
+# tag::header[]
+
+
 def get_ratings_airlines(list_records):
     """From the list of records, create a dictionary with all Airlines
 
@@ -75,6 +81,7 @@ def get_ratings_airlines(list_records):
         * key = airline name
         * value = "Airline" object with all the records of that airline
     """
+    # end::header[]
     # We will loop each element of input list and
     # * Create a new Airline if it does not exist in the dictionary
     # * Add the record in the Airline object
@@ -92,6 +99,9 @@ def get_ratings_airlines(list_records):
     return airlines_dic
 
 
+# tag::header[]
+
+
 def list_sorted_ratings(airlines_dic):
     """Sort the airlines and flights based on the probability to be late
 
@@ -105,6 +115,7 @@ def list_sorted_ratings(airlines_dic):
     NOTE: Each element of the returned lists contains the following tuple:
         (<airline|flight code>, <% late>, <average delay>)
     """
+    # end::header[]
     rating_airlines = list()
     rating_flights = list()
 
@@ -138,6 +149,9 @@ def list_sorted_ratings(airlines_dic):
     return rating_airlines, rating_flights
 
 
+# tag::header[]
+
+
 def get_first_last_elem(sorted_list, nb_elem: int):
     """Return lists with first/last <nb_elem> elements
 
@@ -149,6 +163,7 @@ def get_first_last_elem(sorted_list, nb_elem: int):
         first(list): first nb_elem elements of sorted_list
         last(list): last nb_elem elements of sorted_list in reverse order
     """
+    # end::header[]
     if nb_elem < 1:
         return [], []
     else:
@@ -160,11 +175,17 @@ def get_first_last_elem(sorted_list, nb_elem: int):
         return first_elements, last_elements
 
 
+# tag::header[]
+
+
 ##=== MAIN PROGRAM ===##
+# tag::main_function[]
 if __name__ == "__main__":
 
+    # tag::argparse[]
     # Main Program
     description = """processRecords.py - Generating a report of airines and flights based on their delay"""
+    # end::header[]
 
     # Parsing options and arguments
     parser = argparse.ArgumentParser(description=description)
@@ -184,6 +205,7 @@ if __name__ == "__main__":
         help="Number of best/worse airlines and flights",
     )
     cmd = parser.parse_args()
+    # end::argparse[]
     # =DEBUG=#
     # cmd = parser.parse_args(["list_records.txt"])
 
@@ -209,6 +231,7 @@ if __name__ == "__main__":
         print(msg)
         template = f"<html><body>{msg}</body></html>"
 
+    # tag::report_content[]
     # Prepare the report
     report = dict()
     # time
@@ -226,6 +249,7 @@ if __name__ == "__main__":
 
     # Generate the report
     report_content = template.format(**report)
+    # end::report_content[]
     try:
         with open(cmd.report_path, "w") as f:
             f.write(report_content)
@@ -233,3 +257,5 @@ if __name__ == "__main__":
         print(f"Error while trying to write in '{cmd.report_path}' ({e})")
     else:
         print(f"Successfully wrote report {cmd.report_path!r}")
+
+# end::main_function[]

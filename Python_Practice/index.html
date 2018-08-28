@@ -520,8 +520,32 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_main_program_processrecords_py">1.3. Main Program (<em>processRecords.py</em>)</a></li>
 </ul>
 </li>
-<li><a href="#_airline_class">2. Airline Class</a></li>
-<li><a href="#_test_airline">3. Test Airline</a></li>
+<li><a href="#_check_your_code">2. Check your code</a></li>
+<li><a href="#_solution_prototypes_and_docstrings">3. Solution: Prototypes and Docstrings</a>
+<ul class="sectlevel2">
+<li><a href="#_airlines_py">3.1. airlines.py</a></li>
+<li><a href="#_processrecords_py">3.2. processRecords.py</a></li>
+</ul>
+</li>
+<li><a href="#_solution_algorithms">4. Solution: Algorithms</a>
+<ul class="sectlevel2">
+<li><a href="#_airlines_py_get_delay">4.1. airlines.py / get_delay</a></li>
+<li><a href="#_airlines_py_airline_add_info">4.2. airlines.py / Airline.add_info</a></li>
+<li><a href="#_airlines_py_airline_get_rating_flight">4.3. airlines.py / Airline.get_rating_flight</a></li>
+<li><a href="#_airlines_py_airline_get_rating_flight_2">4.4. airlines.py / Airline.get_rating_flight</a></li>
+<li><a href="#_processrecords_py_read_flight_records">4.5. processRecords.py / read_flight_records</a></li>
+<li><a href="#_processrecords_py_get_ratings_airlines">4.6. processRecords.py / get_ratings_airlines</a></li>
+<li><a href="#_processrecords_py_list_sorted_ratings">4.7. processRecords.py / list_sorted_ratings</a></li>
+<li><a href="#_processrecords_py_get_first_last_elem">4.8. processRecords.py / get_first_last_elem</a></li>
+<li><a href="#_processrecords_py_main_function">4.9. processRecords.py / main function</a></li>
+</ul>
+</li>
+<li><a href="#_final_solution">5. Final Solution</a>
+<ul class="sectlevel2">
+<li><a href="#_airlines_py_2">5.1. airlines.py</a></li>
+<li><a href="#_processrecords_py_2">5.2. processRecords.py</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -764,13 +788,12 @@ Prototype: <code>get_rating_airline(self) &#8594; Tuple[int, int]</code></p>
 </div>
 <div class="sect2">
 <h3 id="_main_program_processrecords_py">1.3. Main Program (<em>processRecords.py</em>)</h3>
-<div class="paragraph">
-<p>Function <code>read_flight_records</code>:</p>
-</div>
+<div class="sect3">
+<h4 id="_function_read_flight_records">1.3.1. Function <strong>read_flight_records</strong></h4>
 <div class="ulist">
 <ul>
 <li>
-<p><em>Input</em>: input file name</p>
+<p><em>Input</em>: input file name (string)</p>
 </li>
 <li>
 <p><em>Output</em>: list of take off records, each element is a dictionary with following keys:<br>
@@ -778,9 +801,24 @@ Prototype: <code>get_rating_airline(self) &#8594; Tuple[int, int]</code></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Function <code>get_ratings_airlines</code>:</p>
+<div class="listingblock">
+<div class="title">Example of output</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-p">[</span>
+  <span class="tok-p">{</span>
+    <span class="tok-s2">&quot;date&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;2018-02-29&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;time&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;15:25&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;code&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;MU123&quot;</span><span class="tok-p">,</span>
+    <span class="tok-s2">&quot;airline&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;China Eastern&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;destination&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;Bali&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;take-off&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;15:45&quot;</span>
+  <span class="tok-p">},</span>
+  <span class="tok-p">{</span>
+    <span class="tok-s2">&quot;date&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;2018-02-29&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;time&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;15:35&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;code&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;AF123&quot;</span><span class="tok-p">,</span>
+    <span class="tok-s2">&quot;airline&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;Air France&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;destination&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;Paris&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;take-off&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;15:50&quot;</span>
+  <span class="tok-p">}</span>
+<span class="tok-p">]</span></code></pre>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_function_get_ratings_airlines">1.3.2. Function <strong>get_ratings_airlines</strong></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -791,9 +829,18 @@ Prototype: <code>get_rating_airline(self) &#8594; Tuple[int, int]</code></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Function <code>list_sorted_ratings</code>:</p>
+<div class="listingblock">
+<div class="title">Example of output</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-p">{</span>
+  <span class="tok-s2">&quot;Air France&quot;</span><span class="tok-p">:</span><span class="tok-o">&lt;</span><span class="tok-n">Airline</span> <span class="tok-nb">object</span><span class="tok-o">&gt;</span><span class="tok-p">,</span>
+  <span class="tok-s2">&quot;China Eastern&quot;</span><span class="tok-p">:</span><span class="tok-o">&lt;</span><span class="tok-n">Airline</span> <span class="tok-nb">object</span><span class="tok-o">&gt;</span>
+<span class="tok-p">}</span></code></pre>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_function_list_sorted_ratings">1.3.3. Function <strong>list_sorted_ratings</strong></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -826,9 +873,16 @@ all the results shall be integers
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Function <code>get_first_last_elem</code>:</p>
+<div class="listingblock">
+<div class="title">Example of output</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-p">[(</span><span class="tok-s2">&quot;China Eastern&quot;</span><span class="tok-p">,</span> <span class="tok-mi">10</span><span class="tok-p">,</span> <span class="tok-mi">5</span><span class="tok-p">),</span> <span class="tok-p">(</span><span class="tok-s2">&quot;Air France&quot;</span><span class="tok-p">,</span> <span class="tok-mi">11</span><span class="tok-p">,</span> <span class="tok-mi">8</span><span class="tok-p">),</span> <span class="tok-o">...</span><span class="tok-p">],</span>
+<span class="tok-p">[(</span><span class="tok-s2">&quot;MU123&quot;</span><span class="tok-p">,</span> <span class="tok-mi">10</span><span class="tok-p">,</span> <span class="tok-mi">5</span><span class="tok-p">),</span> <span class="tok-p">(</span><span class="tok-s2">&quot;AF123&quot;</span><span class="tok-p">,</span> <span class="tok-mi">11</span><span class="tok-p">,</span> <span class="tok-mi">8</span><span class="tok-p">),</span> <span class="tok-o">...</span><span class="tok-p">],</span></code></pre>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_function_get_first_last_elem">1.3.4. Function <strong>get_first_last_elem</strong></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -864,9 +918,9 @@ all the results shall be integers
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><strong>Main function</strong>:</p>
 </div>
+<div class="sect3">
+<h4 id="_main_function">1.3.5. <strong>Main function</strong></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -926,130 +980,23 @@ default value of <code>&lt;nb_ranking&gt;</code> is 10
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_airline_class">2. Airline Class</h2>
+<h2 id="_check_your_code">2. Check your code</h2>
 <div class="sectionbody">
-<div class="listingblock">
-<div class="title">airlines.py</div>
+<div class="paragraph">
+<p>You can use the following code to test your program.</p>
+</div>
+<div class="paragraph">
+<p>To run it you need first to install <code>pytest</code> and then run:</p>
+</div>
+<div class="exampleblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-ch">#!python</span>
-
-<span class="tok-kn">from</span> <span class="tok-nn">collections</span> <span class="tok-kn">import</span> <span class="tok-n">defaultdict</span>
-<span class="tok-kn">from</span> <span class="tok-nn">datetime</span> <span class="tok-kn">import</span> <span class="tok-n">datetime</span>
-
-
-<span class="tok-c1"># #-- CALCULATION OF TIME DELTA --##</span>
-<span class="tok-k">def</span> <span class="tok-nf">get_delay</span><span class="tok-p">(</span><span class="tok-n">expected</span><span class="tok-p">:</span><span class="tok-nb">str</span><span class="tok-p">,</span> <span class="tok-n">takeoff</span><span class="tok-p">:</span><span class="tok-nb">str</span><span class="tok-p">)</span> <span class="tok-o">-&gt;</span> <span class="tok-nb">int</span><span class="tok-p">:</span>
-    <span class="tok-sd">&quot;&quot;&quot;\</span>
-<span class="tok-sd">    Measure the time difference in minutes between two times</span>
-<span class="tok-sd">    delay = &lt;take-off&gt; - &lt;expected&gt;</span>
-
-<span class="tok-sd">    Args:</span>
-<span class="tok-sd">        expected: expected departure time (e.g. 23:45)</span>
-<span class="tok-sd">        takeoff: real departure time (e.g. 23:55)</span>
-<span class="tok-sd">    &quot;&quot;&quot;</span>
-    <span class="tok-n">time_fmt</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;%H:%M&quot;</span>
-    <span class="tok-c1"># We convert with strptime and calculate the difference</span>
-    <span class="tok-c1"># If &quot;takeoff &lt; expected&quot;, the result is {day = -1, sec = delta + 1 day}</span>
-    <span class="tok-c1"># ... so we will have to deduct 1 day from the delta</span>
-    <span class="tok-c1"># However, we will calculate normally if delta is bigger than half-day</span>
-    <span class="tok-n">t_real</span> <span class="tok-o">=</span> <span class="tok-n">datetime</span><span class="tok-o">.</span><span class="tok-n">strptime</span><span class="tok-p">(</span><span class="tok-n">takeoff</span><span class="tok-p">,</span> <span class="tok-n">time_fmt</span><span class="tok-p">)</span>
-    <span class="tok-n">t_exp</span> <span class="tok-o">=</span> <span class="tok-n">datetime</span><span class="tok-o">.</span><span class="tok-n">strptime</span><span class="tok-p">(</span><span class="tok-n">expected</span><span class="tok-p">,</span> <span class="tok-n">time_fmt</span><span class="tok-p">)</span>
-    <span class="tok-n">delta</span> <span class="tok-o">=</span> <span class="tok-n">t_real</span> <span class="tok-o">-</span> <span class="tok-n">t_exp</span>
-    <span class="tok-c1"># Calculate delay (can be negative - first case)</span>
-    <span class="tok-n">sec_in_day</span> <span class="tok-o">=</span> <span class="tok-mi">60</span> <span class="tok-o">*</span> <span class="tok-mi">60</span> <span class="tok-o">*</span> <span class="tok-mi">24</span>
-    <span class="tok-k">if</span> <span class="tok-n">delta</span><span class="tok-o">.</span><span class="tok-n">days</span> <span class="tok-o">&lt;</span> <span class="tok-mi">0</span> <span class="tok-ow">and</span> <span class="tok-n">delta</span><span class="tok-o">.</span><span class="tok-n">seconds</span> <span class="tok-o">&gt;</span> <span class="tok-n">sec_in_day</span><span class="tok-o">/</span><span class="tok-mi">2</span><span class="tok-p">:</span>
-        <span class="tok-n">seconds</span> <span class="tok-o">=</span> <span class="tok-n">delta</span><span class="tok-o">.</span><span class="tok-n">seconds</span> <span class="tok-o">-</span> <span class="tok-n">sec_in_day</span>
-    <span class="tok-k">else</span><span class="tok-p">:</span>
-        <span class="tok-n">seconds</span> <span class="tok-o">=</span> <span class="tok-n">delta</span><span class="tok-o">.</span><span class="tok-n">seconds</span>
-    <span class="tok-k">return</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">seconds</span> <span class="tok-o">/</span> <span class="tok-mi">60</span><span class="tok-p">)</span>
-
-
-
-
-<span class="tok-k">class</span> <span class="tok-nc">Airline</span><span class="tok-p">():</span>
-    <span class="tok-sd">&quot;&quot;&quot;Class describing an airline with records&quot;&quot;&quot;</span>
-
-    <span class="tok-k">def</span> <span class="tok-fm">__init__</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">,</span> <span class="tok-n">name</span><span class="tok-p">,</span> <span class="tok-n">code</span><span class="tok-p">):</span>
-        <span class="tok-sd">&quot;&quot;&quot;Creation of an airline with records&quot;&quot;&quot;</span>
-        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">name</span> <span class="tok-o">=</span> <span class="tok-n">name</span>
-        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">code</span> <span class="tok-o">=</span> <span class="tok-n">code</span>
-        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span> <span class="tok-o">=</span> <span class="tok-n">defaultdict</span><span class="tok-p">(</span><span class="tok-nb">list</span><span class="tok-p">)</span>
-        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">destination</span> <span class="tok-o">=</span> <span class="tok-nb">dict</span><span class="tok-p">()</span>
-
-    <span class="tok-k">def</span> <span class="tok-nf">add_info</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">,</span> <span class="tok-n">record</span><span class="tok-p">):</span>
-        <span class="tok-sd">&quot;&quot;&quot;Add flight information, create flight if it does not exist</span>
-
-<span class="tok-sd">        Args:</span>
-<span class="tok-sd">            record(dict): dictionary with keys:</span>
-<span class="tok-sd">                * &#39;date&#39;: date of the flight, stored as a string (e.g. &quot;2018-02-30&quot;)</span>
-<span class="tok-sd">                * &#39;time&#39;: expected take-off time, stored as a string (e.g. &quot;15:30&quot;)</span>
-<span class="tok-sd">                * &#39;code&#39;: code of flight (e.g. &quot;MU123&quot;)</span>
-<span class="tok-sd">                * &#39;destination&#39;</span>
-<span class="tok-sd">                * &#39;take-off&#39;: real take-off time, stored as a string</span>
-<span class="tok-sd">        &quot;&quot;&quot;</span>
-        <span class="tok-n">code</span> <span class="tok-o">=</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;code&quot;</span><span class="tok-p">]</span>
-
-        <span class="tok-c1"># Save destination</span>
-        <span class="tok-k">if</span> <span class="tok-n">code</span> <span class="tok-ow">not</span> <span class="tok-ow">in</span> <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">destination</span><span class="tok-p">:</span>
-            <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">destination</span><span class="tok-p">[</span><span class="tok-n">code</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;destination&quot;</span><span class="tok-p">]</span>
-            <span class="tok-c1"># self.flights[code] = list()  # mandatory if defaultdict(list) is not used</span>
-
-        <span class="tok-c1"># Record to save in the list of records</span>
-        <span class="tok-c1"># saved_record = {k: record[k] for k in (&quot;date&quot;, &quot;time&quot;)}</span>
-        <span class="tok-n">saved_record</span> <span class="tok-o">=</span> <span class="tok-p">{</span>
-            <span class="tok-s2">&quot;date&quot;</span><span class="tok-p">:</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;date&quot;</span><span class="tok-p">],</span>
-            <span class="tok-s2">&quot;time&quot;</span><span class="tok-p">:</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;time&quot;</span><span class="tok-p">],</span>
-            <span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">:</span> <span class="tok-n">get_delay</span><span class="tok-p">(</span><span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;time&quot;</span><span class="tok-p">],</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;take-off&quot;</span><span class="tok-p">]),</span>
-        <span class="tok-p">}</span>
-
-        <span class="tok-c1"># Save record (NOTE: defaultdict ensure to initialize the list)</span>
-        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-p">[</span><span class="tok-n">code</span><span class="tok-p">]</span><span class="tok-o">.</span><span class="tok-n">append</span><span class="tok-p">(</span><span class="tok-n">saved_record</span><span class="tok-p">)</span>
-
-    <span class="tok-k">def</span> <span class="tok-nf">get_rating_flight</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">,</span> <span class="tok-n">flight</span><span class="tok-p">:</span><span class="tok-nb">str</span><span class="tok-p">):</span>
-        <span class="tok-sd">&quot;&quot;&quot;Get the rating of a given flight</span>
-
-<span class="tok-sd">        Args:</span>
-<span class="tok-sd">            flight: code of a flight</span>
-
-<span class="tok-sd">        Returns:</span>
-<span class="tok-sd">            (&#39;% late&#39;, &#39;average delay&#39;) for a flight, both int</span>
-<span class="tok-sd">        &quot;&quot;&quot;</span>
-        <span class="tok-c1"># Flight unknown</span>
-        <span class="tok-k">if</span> <span class="tok-n">flight</span> <span class="tok-ow">not</span> <span class="tok-ow">in</span> <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-p">:</span>
-            <span class="tok-k">return</span> <span class="tok-bp">None</span><span class="tok-p">,</span> <span class="tok-bp">None</span>
-        <span class="tok-c1"># Known flight: calculate number of flights late and total delay</span>
-        <span class="tok-n">nb_late</span><span class="tok-p">,</span> <span class="tok-n">total_delay</span> <span class="tok-o">=</span> <span class="tok-mf">0.0</span><span class="tok-p">,</span> <span class="tok-mf">0.0</span>
-        <span class="tok-k">for</span> <span class="tok-n">record</span> <span class="tok-ow">in</span> <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-p">[</span><span class="tok-n">flight</span><span class="tok-p">]:</span>
-            <span class="tok-n">total_delay</span> <span class="tok-o">+=</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">]</span>
-            <span class="tok-k">if</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">]</span> <span class="tok-o">&gt;</span> <span class="tok-mi">30</span><span class="tok-p">:</span>
-                <span class="tok-n">nb_late</span> <span class="tok-o">+=</span> <span class="tok-mi">1</span>
-
-        <span class="tok-n">nb_flights</span> <span class="tok-o">=</span> <span class="tok-nb">len</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-p">[</span><span class="tok-n">flight</span><span class="tok-p">])</span>
-        <span class="tok-n">percent</span> <span class="tok-o">=</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">nb_late</span> <span class="tok-o">/</span> <span class="tok-n">nb_flights</span> <span class="tok-o">*</span> <span class="tok-mi">100</span><span class="tok-p">)</span>
-        <span class="tok-n">average</span> <span class="tok-o">=</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">total_delay</span> <span class="tok-o">/</span> <span class="tok-n">nb_flights</span><span class="tok-p">)</span>
-        <span class="tok-k">return</span> <span class="tok-n">percent</span><span class="tok-p">,</span> <span class="tok-n">average</span>
-
-    <span class="tok-k">def</span> <span class="tok-nf">get_rating_airline</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">):</span>
-        <span class="tok-sd">&quot;&quot;&quot;Get the rating of the airline</span>
-
-<span class="tok-sd">        Returns:</span>
-<span class="tok-sd">            (&#39;% late&#39;, &#39;average delay&#39;) for the airline, both int</span>
-<span class="tok-sd">        &quot;&quot;&quot;</span>
-        <span class="tok-k">pass</span>
-
-
-<span class="tok-k">if</span> <span class="tok-vm">__name__</span> <span class="tok-o">==</span> <span class="tok-s2">&quot;__main__&quot;</span><span class="tok-p">:</span>
-
-    <span class="tok-kn">import</span> <span class="tok-nn">doctest</span>
-    <span class="tok-n">doctest</span><span class="tok-o">.</span><span class="tok-n">testmod</span><span class="tok-p">()</span></code></pre>
+<div class="paragraph">
+<p>python -m pytest -v test_airlines.py</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_test_airline">3. Test Airline</h2>
-<div class="sectionbody">
 <div class="listingblock">
 <div class="title">test_airlines.py</div>
 <div class="content">
@@ -1069,6 +1016,10 @@ default value of <code>&lt;nb_ranking&gt;</code> is 10
 <span class="tok-kn">from</span> <span class="tok-nn">typing</span> <span class="tok-kn">import</span> <span class="tok-n">Dict</span><span class="tok-p">,</span> <span class="tok-n">List</span><span class="tok-p">,</span> <span class="tok-n">Any</span>
 
 <span class="tok-kn">from</span> <span class="tok-nn">airlines</span> <span class="tok-kn">import</span> <span class="tok-n">Airline</span><span class="tok-p">,</span> <span class="tok-n">get_delay</span>
+<span class="tok-k">try</span><span class="tok-p">:</span>
+    <span class="tok-kn">from</span> <span class="tok-nn">airlines</span> <span class="tok-kn">import</span> <span class="tok-n">get_delay_2</span>
+<span class="tok-k">except</span> <span class="tok-ne">ImportError</span><span class="tok-p">:</span>
+    <span class="tok-n">get_delay_2</span> <span class="tok-o">=</span> <span class="tok-n">get_delay</span>
 <span class="tok-kn">import</span> <span class="tok-nn">processRecords</span> <span class="tok-kn">as</span> <span class="tok-nn">rec</span>
 
 
@@ -1076,6 +1027,13 @@ default value of <code>&lt;nb_ranking&gt;</code> is 10
     <span class="tok-k">assert</span> <span class="tok-n">get_delay</span><span class="tok-p">(</span><span class="tok-s2">&quot;12:10&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;12:45&quot;</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-mi">35</span>
     <span class="tok-k">assert</span> <span class="tok-n">get_delay</span><span class="tok-p">(</span><span class="tok-s2">&quot;12:10&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;11:45&quot;</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-o">-</span><span class="tok-mi">25</span>
     <span class="tok-k">assert</span> <span class="tok-n">get_delay</span><span class="tok-p">(</span><span class="tok-s2">&quot;23:45&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;00:45&quot;</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-mi">60</span>
+    <span class="tok-k">assert</span> <span class="tok-n">get_delay</span><span class="tok-p">(</span><span class="tok-s2">&quot;00:45&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;23:45&quot;</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-o">-</span><span class="tok-mi">60</span>
+
+    <span class="tok-c1"># For alternate solution</span>
+    <span class="tok-k">assert</span> <span class="tok-n">get_delay_2</span><span class="tok-p">(</span><span class="tok-s2">&quot;12:10&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;12:45&quot;</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-mi">35</span>
+    <span class="tok-k">assert</span> <span class="tok-n">get_delay_2</span><span class="tok-p">(</span><span class="tok-s2">&quot;12:10&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;11:45&quot;</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-o">-</span><span class="tok-mi">25</span>
+    <span class="tok-k">assert</span> <span class="tok-n">get_delay_2</span><span class="tok-p">(</span><span class="tok-s2">&quot;23:45&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;00:45&quot;</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-mi">60</span>
+    <span class="tok-k">assert</span> <span class="tok-n">get_delay_2</span><span class="tok-p">(</span><span class="tok-s2">&quot;00:45&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;23:45&quot;</span><span class="tok-p">)</span> <span class="tok-o">==</span> <span class="tok-o">-</span><span class="tok-mi">60</span>
 
 
 <span class="tok-c1"># Test class &quot;Airline&quot;</span>
@@ -1289,10 +1247,1080 @@ default value of <code>&lt;nb_ranking&gt;</code> is 10
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_solution_prototypes_and_docstrings">3. Solution: Prototypes and Docstrings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Below is the the prototype of the functions and a suggestion of docstring.</p>
+</div>
+<div class="sect2">
+<h3 id="_airlines_py">3.1. airlines.py</h3>
+<div class="listingblock">
+<div class="title">airlines.py</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">def</span> <span class="tok-nf">get_delay</span><span class="tok-p">(</span><span class="tok-n">expected</span><span class="tok-p">:</span> <span class="tok-nb">str</span><span class="tok-p">,</span> <span class="tok-n">takeoff</span><span class="tok-p">:</span> <span class="tok-nb">str</span><span class="tok-p">)</span> <span class="tok-o">-&gt;</span> <span class="tok-nb">int</span><span class="tok-p">:</span>
+    <span class="tok-sd">&quot;&quot;&quot;\</span>
+<span class="tok-sd">    Measure the time difference in minutes between two times</span>
+<span class="tok-sd">    delay = &lt;take-off&gt; - &lt;expected&gt;</span>
+
+<span class="tok-sd">    Args:</span>
+<span class="tok-sd">        expected: expected departure time (e.g. 23:45)</span>
+<span class="tok-sd">        takeoff: real departure time (e.g. 23:55)</span>
+<span class="tok-sd">    &quot;&quot;&quot;</span>
+
+
+<span class="tok-k">class</span> <span class="tok-nc">Airline</span><span class="tok-p">:</span>
+    <span class="tok-sd">&quot;&quot;&quot;Class describing an airline with records&quot;&quot;&quot;</span>
+
+    <span class="tok-k">def</span> <span class="tok-fm">__init__</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">,</span> <span class="tok-n">name</span><span class="tok-p">,</span> <span class="tok-n">code</span><span class="tok-p">):</span>
+        <span class="tok-sd">&quot;&quot;&quot;Creation of an airline with records&quot;&quot;&quot;</span>
+        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">name</span> <span class="tok-o">=</span> <span class="tok-n">name</span>
+        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">code</span> <span class="tok-o">=</span> <span class="tok-n">code</span>
+        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span> <span class="tok-o">=</span> <span class="tok-n">defaultdict</span><span class="tok-p">(</span><span class="tok-nb">list</span><span class="tok-p">)</span>  <span class="tok-c1"># So &quot;.append(...)&quot; will work automatically</span>
+        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">destination</span> <span class="tok-o">=</span> <span class="tok-nb">dict</span><span class="tok-p">()</span>
+
+    <span class="tok-k">def</span> <span class="tok-nf">add_info</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">,</span> <span class="tok-n">record</span><span class="tok-p">):</span>
+        <span class="tok-sd">&quot;&quot;&quot;Add flight information, create flight if it does not exist</span>
+
+<span class="tok-sd">        Args:</span>
+<span class="tok-sd">            record(dict): dictionary with keys:</span>
+<span class="tok-sd">                * &#39;date&#39;: date of the flight, stored as a string (e.g. &quot;2018-02-30&quot;)</span>
+<span class="tok-sd">                * &#39;time&#39;: expected take-off time, stored as a string (e.g. &quot;15:30&quot;)</span>
+<span class="tok-sd">                * &#39;code&#39;: code of flight (e.g. &quot;MU123&quot;)</span>
+<span class="tok-sd">                * &#39;destination&#39;</span>
+<span class="tok-sd">                * &#39;take-off&#39;: real take-off time, stored as a string</span>
+<span class="tok-sd">        &quot;&quot;&quot;</span>
+
+    <span class="tok-k">def</span> <span class="tok-nf">get_rating_flight</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">,</span> <span class="tok-n">flight</span><span class="tok-p">:</span> <span class="tok-nb">str</span><span class="tok-p">):</span>
+        <span class="tok-sd">&quot;&quot;&quot;Get the rating of a given flight</span>
+
+<span class="tok-sd">        Args:</span>
+<span class="tok-sd">            flight: code of a flight</span>
+
+<span class="tok-sd">        Returns:</span>
+<span class="tok-sd">            (&#39;% late&#39;, &#39;average delay&#39;) for a flight, both int</span>
+<span class="tok-sd">        &quot;&quot;&quot;</span>
+
+    <span class="tok-k">def</span> <span class="tok-nf">get_rating_airline</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">):</span>
+        <span class="tok-sd">&quot;&quot;&quot;Get the rating of the airline</span>
+
+<span class="tok-sd">        Returns:</span>
+<span class="tok-sd">            (&#39;% late&#39;, &#39;average delay&#39;) for the airline, both int</span>
+<span class="tok-sd">        &quot;&quot;&quot;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_processrecords_py">3.2. processRecords.py</h3>
+<div class="listingblock">
+<div class="title">processRecords.py</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span>
+
+<span class="tok-k">def</span> <span class="tok-nf">read_flight_records</span><span class="tok-p">(</span><span class="tok-n">file_path</span><span class="tok-p">:</span> <span class="tok-nb">str</span><span class="tok-p">):</span>
+    <span class="tok-sd">&quot;&quot;&quot;\</span>
+<span class="tok-sd">    Read flight records from a given file and returns the list of take-off records.</span>
+<span class="tok-sd">    Each element is a dict with keys: date, time, code, airline, destination, take-off</span>
+
+<span class="tok-sd">    Args:</span>
+<span class="tok-sd">        file_path: Path of file to read</span>
+
+<span class="tok-sd">    Returns:</span>
+<span class="tok-sd">        list of take off records</span>
+<span class="tok-sd">    &quot;&quot;&quot;</span>
+
+
+<span class="tok-k">def</span> <span class="tok-nf">get_ratings_airlines</span><span class="tok-p">(</span><span class="tok-n">list_records</span><span class="tok-p">):</span>
+    <span class="tok-sd">&quot;&quot;&quot;From the list of records, create a dictionary with all Airlines</span>
+
+<span class="tok-sd">    Args:</span>
+<span class="tok-sd">        list_records(list): list of dict returned by read_flight_records</span>
+
+<span class="tok-sd">    Returns:</span>
+<span class="tok-sd">        dictionary &quot;airlines_dic&quot; with:</span>
+<span class="tok-sd">        * key = airline name</span>
+<span class="tok-sd">        * value = &quot;Airline&quot; object with all the records of that airline</span>
+<span class="tok-sd">    &quot;&quot;&quot;</span>
+
+
+<span class="tok-k">def</span> <span class="tok-nf">list_sorted_ratings</span><span class="tok-p">(</span><span class="tok-n">airlines_dic</span><span class="tok-p">):</span>
+    <span class="tok-sd">&quot;&quot;&quot;Sort the airlines and flights based on the probability to be late</span>
+
+<span class="tok-sd">    Args:</span>
+<span class="tok-sd">        airlines_dic(dict): Dictionary with Airline objects</span>
+
+<span class="tok-sd">    Returns:</span>
+<span class="tok-sd">        rating_airlines(list): list of Airlines sorted by late probability (less late first)</span>
+<span class="tok-sd">        rating_flights(list): list of flights sorted by late probability (less late first)</span>
+
+<span class="tok-sd">    NOTE: Each element of the returned lists contains the following tuple:</span>
+<span class="tok-sd">        (&lt;airline|flight code&gt;, &lt;% late&gt;, &lt;average delay&gt;)</span>
+<span class="tok-sd">    &quot;&quot;&quot;</span>
+
+
+<span class="tok-k">def</span> <span class="tok-nf">get_first_last_elem</span><span class="tok-p">(</span><span class="tok-n">sorted_list</span><span class="tok-p">,</span> <span class="tok-n">nb_elem</span><span class="tok-p">:</span> <span class="tok-nb">int</span><span class="tok-p">):</span>
+    <span class="tok-sd">&quot;&quot;&quot;Return lists with first/last &lt;nb_elem&gt; elements</span>
+
+<span class="tok-sd">    Args:</span>
+<span class="tok-sd">        sorted_list(list): list of elements</span>
+<span class="tok-sd">        nb_elem(int): number of first/last elements</span>
+
+<span class="tok-sd">    Return:</span>
+<span class="tok-sd">        first(list): first nb_elem elements of sorted_list</span>
+<span class="tok-sd">        last(list): last nb_elem elements of sorted_list in reverse order</span>
+<span class="tok-sd">    &quot;&quot;&quot;</span>
+
+
+<span class="tok-c1">##=== MAIN PROGRAM ===##</span>
+<span class="tok-k">if</span> <span class="tok-vm">__name__</span> <span class="tok-o">==</span> <span class="tok-s2">&quot;__main__&quot;</span><span class="tok-p">:</span>
+
+    <span class="tok-c1"># Main Program</span>
+    <span class="tok-n">description</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;&quot;&quot;processRecords.py - Generating a report of airines and flights based on their delay&quot;&quot;&quot;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_solution_algorithms">4. Solution: Algorithms</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These are some simple hints to help you start: it provides the algorithm.</p>
+</div>
+<div class="sect2">
+<h3 id="_airlines_py_get_delay">4.1. airlines.py / get_delay</h3>
+<div class="paragraph">
+<p>This function takes 2 strings (e.g. "12:15" and "13:4") for respectively planned time and take-off.
+It returns a delay as integer.</p>
+</div>
+<div class="paragraph">
+<p>First, we need to convert the strings into time (2 possibilities):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Using <code>datetime.datetime.strptime(&lt;time&gt;, "%H:%M")</code> to convert into <code>datetime</code> objects</p>
+</li>
+<li>
+<p>Calculating number of minutes in the day (i.e. <code>&lt;HH&gt; * 60 + &lt;MM&gt;</code>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We will then calculate the difference.</p>
+</div>
+<div class="paragraph">
+<p>We have 4 cases for the delay:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>both times before midnight, take-off is after planned time</p>
+</li>
+<li>
+<p>both times before midnight, take-off is before planned time</p>
+</li>
+<li>
+<p>take-off is after midnight, planned time is before midnight</p>
+</li>
+<li>
+<p>take-off is before midnight, planned time is after midnight</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>To cover all cases, we can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Return <code>-1 * delay(take_off, planned)</code> if take-off is before planned time [cases 2 and 3]</p>
+</li>
+<li>
+<p>Return <code>difference - 1 day</code> if the difference is bigger than 12 hours [case 4]</p>
+</li>
+<li>
+<p>Return the difference otherwise [case 1]</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_airlines_py_airline_add_info">4.2. airlines.py / Airline.add_info</h3>
+<div class="paragraph">
+<p>We need to save the destination into <code>self.destination</code> dictionary.
+There are 2 possibilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Store only when necessary
+(i.e. check if <code>record["code"]</code> is already a key of <code>self.destination</code>)</p>
+</li>
+<li>
+<p>Store systematically (i.e. no check like in previous solution)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To store the dictionary with information we need to get 3 data</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>date</strong>: same as the one in <code>record</code> passed as argument</p>
+</li>
+<li>
+<p><strong>time</strong>: same as the one in <code>record</code> passed as argument</p>
+</li>
+<li>
+<p><strong>delay</strong>: computed by using function <code>get_delay</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After creating the dictionary, append it to the list <code>self.flights[record[code]]</code>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To append the first element to a list, either</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>we create an empty list before appending</p>
+</li>
+<li>
+<p>we use <code>defaultdict[list]</code> that sets the
+value of dictionary as an empty list the first time it is called</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_airlines_py_airline_get_rating_flight">4.3. airlines.py / Airline.get_rating_flight</h3>
+<div class="paragraph">
+<p>This function returns statistics on a given flight.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+We need to consider the case where the flight is not found in <code>self.flights</code>: an example would be to return <code>None, None</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>We need to compute:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Percent of late flights (i.e. number of records with delay &gt; 30 min / number of records for the flight)</p>
+</li>
+<li>
+<p>Average of delay (i.e. total delay / number of records for the flight)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To do that, we need 2 numbers initiated to 0: <code>nb_late</code> and <code>total_delay</code>.</p>
+</div>
+<div class="paragraph">
+<p>We loop each record and:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Increment <code>nb_late</code> by 1 if the delay is bigger than 30 minutes</p>
+</li>
+<li>
+<p>Increment <code>total_delay</code> by the delay</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We finally return the integer values corresponding to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>nb_late</code> / number of records for the flight * 100</p>
+</li>
+<li>
+<p><code>total_delay</code> / number of records for the flight</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_airlines_py_airline_get_rating_flight_2">4.4. airlines.py / Airline.get_rating_flight</h3>
+<div class="paragraph">
+<p>This function returns the same statistics for the airline on all its flights.</p>
+</div>
+<div class="paragraph">
+<p>2 possibilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Re-use the method <code>get_rating_flight</code> for each flight of the airline</p>
+</li>
+<li>
+<p>Use similar algorithm of <code>get_rating_flight</code> with</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Loop for each flight of the airline</p>
+</li>
+<li>
+<p>Divide <code>nb_late</code> and <code>total_delay</code> by the total number of records for all the flights</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_processrecords_py_read_flight_records">4.5. processRecords.py / read_flight_records</h3>
+<div class="paragraph">
+<p>We will first parse each line and split it into the elements to process</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Solution #1: Using regular expression to ensure strict pattern matching</p>
+</li>
+<li>
+<p>Solution #2: Using <code>&lt;line&gt;.split(",")</code> and stripping all spaces around each element</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+For solution #2, we need to check the number of elements
+returned by the split to verify that we have as many elements as the keys.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We will create a dictionary with following keys:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">record_keys</span> <span class="tok-o">=</span> <span class="tok-p">[</span><span class="tok-s2">&quot;date&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;time&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;code&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;airline&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;destination&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;take-off&quot;</span><span class="tok-p">]</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We will match the extracted elements to <code>record_keys</code> by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Using <code>zip(&lt;lis1&gt;, &lt;list2&gt;)</code> function</p>
+</li>
+<li>
+<p>Using <code>dict(&#8230;&#8203;)</code> on this zipped list to create a dictionary with key and value</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The function <code>zip</code> transforms 2 list in a list of tuple. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-o">&gt;&gt;&gt;</span> <span class="tok-nb">zip</span><span class="tok-p">([</span><span class="tok-mi">1</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-mi">3</span><span class="tok-p">],</span> <span class="tok-p">[</span><span class="tok-s2">&quot;a&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;b&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;c&quot;</span><span class="tok-p">])</span>
+<span class="tok-p">[(</span><span class="tok-mi">1</span><span class="tok-p">,</span> <span class="tok-s2">&quot;a&quot;</span><span class="tok-p">),</span> <span class="tok-p">(</span><span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-s2">&quot;b&quot;</span><span class="tok-p">),</span> <span class="tok-p">(</span><span class="tok-mi">3</span><span class="tok-p">,</span> <span class="tok-s2">&quot;c&quot;</span><span class="tok-p">)]</span></code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>We will add the created dictionary to the list of records and will return this list.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_processrecords_py_get_ratings_airlines">4.6. processRecords.py / get_ratings_airlines</h3>
+<div class="paragraph">
+<p>The purpose of this function is to create a dictionary with</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>key = airline name</p>
+</li>
+<li>
+<p>value = "Airline" object with all the records of that airline</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To do that, we can loop each element of list of record (the input) and</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a new <strong>Airline</strong> if it does not exist in the dictionary
+(and store it in the dictionary)</p>
+</li>
+<li>
+<p>Add the record in the Airline object stored in the dictionary</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+To create an <strong>Airline</strong> object, we need the airline code
+that corresponds to the first 2 letters of the flight code.
+For example, a flight code <code>"AF123"</code> would give the airline code <code>"AF"</code>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_processrecords_py_list_sorted_ratings">4.7. processRecords.py / list_sorted_ratings</h3>
+<div class="paragraph">
+<p>This function parse the dictionary created by <code>get_rating_airlines</code> and returns 2 lists:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>List of tuples <code>(&lt;airline name&gt;, &lt;% late&gt;, &lt;average delay&gt;)</code>
+sorted by `&lt;% late&gt;% (ascending order) for all airlines</p>
+</li>
+<li>
+<p>List of tuples <code>(&lt;flight code&gt;, &lt;% late&gt;, &lt;average delay&gt;)</code>
+sorted by `&lt;% late&gt;% (ascending order) for all flights of all airlines</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We will do:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create 2 empty lists (<code>rating_airlines</code> and <code>rating_flights</code>)</p>
+</li>
+<li>
+<p>Loop on each airline</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Use <code>&lt;airline&gt;.get_rating_airline</code> method to get the rating and append to <code>rating_airlines</code></p>
+</li>
+<li>
+<p>Loop on each flight of the airline: use <code>&lt;airline&gt;.get_rating_flight</code> method to get the rating and append to <code>rating_flights</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Sort <code>rating_airlines</code> and <code>rating_flights</code> based on probability to be late</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_processrecords_py_get_first_last_elem">4.8. processRecords.py / get_first_last_elem</h3>
+<div class="paragraph">
+<p>The purpose of this function is to return 2 lists:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>First <code>nb_elem</code> elements of <code>sorted_list</code></p>
+</li>
+<li>
+<p>Last <code>nb_elem</code> elements of <code>sorted_list</code> in reversed order</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To do that, we can use the list index <code>[&#8230;&#8203;:&#8230;&#8203;]</code> and the <code>&lt;list&gt;.reverse()</code> function.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_processrecords_py_main_function">4.9. processRecords.py / main function</h3>
+<div class="paragraph">
+<p>For the arguments, we will use the module <code>argparse</code> with its class <code>argparse.ArgumentParser</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">argparse.ArgumentParser for main function</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can then use arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cmd.input_path</code>: path of file with data to parse with <code>read_flight_records</code></p>
+</li>
+<li>
+<p><code>cmd.nb_ranking</code>: number of elements to keep in <code>get_first_last_elem</code></p>
+</li>
+<li>
+<p><code>cmd.report_path</code>: path of HTML file to generate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We need to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Call <code>read_flight_records</code> and store the result</p>
+</li>
+<li>
+<p>Use this result in <code>get_ratings_airlines</code> and store the result</p>
+</li>
+<li>
+<p>Use this result in <code>list_sorted_ratings</code> and store the resulting lists</p>
+</li>
+<li>
+<p>Use these two lists with <code>get_first_last_elem</code> to extract <code>cmd.nb_ranking</code> best/worse elements (airlines and flights)</p>
+</li>
+<li>
+<p>Read the template <code>"report_Template.html"</code> and save its content</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+We shall replace <code>{</code> by <code>{{</code> and <code>}</code> by <code>}}</code>
+in the <code>&lt;style&gt;&#8230;&#8203;&lt;/style&gt;</code> blocks of the HTML template
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Generate the content of the report based on the template (see below)</p>
+</li>
+<li>
+<p>Write the content in <code>cmd.report_path</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Get content of the report</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span>    <span class="tok-c1"># Prepare the report</span>
+    <span class="tok-n">report</span> <span class="tok-o">=</span> <span class="tok-nb">dict</span><span class="tok-p">()</span>
+    <span class="tok-c1"># time</span>
+    <span class="tok-n">report</span><span class="tok-p">[</span><span class="tok-s2">&quot;date&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-nb">str</span><span class="tok-p">(</span><span class="tok-n">datetime</span><span class="tok-o">.</span><span class="tok-n">date</span><span class="tok-o">.</span><span class="tok-n">today</span><span class="tok-p">())</span>
+    <span class="tok-n">report</span><span class="tok-p">[</span><span class="tok-s2">&quot;time&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-nb">str</span><span class="tok-p">(</span><span class="tok-n">datetime</span><span class="tok-o">.</span><span class="tok-n">datetime</span><span class="tok-o">.</span><span class="tok-n">now</span><span class="tok-p">()</span><span class="tok-o">.</span><span class="tok-n">time</span><span class="tok-p">())[:</span><span class="tok-mi">8</span><span class="tok-p">]</span>
+    <span class="tok-c1"># rankings</span>
+    <span class="tok-k">def</span> <span class="tok-nf">store_ranking</span><span class="tok-p">(</span><span class="tok-n">key</span><span class="tok-p">,</span> <span class="tok-n">ranking</span><span class="tok-p">):</span>
+        <span class="tok-n">str_info</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;&lt;b&gt;{0}&lt;/b&gt; ({1}%, avg={2} min)&quot;</span>
+        <span class="tok-n">report</span><span class="tok-p">[</span><span class="tok-n">key</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;&lt;/li&gt;</span><span class="tok-se">\n</span><span class="tok-s2">&lt;li&gt;&quot;</span><span class="tok-o">.</span><span class="tok-n">join</span><span class="tok-p">([</span><span class="tok-n">str_info</span><span class="tok-o">.</span><span class="tok-n">format</span><span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-n">t</span><span class="tok-p">)</span> <span class="tok-k">for</span> <span class="tok-n">t</span> <span class="tok-ow">in</span> <span class="tok-n">ranking</span><span class="tok-p">])</span>
+
+    <span class="tok-n">store_ranking</span><span class="tok-p">(</span><span class="tok-s2">&quot;best_airlines&quot;</span><span class="tok-p">,</span> <span class="tok-n">best_airlines</span><span class="tok-p">)</span>
+    <span class="tok-n">store_ranking</span><span class="tok-p">(</span><span class="tok-s2">&quot;worse_airlines&quot;</span><span class="tok-p">,</span> <span class="tok-n">worse_airlines</span><span class="tok-p">)</span>
+    <span class="tok-n">store_ranking</span><span class="tok-p">(</span><span class="tok-s2">&quot;best_flights&quot;</span><span class="tok-p">,</span> <span class="tok-n">best_flights</span><span class="tok-p">)</span>
+    <span class="tok-n">store_ranking</span><span class="tok-p">(</span><span class="tok-s2">&quot;worse_flights&quot;</span><span class="tok-p">,</span> <span class="tok-n">worse_flights</span><span class="tok-p">)</span>
+
+    <span class="tok-c1"># Generate the report</span>
+    <span class="tok-n">report_content</span> <span class="tok-o">=</span> <span class="tok-n">template</span><span class="tok-o">.</span><span class="tok-n">format</span><span class="tok-p">(</span><span class="tok-o">**</span><span class="tok-n">report</span><span class="tok-p">)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_final_solution">5. Final Solution</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_airlines_py_2">5.1. airlines.py</h3>
+<div class="listingblock">
+<div class="title">airlines.py</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-ch">#!python</span>
+
+<span class="tok-kn">from</span> <span class="tok-nn">collections</span> <span class="tok-kn">import</span> <span class="tok-n">defaultdict</span>
+<span class="tok-kn">from</span> <span class="tok-nn">datetime</span> <span class="tok-kn">import</span> <span class="tok-n">datetime</span>
+
+
+<span class="tok-c1"># #-- CALCULATION OF TIME DELTA --##</span>
+<span class="tok-c1"># tag::header[]</span>
+<span class="tok-c1"># tag::get_delay[]</span>
+<span class="tok-k">def</span> <span class="tok-nf">get_delay</span><span class="tok-p">(</span><span class="tok-n">expected</span><span class="tok-p">:</span> <span class="tok-nb">str</span><span class="tok-p">,</span> <span class="tok-n">takeoff</span><span class="tok-p">:</span> <span class="tok-nb">str</span><span class="tok-p">)</span> <span class="tok-o">-&gt;</span> <span class="tok-nb">int</span><span class="tok-p">:</span>
+    <span class="tok-sd">&quot;&quot;&quot;\</span>
+<span class="tok-sd">    Measure the time difference in minutes between two times</span>
+<span class="tok-sd">    delay = &lt;take-off&gt; - &lt;expected&gt;</span>
+
+<span class="tok-sd">    Args:</span>
+<span class="tok-sd">        expected: expected departure time (e.g. 23:45)</span>
+<span class="tok-sd">        takeoff: real departure time (e.g. 23:55)</span>
+<span class="tok-sd">    &quot;&quot;&quot;</span>
+    <span class="tok-c1"># end::header[]</span>
+    <span class="tok-n">time_fmt</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;%H:%M&quot;</span>
+    <span class="tok-c1"># We convert with strptime and calculate the difference</span>
+    <span class="tok-n">t_real</span> <span class="tok-o">=</span> <span class="tok-n">datetime</span><span class="tok-o">.</span><span class="tok-n">strptime</span><span class="tok-p">(</span><span class="tok-n">takeoff</span><span class="tok-p">,</span> <span class="tok-n">time_fmt</span><span class="tok-p">)</span>
+    <span class="tok-n">t_exp</span> <span class="tok-o">=</span> <span class="tok-n">datetime</span><span class="tok-o">.</span><span class="tok-n">strptime</span><span class="tok-p">(</span><span class="tok-n">expected</span><span class="tok-p">,</span> <span class="tok-n">time_fmt</span><span class="tok-p">)</span>
+    <span class="tok-n">delta</span> <span class="tok-o">=</span> <span class="tok-n">t_real</span> <span class="tok-o">-</span> <span class="tok-n">t_exp</span>
+
+    <span class="tok-c1"># If &quot;takeoff &lt; expected&quot;, we will call recursively and multiply by &quot;-1&quot;</span>
+    <span class="tok-k">if</span> <span class="tok-n">delta</span><span class="tok-o">.</span><span class="tok-n">days</span> <span class="tok-o">&lt;</span> <span class="tok-mi">0</span><span class="tok-p">:</span>
+        <span class="tok-k">return</span> <span class="tok-o">-</span><span class="tok-mi">1</span> <span class="tok-o">*</span> <span class="tok-n">get_delay</span><span class="tok-p">(</span><span class="tok-n">takeoff</span><span class="tok-p">,</span> <span class="tok-n">expected</span><span class="tok-p">)</span>
+
+    <span class="tok-c1"># If delta is bigger than half-day, we will return (delta - 1 day)</span>
+    <span class="tok-n">sec_in_day</span> <span class="tok-o">=</span> <span class="tok-mi">60</span> <span class="tok-o">*</span> <span class="tok-mi">60</span> <span class="tok-o">*</span> <span class="tok-mi">24</span>
+    <span class="tok-k">if</span> <span class="tok-n">delta</span><span class="tok-o">.</span><span class="tok-n">seconds</span> <span class="tok-o">&gt;</span> <span class="tok-n">sec_in_day</span> <span class="tok-o">/</span> <span class="tok-mi">2</span><span class="tok-p">:</span>
+        <span class="tok-n">seconds</span> <span class="tok-o">=</span> <span class="tok-n">delta</span><span class="tok-o">.</span><span class="tok-n">seconds</span> <span class="tok-o">-</span> <span class="tok-n">sec_in_day</span>
+    <span class="tok-k">else</span><span class="tok-p">:</span>
+        <span class="tok-n">seconds</span> <span class="tok-o">=</span> <span class="tok-n">delta</span><span class="tok-o">.</span><span class="tok-n">seconds</span>
+    <span class="tok-k">return</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">seconds</span> <span class="tok-o">/</span> <span class="tok-mi">60</span><span class="tok-p">)</span>
+
+
+<span class="tok-k">def</span> <span class="tok-nf">get_delay_2</span><span class="tok-p">(</span><span class="tok-n">expected</span><span class="tok-p">:</span> <span class="tok-nb">str</span><span class="tok-p">,</span> <span class="tok-n">takeoff</span><span class="tok-p">:</span> <span class="tok-nb">str</span><span class="tok-p">)</span> <span class="tok-o">-&gt;</span> <span class="tok-nb">int</span><span class="tok-p">:</span>
+    <span class="tok-sd">&quot;&quot;&quot;\</span>
+<span class="tok-sd">    Measure the time difference in minutes between two times</span>
+<span class="tok-sd">    delay = &lt;take-off&gt; - &lt;expected&gt;</span>
+
+<span class="tok-sd">    Args:</span>
+<span class="tok-sd">        expected: expected departure time (e.g. 23:45)</span>
+<span class="tok-sd">        takeoff: real departure time (e.g. 23:55)</span>
+<span class="tok-sd">    &quot;&quot;&quot;</span>
+
+    <span class="tok-k">def</span> <span class="tok-nf">min_in_time</span><span class="tok-p">(</span><span class="tok-n">hhmm</span><span class="tok-p">:</span> <span class="tok-nb">str</span><span class="tok-p">):</span>
+        <span class="tok-n">t</span> <span class="tok-o">=</span> <span class="tok-n">hhmm</span><span class="tok-o">.</span><span class="tok-n">split</span><span class="tok-p">(</span><span class="tok-s2">&quot;:&quot;</span><span class="tok-p">)</span>
+        <span class="tok-k">return</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">t</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">])</span> <span class="tok-o">*</span> <span class="tok-mi">60</span> <span class="tok-o">+</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">t</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">])</span>
+
+    <span class="tok-c1"># We convert by doing HH * 60 + MM and calculate the difference</span>
+    <span class="tok-c1"># If &quot;takeoff &lt; expected&quot;, the result is we will have to deduct 1 day from delta</span>
+    <span class="tok-c1"># However, we will calculate normally if delta is bigger than half-day</span>
+    <span class="tok-n">min_in_day</span> <span class="tok-o">=</span> <span class="tok-mi">60</span> <span class="tok-o">*</span> <span class="tok-mi">24</span>
+    <span class="tok-n">delta</span> <span class="tok-o">=</span> <span class="tok-n">min_in_time</span><span class="tok-p">(</span><span class="tok-n">takeoff</span><span class="tok-p">)</span> <span class="tok-o">-</span> <span class="tok-n">min_in_time</span><span class="tok-p">(</span><span class="tok-n">expected</span><span class="tok-p">)</span>
+    <span class="tok-k">if</span> <span class="tok-n">delta</span> <span class="tok-o">&lt;</span> <span class="tok-mi">0</span><span class="tok-p">:</span>
+        <span class="tok-k">return</span> <span class="tok-o">-</span><span class="tok-mi">1</span> <span class="tok-o">*</span> <span class="tok-n">get_delay_2</span><span class="tok-p">(</span><span class="tok-n">takeoff</span><span class="tok-p">,</span> <span class="tok-n">expected</span><span class="tok-p">)</span>
+    <span class="tok-k">elif</span> <span class="tok-n">delta</span> <span class="tok-o">&gt;</span> <span class="tok-n">min_in_day</span> <span class="tok-o">/</span> <span class="tok-mi">2</span><span class="tok-p">:</span>
+        <span class="tok-k">return</span> <span class="tok-n">delta</span> <span class="tok-o">-</span> <span class="tok-n">min_in_day</span>
+    <span class="tok-k">else</span><span class="tok-p">:</span>
+        <span class="tok-k">return</span> <span class="tok-n">delta</span>
+<span class="tok-c1"># end::get_delay[]</span>
+
+
+<span class="tok-c1"># tag::header[]</span>
+
+
+<span class="tok-k">class</span> <span class="tok-nc">Airline</span><span class="tok-p">:</span>
+    <span class="tok-sd">&quot;&quot;&quot;Class describing an airline with records&quot;&quot;&quot;</span>
+
+    <span class="tok-k">def</span> <span class="tok-fm">__init__</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">,</span> <span class="tok-n">name</span><span class="tok-p">,</span> <span class="tok-n">code</span><span class="tok-p">):</span>
+        <span class="tok-sd">&quot;&quot;&quot;Creation of an airline with records&quot;&quot;&quot;</span>
+        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">name</span> <span class="tok-o">=</span> <span class="tok-n">name</span>
+        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">code</span> <span class="tok-o">=</span> <span class="tok-n">code</span>
+        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span> <span class="tok-o">=</span> <span class="tok-n">defaultdict</span><span class="tok-p">(</span><span class="tok-nb">list</span><span class="tok-p">)</span>  <span class="tok-c1"># So &quot;.append(...)&quot; will work automatically</span>
+        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">destination</span> <span class="tok-o">=</span> <span class="tok-nb">dict</span><span class="tok-p">()</span>
+
+    <span class="tok-c1"># tag::add_info[]</span>
+    <span class="tok-k">def</span> <span class="tok-nf">add_info</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">,</span> <span class="tok-n">record</span><span class="tok-p">):</span>
+        <span class="tok-sd">&quot;&quot;&quot;Add flight information, create flight if it does not exist</span>
+
+<span class="tok-sd">        Args:</span>
+<span class="tok-sd">            record(dict): dictionary with keys:</span>
+<span class="tok-sd">                * &#39;date&#39;: date of the flight, stored as a string (e.g. &quot;2018-02-30&quot;)</span>
+<span class="tok-sd">                * &#39;time&#39;: expected take-off time, stored as a string (e.g. &quot;15:30&quot;)</span>
+<span class="tok-sd">                * &#39;code&#39;: code of flight (e.g. &quot;MU123&quot;)</span>
+<span class="tok-sd">                * &#39;destination&#39;</span>
+<span class="tok-sd">                * &#39;take-off&#39;: real take-off time, stored as a string</span>
+<span class="tok-sd">        &quot;&quot;&quot;</span>
+        <span class="tok-c1"># end::header[]</span>
+        <span class="tok-n">code</span> <span class="tok-o">=</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;code&quot;</span><span class="tok-p">]</span>
+
+        <span class="tok-c1"># Save destination</span>
+        <span class="tok-k">if</span> <span class="tok-n">code</span> <span class="tok-ow">not</span> <span class="tok-ow">in</span> <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">destination</span><span class="tok-p">:</span>
+            <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">destination</span><span class="tok-p">[</span><span class="tok-n">code</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;destination&quot;</span><span class="tok-p">]</span>
+            <span class="tok-c1"># self.flights[code] = list()  # mandatory if defaultdict(list) is not used</span>
+
+        <span class="tok-c1"># Record to save in the list of records</span>
+        <span class="tok-c1"># saved_record = {k: record[k] for k in (&quot;date&quot;, &quot;time&quot;)}</span>
+        <span class="tok-n">saved_record</span> <span class="tok-o">=</span> <span class="tok-p">{</span>
+            <span class="tok-s2">&quot;date&quot;</span><span class="tok-p">:</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;date&quot;</span><span class="tok-p">],</span>
+            <span class="tok-s2">&quot;time&quot;</span><span class="tok-p">:</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;time&quot;</span><span class="tok-p">],</span>
+            <span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">:</span> <span class="tok-n">get_delay</span><span class="tok-p">(</span><span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;time&quot;</span><span class="tok-p">],</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;take-off&quot;</span><span class="tok-p">]),</span>
+        <span class="tok-p">}</span>
+
+        <span class="tok-c1"># Save record (NOTE: defaultdict ensure to initialize the list)</span>
+        <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-p">[</span><span class="tok-n">code</span><span class="tok-p">]</span><span class="tok-o">.</span><span class="tok-n">append</span><span class="tok-p">(</span><span class="tok-n">saved_record</span><span class="tok-p">)</span>
+
+    <span class="tok-c1"># end::add_info[]</span>
+    <span class="tok-c1"># tag::header[]</span>
+
+    <span class="tok-c1"># tag::get_rating_flight[]</span>
+    <span class="tok-k">def</span> <span class="tok-nf">get_rating_flight</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">,</span> <span class="tok-n">flight</span><span class="tok-p">:</span> <span class="tok-nb">str</span><span class="tok-p">):</span>
+        <span class="tok-sd">&quot;&quot;&quot;Get the rating of a given flight</span>
+
+<span class="tok-sd">        Args:</span>
+<span class="tok-sd">            flight: code of a flight</span>
+
+<span class="tok-sd">        Returns:</span>
+<span class="tok-sd">            (&#39;% late&#39;, &#39;average delay&#39;) for a flight, both int</span>
+<span class="tok-sd">        &quot;&quot;&quot;</span>
+        <span class="tok-c1"># end::header[]</span>
+        <span class="tok-c1"># Flight unknown</span>
+        <span class="tok-k">if</span> <span class="tok-n">flight</span> <span class="tok-ow">not</span> <span class="tok-ow">in</span> <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-p">:</span>
+            <span class="tok-k">return</span> <span class="tok-bp">None</span><span class="tok-p">,</span> <span class="tok-bp">None</span>
+        <span class="tok-c1"># Known flight: calculate number of flights late and total delay</span>
+        <span class="tok-n">nb_late</span><span class="tok-p">,</span> <span class="tok-n">total_delay</span> <span class="tok-o">=</span> <span class="tok-mf">0.0</span><span class="tok-p">,</span> <span class="tok-mf">0.0</span>
+        <span class="tok-k">for</span> <span class="tok-n">record</span> <span class="tok-ow">in</span> <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-p">[</span><span class="tok-n">flight</span><span class="tok-p">]:</span>
+            <span class="tok-n">total_delay</span> <span class="tok-o">+=</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">]</span>
+            <span class="tok-k">if</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">]</span> <span class="tok-o">&gt;</span> <span class="tok-mi">30</span><span class="tok-p">:</span>
+                <span class="tok-n">nb_late</span> <span class="tok-o">+=</span> <span class="tok-mi">1</span>
+
+        <span class="tok-n">nb_flights</span> <span class="tok-o">=</span> <span class="tok-nb">len</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-p">[</span><span class="tok-n">flight</span><span class="tok-p">])</span>
+        <span class="tok-n">percent</span> <span class="tok-o">=</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">nb_late</span> <span class="tok-o">/</span> <span class="tok-n">nb_flights</span> <span class="tok-o">*</span> <span class="tok-mi">100</span><span class="tok-p">)</span>
+        <span class="tok-n">average</span> <span class="tok-o">=</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">total_delay</span> <span class="tok-o">/</span> <span class="tok-n">nb_flights</span><span class="tok-p">)</span>
+        <span class="tok-k">return</span> <span class="tok-n">percent</span><span class="tok-p">,</span> <span class="tok-n">average</span>
+
+    <span class="tok-c1"># end::get_rating_flight[]</span>
+    <span class="tok-c1"># tag::header[]</span>
+
+    <span class="tok-c1"># tag::get_rating_airline[]</span>
+    <span class="tok-k">def</span> <span class="tok-nf">get_rating_airline</span><span class="tok-p">(</span><span class="tok-bp">self</span><span class="tok-p">):</span>
+        <span class="tok-sd">&quot;&quot;&quot;Get the rating of the airline</span>
+
+<span class="tok-sd">        Returns:</span>
+<span class="tok-sd">            (&#39;% late&#39;, &#39;average delay&#39;) for the airline, both int</span>
+<span class="tok-sd">        &quot;&quot;&quot;</span>
+        <span class="tok-c1"># end::header[]</span>
+        <span class="tok-c1"># We could use the previous version to avoid duplicate code</span>
+        <span class="tok-c1"># HOWEVER, get_rating_flight returns &quot;int&quot; so the result would be inexact</span>
+        <span class="tok-c1"># We will do a copy of the code with a loop on &quot;flight&quot; [arghhh :( duplicate code!!]</span>
+        <span class="tok-n">nb_late</span><span class="tok-p">,</span> <span class="tok-n">total_delay</span> <span class="tok-o">=</span> <span class="tok-mf">0.0</span><span class="tok-p">,</span> <span class="tok-mf">0.0</span>
+        <span class="tok-n">nb_flights</span> <span class="tok-o">=</span> <span class="tok-mi">0</span>
+        <span class="tok-k">for</span> <span class="tok-n">records</span> <span class="tok-ow">in</span> <span class="tok-bp">self</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-o">.</span><span class="tok-n">values</span><span class="tok-p">():</span>
+            <span class="tok-n">nb_flights</span> <span class="tok-o">+=</span> <span class="tok-nb">len</span><span class="tok-p">(</span><span class="tok-n">records</span><span class="tok-p">)</span>
+            <span class="tok-k">for</span> <span class="tok-n">record</span> <span class="tok-ow">in</span> <span class="tok-n">records</span><span class="tok-p">:</span>
+                <span class="tok-n">total_delay</span> <span class="tok-o">+=</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">]</span>
+                <span class="tok-k">if</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;delay&quot;</span><span class="tok-p">]</span> <span class="tok-o">&gt;</span> <span class="tok-mi">30</span><span class="tok-p">:</span>
+                    <span class="tok-n">nb_late</span> <span class="tok-o">+=</span> <span class="tok-mi">1</span>
+
+        <span class="tok-n">percent</span> <span class="tok-o">=</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">nb_late</span> <span class="tok-o">/</span> <span class="tok-n">nb_flights</span> <span class="tok-o">*</span> <span class="tok-mi">100</span><span class="tok-p">)</span>
+        <span class="tok-n">average</span> <span class="tok-o">=</span> <span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-n">total_delay</span> <span class="tok-o">/</span> <span class="tok-n">nb_flights</span><span class="tok-p">)</span>
+        <span class="tok-k">return</span> <span class="tok-n">percent</span><span class="tok-p">,</span> <span class="tok-n">average</span>
+    <span class="tok-c1"># end::get_rating_airline[]</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_processrecords_py_2">5.2. processRecords.py</h3>
+<div class="listingblock">
+<div class="title">processRecords.py</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-ch">#!python</span>
+
+<span class="tok-kn">import</span> <span class="tok-nn">airlines</span>
+<span class="tok-kn">import</span> <span class="tok-nn">re</span><span class="tok-o">,</span> <span class="tok-nn">argparse</span><span class="tok-o">,</span> <span class="tok-nn">datetime</span>
+
+<span class="tok-c1"># tag::header[]</span>
+
+
+<span class="tok-k">def</span> <span class="tok-nf">read_flight_records</span><span class="tok-p">(</span><span class="tok-n">file_path</span><span class="tok-p">:</span> <span class="tok-nb">str</span><span class="tok-p">):</span>
+    <span class="tok-sd">&quot;&quot;&quot;\</span>
+<span class="tok-sd">    Read flight records from a given file and returns the list of take-off records.</span>
+<span class="tok-sd">    Each element is a dict with keys: date, time, code, airline, destination, take-off</span>
+
+<span class="tok-sd">    Args:</span>
+<span class="tok-sd">        file_path: Path of file to read</span>
+
+<span class="tok-sd">    Returns:</span>
+<span class="tok-sd">        list of take off records</span>
+<span class="tok-sd">    &quot;&quot;&quot;</span>
+    <span class="tok-c1"># end::header[]</span>
+    <span class="tok-n">list_records</span> <span class="tok-o">=</span> <span class="tok-nb">list</span><span class="tok-p">()</span>
+    <span class="tok-n">record_keys</span> <span class="tok-o">=</span> <span class="tok-p">[</span><span class="tok-s2">&quot;date&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;time&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;code&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;airline&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;destination&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;take-off&quot;</span><span class="tok-p">]</span>
+
+    <span class="tok-c1"># We will extract each info and match it to &quot;record_keys&quot; by using zip(l1, l2)</span>
+    <span class="tok-c1"># NOTE: zip transforms 2 list in a list of tuple; for example:</span>
+    <span class="tok-c1">#       zip([1, 2, 3], [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]) =&gt; [(1, &quot;a&quot;), (2, &quot;b&quot;), (3, &quot;c&quot;)]</span>
+    <span class="tok-c1"># Using &quot;dict(...)&quot; on this zipped list will create a dictionary with key and value</span>
+
+    <span class="tok-c1"># 2 solutions to split line in elements</span>
+    <span class="tok-c1"># Solution #1: Using regular expression to ensure strict pattern matching</span>
+    <span class="tok-n">pattern</span> <span class="tok-o">=</span> <span class="tok-p">(</span>
+        <span class="tok-sa">r</span><span class="tok-s2">&quot;^([\d\-]+),\s*([\d:]+),\s*([A-Z0-9]+),\s*([\w ]+),\s*(\w.+?),\s*([\d:]+)&quot;</span>
+    <span class="tok-p">)</span>
+    <span class="tok-c1"># Solution #2: using &lt;line&gt;.split(&quot;,&quot;) and stripping all spaces around each element</span>
+    <span class="tok-c1"># We then need to check the number of elements in split result</span>
+
+    <span class="tok-k">try</span><span class="tok-p">:</span>
+        <span class="tok-k">with</span> <span class="tok-nb">open</span><span class="tok-p">(</span><span class="tok-n">file_path</span><span class="tok-p">)</span> <span class="tok-k">as</span> <span class="tok-n">f</span><span class="tok-p">:</span>
+            <span class="tok-k">for</span> <span class="tok-n">record</span> <span class="tok-ow">in</span> <span class="tok-n">f</span><span class="tok-p">:</span>
+                <span class="tok-c1"># == Solution #1 (regex) ==</span>
+                <span class="tok-c1"># if record.strip() == &quot;&quot;:</span>
+                <span class="tok-c1">#     continue  # Skip empty lines</span>
+                <span class="tok-c1"># match_record = re.match(pattern, record)</span>
+                <span class="tok-c1"># if match_record:</span>
+                <span class="tok-c1">#     record_dict = dict(zip(record_keys, match_record.groups()))</span>
+                <span class="tok-c1">#     list_records.append(record_dict)</span>
+                <span class="tok-c1"># else:</span>
+                <span class="tok-c1">#     print(f&quot;Following line of {file_path!r} does not match pattern: {record!r}&quot;)</span>
+
+                <span class="tok-c1"># == Solution #2 (split) ==</span>
+                <span class="tok-k">if</span> <span class="tok-n">record</span><span class="tok-o">.</span><span class="tok-n">strip</span><span class="tok-p">()</span> <span class="tok-o">==</span> <span class="tok-s2">&quot;&quot;</span><span class="tok-p">:</span>
+                    <span class="tok-k">continue</span>  <span class="tok-c1"># Skip empty lines</span>
+                <span class="tok-n">data</span> <span class="tok-o">=</span> <span class="tok-p">[</span><span class="tok-n">d</span><span class="tok-o">.</span><span class="tok-n">strip</span><span class="tok-p">()</span> <span class="tok-k">for</span> <span class="tok-n">d</span> <span class="tok-ow">in</span> <span class="tok-n">record</span><span class="tok-o">.</span><span class="tok-n">split</span><span class="tok-p">(</span><span class="tok-s2">&quot;,&quot;</span><span class="tok-p">)]</span>
+                <span class="tok-c1"># NOTE: we can also use regular expression</span>
+                <span class="tok-c1"># data = re.split(r&quot;\s*,\s*&quot;, record.rstrip())</span>
+                <span class="tok-k">if</span> <span class="tok-nb">len</span><span class="tok-p">(</span><span class="tok-n">data</span><span class="tok-p">)</span> <span class="tok-o">!=</span> <span class="tok-nb">len</span><span class="tok-p">(</span><span class="tok-n">record_keys</span><span class="tok-p">):</span>
+                    <span class="tok-k">print</span><span class="tok-p">(</span>
+                        <span class="tok-n">f</span><span class="tok-s2">&quot;Following line of {file_path!r} has incorrect number of data: {record!r}&quot;</span>
+                    <span class="tok-p">)</span>
+                <span class="tok-k">else</span><span class="tok-p">:</span>
+                    <span class="tok-n">record_dict</span> <span class="tok-o">=</span> <span class="tok-nb">dict</span><span class="tok-p">(</span><span class="tok-nb">zip</span><span class="tok-p">(</span><span class="tok-n">record_keys</span><span class="tok-p">,</span> <span class="tok-n">data</span><span class="tok-p">))</span>
+                    <span class="tok-n">list_records</span><span class="tok-o">.</span><span class="tok-n">append</span><span class="tok-p">(</span><span class="tok-n">record_dict</span><span class="tok-p">)</span>
+
+    <span class="tok-k">except</span> <span class="tok-ne">Exception</span> <span class="tok-k">as</span> <span class="tok-n">e</span><span class="tok-p">:</span>
+        <span class="tok-k">raise</span> <span class="tok-ne">IOError</span><span class="tok-p">(</span><span class="tok-n">f</span><span class="tok-s2">&quot;Error while trying to read input file {file_path!r}: {e}&quot;</span><span class="tok-p">)</span>
+
+    <span class="tok-k">return</span> <span class="tok-n">list_records</span>
+
+
+<span class="tok-c1"># tag::header[]</span>
+
+
+<span class="tok-k">def</span> <span class="tok-nf">get_ratings_airlines</span><span class="tok-p">(</span><span class="tok-n">list_records</span><span class="tok-p">):</span>
+    <span class="tok-sd">&quot;&quot;&quot;From the list of records, create a dictionary with all Airlines</span>
+
+<span class="tok-sd">    Args:</span>
+<span class="tok-sd">        list_records(list): list of dict returned by read_flight_records</span>
+
+<span class="tok-sd">    Returns:</span>
+<span class="tok-sd">        dictionary &quot;airlines_dic&quot; with:</span>
+<span class="tok-sd">        * key = airline name</span>
+<span class="tok-sd">        * value = &quot;Airline&quot; object with all the records of that airline</span>
+<span class="tok-sd">    &quot;&quot;&quot;</span>
+    <span class="tok-c1"># end::header[]</span>
+    <span class="tok-c1"># We will loop each element of input list and</span>
+    <span class="tok-c1"># * Create a new Airline if it does not exist in the dictionary</span>
+    <span class="tok-c1"># * Add the record in the Airline object</span>
+    <span class="tok-n">airlines_dic</span> <span class="tok-o">=</span> <span class="tok-nb">dict</span><span class="tok-p">()</span>
+
+    <span class="tok-k">for</span> <span class="tok-n">record</span> <span class="tok-ow">in</span> <span class="tok-n">list_records</span><span class="tok-p">:</span>
+        <span class="tok-n">name</span> <span class="tok-o">=</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;airline&quot;</span><span class="tok-p">]</span>
+        <span class="tok-c1"># Create airline if required</span>
+        <span class="tok-k">if</span> <span class="tok-n">name</span> <span class="tok-ow">not</span> <span class="tok-ow">in</span> <span class="tok-n">airlines_dic</span><span class="tok-p">:</span>
+            <span class="tok-n">code</span> <span class="tok-o">=</span> <span class="tok-n">record</span><span class="tok-p">[</span><span class="tok-s2">&quot;code&quot;</span><span class="tok-p">][:</span><span class="tok-mi">2</span><span class="tok-p">]</span>  <span class="tok-c1"># First 2 characters of flight</span>
+            <span class="tok-n">airlines_dic</span><span class="tok-p">[</span><span class="tok-n">name</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-n">airlines</span><span class="tok-o">.</span><span class="tok-n">Airline</span><span class="tok-p">(</span><span class="tok-n">name</span><span class="tok-p">,</span> <span class="tok-n">code</span><span class="tok-p">)</span>
+        <span class="tok-c1"># Add the record information</span>
+        <span class="tok-n">airlines_dic</span><span class="tok-p">[</span><span class="tok-n">name</span><span class="tok-p">]</span><span class="tok-o">.</span><span class="tok-n">add_info</span><span class="tok-p">(</span><span class="tok-n">record</span><span class="tok-p">)</span>
+
+    <span class="tok-k">return</span> <span class="tok-n">airlines_dic</span>
+
+
+<span class="tok-c1"># tag::header[]</span>
+
+
+<span class="tok-k">def</span> <span class="tok-nf">list_sorted_ratings</span><span class="tok-p">(</span><span class="tok-n">airlines_dic</span><span class="tok-p">):</span>
+    <span class="tok-sd">&quot;&quot;&quot;Sort the airlines and flights based on the probability to be late</span>
+
+<span class="tok-sd">    Args:</span>
+<span class="tok-sd">        airlines_dic(dict): Dictionary with Airline objects</span>
+
+<span class="tok-sd">    Returns:</span>
+<span class="tok-sd">        rating_airlines(list): list of Airlines sorted by late probability (less late first)</span>
+<span class="tok-sd">        rating_flights(list): list of flights sorted by late probability (less late first)</span>
+
+<span class="tok-sd">    NOTE: Each element of the returned lists contains the following tuple:</span>
+<span class="tok-sd">        (&lt;airline|flight code&gt;, &lt;% late&gt;, &lt;average delay&gt;)</span>
+<span class="tok-sd">    &quot;&quot;&quot;</span>
+    <span class="tok-c1"># end::header[]</span>
+    <span class="tok-n">rating_airlines</span> <span class="tok-o">=</span> <span class="tok-nb">list</span><span class="tok-p">()</span>
+    <span class="tok-n">rating_flights</span> <span class="tok-o">=</span> <span class="tok-nb">list</span><span class="tok-p">()</span>
+
+    <span class="tok-c1"># Generate the lists</span>
+    <span class="tok-k">for</span> <span class="tok-n">name</span><span class="tok-p">,</span> <span class="tok-n">airline</span> <span class="tok-ow">in</span> <span class="tok-n">airlines_dic</span><span class="tok-o">.</span><span class="tok-n">items</span><span class="tok-p">():</span>
+        <span class="tok-c1"># Airline</span>
+        <span class="tok-n">rating_airline</span> <span class="tok-o">=</span> <span class="tok-n">airline</span><span class="tok-o">.</span><span class="tok-n">get_rating_airline</span><span class="tok-p">()</span>
+        <span class="tok-c1"># TODO: add code of Airline in the ranking</span>
+        <span class="tok-c1"># name_code = f&quot;{name} [{airline.code}]&quot;</span>
+        <span class="tok-c1"># rating_airlines.append((name_code, *rating_airline))</span>
+        <span class="tok-c1"># NOTE: We add the name before the tuple by using &quot;*args&quot; to get elements of tuple</span>
+        <span class="tok-n">rating_airlines</span><span class="tok-o">.</span><span class="tok-n">append</span><span class="tok-p">((</span><span class="tok-n">name</span><span class="tok-p">,</span> <span class="tok-o">*</span><span class="tok-n">rating_airline</span><span class="tok-p">))</span>
+        <span class="tok-c1"># Flights</span>
+        <span class="tok-k">for</span> <span class="tok-n">flight</span> <span class="tok-ow">in</span> <span class="tok-n">airline</span><span class="tok-o">.</span><span class="tok-n">flights</span><span class="tok-o">.</span><span class="tok-n">keys</span><span class="tok-p">():</span>
+            <span class="tok-n">rating_flight</span> <span class="tok-o">=</span> <span class="tok-n">airline</span><span class="tok-o">.</span><span class="tok-n">get_rating_flight</span><span class="tok-p">(</span><span class="tok-n">flight</span><span class="tok-p">)</span>
+            <span class="tok-c1"># TODO: add destination of flight in the ranking</span>
+            <span class="tok-c1"># code_dest = f&quot;{flight} ({airline.destination[flight]})&quot;</span>
+            <span class="tok-c1"># rating_flights.append((code_dest, *rating_flight))</span>
+            <span class="tok-n">rating_flights</span><span class="tok-o">.</span><span class="tok-n">append</span><span class="tok-p">((</span><span class="tok-n">flight</span><span class="tok-p">,</span> <span class="tok-o">*</span><span class="tok-n">rating_flight</span><span class="tok-p">))</span>
+
+    <span class="tok-c1"># Sort the lists based on the probability to be late</span>
+    <span class="tok-k">def</span> <span class="tok-nf">score_airline</span><span class="tok-p">(</span><span class="tok-n">t</span><span class="tok-p">):</span>
+        <span class="tok-sd">&quot;&quot;&quot;From tuple (% late, average delay) calculates a score</span>
+<span class="tok-sd">        &quot;% late&quot; * 1000 + &quot;average delay&quot; to sort the airlines</span>
+<span class="tok-sd">        &quot;&quot;&quot;</span>
+        <span class="tok-k">return</span> <span class="tok-n">t</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">]</span> <span class="tok-o">*</span> <span class="tok-mi">1000</span> <span class="tok-o">+</span> <span class="tok-n">t</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">]</span>
+
+    <span class="tok-n">rating_airlines</span> <span class="tok-o">=</span> <span class="tok-nb">sorted</span><span class="tok-p">(</span><span class="tok-n">rating_airlines</span><span class="tok-p">,</span> <span class="tok-n">key</span><span class="tok-o">=</span><span class="tok-n">score_airline</span><span class="tok-p">)</span>
+    <span class="tok-n">rating_flights</span> <span class="tok-o">=</span> <span class="tok-nb">sorted</span><span class="tok-p">(</span><span class="tok-n">rating_flights</span><span class="tok-p">,</span> <span class="tok-n">key</span><span class="tok-o">=</span><span class="tok-n">score_airline</span><span class="tok-p">)</span>
+
+    <span class="tok-k">return</span> <span class="tok-n">rating_airlines</span><span class="tok-p">,</span> <span class="tok-n">rating_flights</span>
+
+
+<span class="tok-c1"># tag::header[]</span>
+
+
+<span class="tok-k">def</span> <span class="tok-nf">get_first_last_elem</span><span class="tok-p">(</span><span class="tok-n">sorted_list</span><span class="tok-p">,</span> <span class="tok-n">nb_elem</span><span class="tok-p">:</span> <span class="tok-nb">int</span><span class="tok-p">):</span>
+    <span class="tok-sd">&quot;&quot;&quot;Return lists with first/last &lt;nb_elem&gt; elements</span>
+
+<span class="tok-sd">    Args:</span>
+<span class="tok-sd">        sorted_list(list): list of elements</span>
+<span class="tok-sd">        nb_elem(int): number of first/last elements</span>
+
+<span class="tok-sd">    Return:</span>
+<span class="tok-sd">        first(list): first nb_elem elements of sorted_list</span>
+<span class="tok-sd">        last(list): last nb_elem elements of sorted_list in reverse order</span>
+<span class="tok-sd">    &quot;&quot;&quot;</span>
+    <span class="tok-c1"># end::header[]</span>
+    <span class="tok-k">if</span> <span class="tok-n">nb_elem</span> <span class="tok-o">&lt;</span> <span class="tok-mi">1</span><span class="tok-p">:</span>
+        <span class="tok-k">return</span> <span class="tok-p">[],</span> <span class="tok-p">[]</span>
+    <span class="tok-k">else</span><span class="tok-p">:</span>
+        <span class="tok-n">first_elements</span> <span class="tok-o">=</span> <span class="tok-n">sorted_list</span><span class="tok-p">[:</span><span class="tok-n">nb_elem</span><span class="tok-p">]</span>
+
+        <span class="tok-n">last_elements</span> <span class="tok-o">=</span> <span class="tok-n">sorted_list</span><span class="tok-p">[</span><span class="tok-o">-</span><span class="tok-n">nb_elem</span><span class="tok-p">:]</span>
+        <span class="tok-n">last_elements</span><span class="tok-o">.</span><span class="tok-n">reverse</span><span class="tok-p">()</span>
+
+        <span class="tok-k">return</span> <span class="tok-n">first_elements</span><span class="tok-p">,</span> <span class="tok-n">last_elements</span>
+
+
+<span class="tok-c1"># tag::header[]</span>
+
+
+<span class="tok-c1">##=== MAIN PROGRAM ===##</span>
+<span class="tok-c1"># tag::main_function[]</span>
+<span class="tok-k">if</span> <span class="tok-vm">__name__</span> <span class="tok-o">==</span> <span class="tok-s2">&quot;__main__&quot;</span><span class="tok-p">:</span>
+
+    <span class="tok-c1"># tag::argparse[]</span>
+    <span class="tok-c1"># Main Program</span>
+    <span class="tok-n">description</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;&quot;&quot;processRecords.py - Generating a report of airines and flights based on their delay&quot;&quot;&quot;</span>
+    <span class="tok-c1"># end::header[]</span>
+
+    <span class="tok-c1"># Parsing options and arguments</span>
+    <span class="tok-n">parser</span> <span class="tok-o">=</span> <span class="tok-n">argparse</span><span class="tok-o">.</span><span class="tok-n">ArgumentParser</span><span class="tok-p">(</span><span class="tok-n">description</span><span class="tok-o">=</span><span class="tok-n">description</span><span class="tok-p">)</span>
+    <span class="tok-n">parser</span><span class="tok-o">.</span><span class="tok-n">add_argument</span><span class="tok-p">(</span><span class="tok-s2">&quot;input_path&quot;</span><span class="tok-p">)</span>
+    <span class="tok-n">parser</span><span class="tok-o">.</span><span class="tok-n">add_argument</span><span class="tok-p">(</span>
+        <span class="tok-s2">&quot;-o&quot;</span><span class="tok-p">,</span>
+        <span class="tok-s2">&quot;--output&quot;</span><span class="tok-p">,</span>
+        <span class="tok-n">dest</span><span class="tok-o">=</span><span class="tok-s2">&quot;report_path&quot;</span><span class="tok-p">,</span>
+        <span class="tok-n">default</span><span class="tok-o">=</span><span class="tok-s2">&quot;report_airlines.html&quot;</span><span class="tok-p">,</span>
+        <span class="tok-n">help</span><span class="tok-o">=</span><span class="tok-s2">&quot;Path of HTML report to generate&quot;</span><span class="tok-p">,</span>
+    <span class="tok-p">)</span>
+    <span class="tok-n">parser</span><span class="tok-o">.</span><span class="tok-n">add_argument</span><span class="tok-p">(</span>
+        <span class="tok-s2">&quot;-n&quot;</span><span class="tok-p">,</span>
+        <span class="tok-n">dest</span><span class="tok-o">=</span><span class="tok-s2">&quot;nb_ranking&quot;</span><span class="tok-p">,</span>
+        <span class="tok-n">default</span><span class="tok-o">=</span><span class="tok-mi">10</span><span class="tok-p">,</span>
+        <span class="tok-nb">type</span><span class="tok-o">=</span><span class="tok-nb">int</span><span class="tok-p">,</span>
+        <span class="tok-n">help</span><span class="tok-o">=</span><span class="tok-s2">&quot;Number of best/worse airlines and flights&quot;</span><span class="tok-p">,</span>
+    <span class="tok-p">)</span>
+    <span class="tok-n">cmd</span> <span class="tok-o">=</span> <span class="tok-n">parser</span><span class="tok-o">.</span><span class="tok-n">parse_args</span><span class="tok-p">()</span>
+    <span class="tok-c1"># end::argparse[]</span>
+    <span class="tok-c1"># =DEBUG=#</span>
+    <span class="tok-c1"># cmd = parser.parse_args([&quot;list_records.txt&quot;])</span>
+
+    <span class="tok-c1"># Getting list of sorted elements</span>
+    <span class="tok-n">records</span> <span class="tok-o">=</span> <span class="tok-n">read_flight_records</span><span class="tok-p">(</span><span class="tok-n">cmd</span><span class="tok-o">.</span><span class="tok-n">input_path</span><span class="tok-p">)</span>
+    <span class="tok-n">airlines_dic</span> <span class="tok-o">=</span> <span class="tok-n">get_ratings_airlines</span><span class="tok-p">(</span><span class="tok-n">records</span><span class="tok-p">)</span>
+    <span class="tok-n">rating_airlines</span><span class="tok-p">,</span> <span class="tok-n">rating_flights</span> <span class="tok-o">=</span> <span class="tok-n">list_sorted_ratings</span><span class="tok-p">(</span><span class="tok-n">airlines_dic</span><span class="tok-p">)</span>
+
+    <span class="tok-c1"># Generate list of  best and worse &lt;nb_ranking&gt; airlines/flights</span>
+    <span class="tok-n">best_airlines</span><span class="tok-p">,</span> <span class="tok-n">worse_airlines</span> <span class="tok-o">=</span> <span class="tok-n">get_first_last_elem</span><span class="tok-p">(</span><span class="tok-n">rating_airlines</span><span class="tok-p">,</span> <span class="tok-n">cmd</span><span class="tok-o">.</span><span class="tok-n">nb_ranking</span><span class="tok-p">)</span>
+    <span class="tok-n">best_flights</span><span class="tok-p">,</span> <span class="tok-n">worse_flights</span> <span class="tok-o">=</span> <span class="tok-n">get_first_last_elem</span><span class="tok-p">(</span><span class="tok-n">rating_flights</span><span class="tok-p">,</span> <span class="tok-n">cmd</span><span class="tok-o">.</span><span class="tok-n">nb_ranking</span><span class="tok-p">)</span>
+
+    <span class="tok-c1"># Retrieve template of report</span>
+    <span class="tok-k">try</span><span class="tok-p">:</span>
+        <span class="tok-k">with</span> <span class="tok-nb">open</span><span class="tok-p">(</span><span class="tok-s2">&quot;report_Template.html&quot;</span><span class="tok-p">)</span> <span class="tok-k">as</span> <span class="tok-n">f</span><span class="tok-p">:</span>
+            <span class="tok-n">template</span> <span class="tok-o">=</span> <span class="tok-n">f</span><span class="tok-o">.</span><span class="tok-n">read</span><span class="tok-p">()</span>
+            <span class="tok-c1"># Replace single curly brackets by double ones in &lt;STYLE&gt; block</span>
+            <span class="tok-k">for</span> <span class="tok-n">block</span> <span class="tok-ow">in</span> <span class="tok-n">re</span><span class="tok-o">.</span><span class="tok-n">findall</span><span class="tok-p">(</span><span class="tok-sa">r</span><span class="tok-s2">&quot;&lt;style&gt;.*?&lt;/style&gt;&quot;</span><span class="tok-p">,</span> <span class="tok-n">template</span><span class="tok-p">,</span> <span class="tok-n">re</span><span class="tok-o">.</span><span class="tok-n">I</span> <span class="tok-o">|</span> <span class="tok-n">re</span><span class="tok-o">.</span><span class="tok-n">S</span><span class="tok-p">):</span>
+                <span class="tok-n">updated_block</span> <span class="tok-o">=</span> <span class="tok-n">re</span><span class="tok-o">.</span><span class="tok-n">sub</span><span class="tok-p">(</span><span class="tok-sa">r</span><span class="tok-s2">&quot;([{}])\1*&quot;</span><span class="tok-p">,</span> <span class="tok-sa">r</span><span class="tok-s2">&quot;\1&quot;</span> <span class="tok-o">*</span> <span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-n">block</span><span class="tok-p">)</span>
+                <span class="tok-n">template</span> <span class="tok-o">=</span> <span class="tok-n">template</span><span class="tok-o">.</span><span class="tok-n">replace</span><span class="tok-p">(</span><span class="tok-n">block</span><span class="tok-p">,</span> <span class="tok-n">updated_block</span><span class="tok-p">)</span>
+    <span class="tok-k">except</span> <span class="tok-ne">Exception</span> <span class="tok-k">as</span> <span class="tok-n">e</span><span class="tok-p">:</span>
+        <span class="tok-n">msg</span> <span class="tok-o">=</span> <span class="tok-n">f</span><span class="tok-s2">&quot;Error while reading template &#39;report_Template.html&#39; ({e})&quot;</span>
+        <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-n">msg</span><span class="tok-p">)</span>
+        <span class="tok-n">template</span> <span class="tok-o">=</span> <span class="tok-n">f</span><span class="tok-s2">&quot;&lt;html&gt;&lt;body&gt;{msg}&lt;/body&gt;&lt;/html&gt;&quot;</span>
+
+    <span class="tok-c1"># tag::report_content[]</span>
+    <span class="tok-c1"># Prepare the report</span>
+    <span class="tok-n">report</span> <span class="tok-o">=</span> <span class="tok-nb">dict</span><span class="tok-p">()</span>
+    <span class="tok-c1"># time</span>
+    <span class="tok-n">report</span><span class="tok-p">[</span><span class="tok-s2">&quot;date&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-nb">str</span><span class="tok-p">(</span><span class="tok-n">datetime</span><span class="tok-o">.</span><span class="tok-n">date</span><span class="tok-o">.</span><span class="tok-n">today</span><span class="tok-p">())</span>
+    <span class="tok-n">report</span><span class="tok-p">[</span><span class="tok-s2">&quot;time&quot;</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-nb">str</span><span class="tok-p">(</span><span class="tok-n">datetime</span><span class="tok-o">.</span><span class="tok-n">datetime</span><span class="tok-o">.</span><span class="tok-n">now</span><span class="tok-p">()</span><span class="tok-o">.</span><span class="tok-n">time</span><span class="tok-p">())[:</span><span class="tok-mi">8</span><span class="tok-p">]</span>
+    <span class="tok-c1"># rankings</span>
+    <span class="tok-k">def</span> <span class="tok-nf">store_ranking</span><span class="tok-p">(</span><span class="tok-n">key</span><span class="tok-p">,</span> <span class="tok-n">ranking</span><span class="tok-p">):</span>
+        <span class="tok-n">str_info</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;&lt;b&gt;{0}&lt;/b&gt; ({1}%, avg={2} min)&quot;</span>
+        <span class="tok-n">report</span><span class="tok-p">[</span><span class="tok-n">key</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;&lt;/li&gt;</span><span class="tok-se">\n</span><span class="tok-s2">&lt;li&gt;&quot;</span><span class="tok-o">.</span><span class="tok-n">join</span><span class="tok-p">([</span><span class="tok-n">str_info</span><span class="tok-o">.</span><span class="tok-n">format</span><span class="tok-p">(</span><span class="tok-o">*</span><span class="tok-n">t</span><span class="tok-p">)</span> <span class="tok-k">for</span> <span class="tok-n">t</span> <span class="tok-ow">in</span> <span class="tok-n">ranking</span><span class="tok-p">])</span>
+
+    <span class="tok-n">store_ranking</span><span class="tok-p">(</span><span class="tok-s2">&quot;best_airlines&quot;</span><span class="tok-p">,</span> <span class="tok-n">best_airlines</span><span class="tok-p">)</span>
+    <span class="tok-n">store_ranking</span><span class="tok-p">(</span><span class="tok-s2">&quot;worse_airlines&quot;</span><span class="tok-p">,</span> <span class="tok-n">worse_airlines</span><span class="tok-p">)</span>
+    <span class="tok-n">store_ranking</span><span class="tok-p">(</span><span class="tok-s2">&quot;best_flights&quot;</span><span class="tok-p">,</span> <span class="tok-n">best_flights</span><span class="tok-p">)</span>
+    <span class="tok-n">store_ranking</span><span class="tok-p">(</span><span class="tok-s2">&quot;worse_flights&quot;</span><span class="tok-p">,</span> <span class="tok-n">worse_flights</span><span class="tok-p">)</span>
+
+    <span class="tok-c1"># Generate the report</span>
+    <span class="tok-n">report_content</span> <span class="tok-o">=</span> <span class="tok-n">template</span><span class="tok-o">.</span><span class="tok-n">format</span><span class="tok-p">(</span><span class="tok-o">**</span><span class="tok-n">report</span><span class="tok-p">)</span>
+    <span class="tok-c1"># end::report_content[]</span>
+    <span class="tok-k">try</span><span class="tok-p">:</span>
+        <span class="tok-k">with</span> <span class="tok-nb">open</span><span class="tok-p">(</span><span class="tok-n">cmd</span><span class="tok-o">.</span><span class="tok-n">report_path</span><span class="tok-p">,</span> <span class="tok-s2">&quot;w&quot;</span><span class="tok-p">)</span> <span class="tok-k">as</span> <span class="tok-n">f</span><span class="tok-p">:</span>
+            <span class="tok-n">f</span><span class="tok-o">.</span><span class="tok-n">write</span><span class="tok-p">(</span><span class="tok-n">report_content</span><span class="tok-p">)</span>
+    <span class="tok-k">except</span> <span class="tok-ne">Exception</span> <span class="tok-k">as</span> <span class="tok-n">e</span><span class="tok-p">:</span>
+        <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-n">f</span><span class="tok-s2">&quot;Error while trying to write in &#39;{cmd.report_path}&#39; ({e})&quot;</span><span class="tok-p">)</span>
+    <span class="tok-k">else</span><span class="tok-p">:</span>
+        <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-n">f</span><span class="tok-s2">&quot;Successfully wrote report {cmd.report_path!r}&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-c1"># end::main_function[]</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-26 16:54:27 China Standard Time
+Last updated 2018-08-28 19:58:43 China Standard Time
 </div>
 </div>
 </body>

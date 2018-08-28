@@ -124,20 +124,42 @@ TIP: We recommend to create a function `get_delay` to compute the delay (in minu
 
 === Main Program (_processRecords.py_)
 
-Function `read_flight_records`:
+==== Function *read_flight_records*
 
-* _Input_: input file name
+* _Input_: input file name (string)
 * _Output_: list of take off records, each element is a dictionary with following keys: +
    *date*, *time*, *code*, *airline*, *destination*, and *take-off*
 
+.Example of output
+[source]
+----
+[
+  {
+    "date":"2018-02-29", "time":"15:25", "code":"MU123",
+    "airline":"China Eastern", "destination":"Bali", "take-off":"15:45"
+  },
+  {
+    "date":"2018-02-29", "time":"15:35", "code":"AF123",
+    "airline":"Air France", "destination":"Paris", "take-off":"15:50"
+  }
+]
+----
 
-Function `get_ratings_airlines`:
+==== Function *get_ratings_airlines*
 
 * _Input_: list of landing records returned by `read_flight_records`
 * _Output_: dictionary with key=airline name, value=Object of class *Airline* with all the records of that airline
 
+.Example of output
+[source]
+----
+{
+  "Air France":<Airline object>,
+  "China Eastern":<Airline object>
+}
+----
 
-Function `list_sorted_ratings`:
+==== Function *list_sorted_ratings*
 
 * _Input_: dictionary returned by `get_ratings_airlines`
 * _Output_: 2 lists sorted based on "% late" (lowest % first)
@@ -147,8 +169,14 @@ Function `list_sorted_ratings`:
 
 NOTE: all the results shall be integers
 
+.Example of output
+[source]
+----
+[("China Eastern", 10, 5), ("Air France", 11, 8), ...],
+[("MU123", 10, 5), ("AF123", 11, 8), ...],
+----
 
-Function `get_first_last_elem`:
+==== Function *get_first_last_elem*
 
 * _Input_:
 +
@@ -165,7 +193,7 @@ Function `get_first_last_elem`:
 <1> Notice that the last elements shall be in reversed order (i.e. starting from last element)  
 
 
-*Main function*:
+==== *Main function*
 
 * Parse arguments based on following usage:
 +
@@ -183,18 +211,262 @@ NOTE: default value of `<nb_ranking>` is 10
  - List of <nb_ranking> worse flights based on chances to be late
 
 
-== Airline Class
+== Check your code
 
-.airlines.py
-[source]
-----
-include::Solution/level_FINAL/airlines_tmp.py[]
-----
+You can use the following code to test your program.
 
-== Test Airline
+To run it you need first to install `pytest` and then run:
+
+====
+python -m pytest -v test_airlines.py
+====
 
 .test_airlines.py
 [source]
 ----
 include::Solution/level_FINAL/test_airlines.py[]
+----
+
+
+
+== Solution: Prototypes and Docstrings
+
+Below is the the prototype of the functions and a suggestion of docstring.
+
+=== airlines.py
+.airlines.py
+[source]
+----
+include::Solution/level_FINAL/airlines.py[tags=header]
+----
+
+=== processRecords.py
+.processRecords.py
+[source]
+----
+include::Solution/level_FINAL/processRecords.py[tags=header]
+----
+
+
+== Solution: Algorithms
+
+These are some simple hints to help you start: it provides the algorithm.
+
+=== airlines.py / get_delay
+
+This function takes 2 strings (e.g. "12:15" and "13:4") for respectively planned time and take-off.
+It returns a delay as integer.
+
+First, we need to convert the strings into time (2 possibilities):
+
+* Using `datetime.datetime.strptime(<time>, "%H:%M")` to convert into `datetime` objects
+* Calculating number of minutes in the day (i.e. `<HH> * 60 + <MM>`)
+
+We will then calculate the difference.
+
+We have 4 cases for the delay:
+
+. both times before midnight, take-off is after planned time
+. both times before midnight, take-off is before planned time
+. take-off is after midnight, planned time is before midnight
+. take-off is before midnight, planned time is after midnight
+
+To cover all cases, we can:
+
+* Return `-1 * delay(take_off, planned)` if take-off is before planned time [cases 2 and 3]
+* Return `difference - 1 day` if the difference is bigger than 12 hours [case 4]
+* Return the difference otherwise [case 1]
+
+=== airlines.py / Airline.add_info
+
+We need to save the destination into `self.destination` dictionary.
+There are 2 possibilities:
+
+* Store only when necessary
+  (i.e. check if `record["code"]` is already a key of `self.destination`)
+* Store systematically (i.e. no check like in previous solution)
+
+To store the dictionary with information we need to get 3 data
+
+* *date*: same as the one in `record` passed as argument
+* *time*: same as the one in `record` passed as argument
+* *delay*: computed by using function `get_delay`
+
+After creating the dictionary, append it to the list `self.flights[record[code]]`.
+
+[TIP]
+====
+To append the first element to a list, either
+
+* we create an empty list before appending
+* we use `defaultdict[list]` that sets the
+  value of dictionary as an empty list the first time it is called
+====
+
+=== airlines.py / Airline.get_rating_flight
+
+This function returns statistics on a given flight.
+
+TIP: We need to consider the case where the flight is not found in `self.flights`: an example would be to return `None, None`.
+
+We need to compute:
+
+* Percent of late flights (i.e. number of records with delay > 30 min / number of records for the flight)
+* Average of delay (i.e. total delay / number of records for the flight)
+
+To do that, we need 2 numbers initiated to 0: `nb_late` and `total_delay`.
+
+We loop each record and:
+
+* Increment `nb_late` by 1 if the delay is bigger than 30 minutes
+* Increment `total_delay` by the delay
+
+We finally return the integer values corresponding to:
+
+* `nb_late` / number of records for the flight * 100
+* `total_delay` / number of records for the flight
+
+=== airlines.py / Airline.get_rating_flight
+
+This function returns the same statistics for the airline on all its flights.
+
+2 possibilities:
+
+* Re-use the method `get_rating_flight` for each flight of the airline
+* Use similar algorithm of `get_rating_flight` with
+  - Loop for each flight of the airline
+  - Divide `nb_late` and `total_delay` by the total number of records for all the flights
+
+
+=== processRecords.py / read_flight_records
+
+We will first parse each line and split it into the elements to process
+
+* Solution #1: Using regular expression to ensure strict pattern matching
+* Solution #2: Using `<line>.split(",")` and stripping all spaces around each element
++
+IMPORTANT: For solution #2, we need to check the number of elements
+returned by the split to verify that we have as many elements as the keys.
+
+We will create a dictionary with following keys:
+[source]
+----
+record_keys = ["date", "time", "code", "airline", "destination", "take-off"]
+----
+
+We will match the extracted elements to `record_keys` by:
+
+* Using `zip(<lis1>, <list2>)` function
+* Using `dict(...)` on this zipped list to create a dictionary with key and value
+
+[NOTE]
+====
+The function `zip` transforms 2 list in a list of tuple. For example:
+
+[source]
+----
+>>> zip([1, 2, 3], ["a", "b", "c"])
+[(1, "a"), (2, "b"), (3, "c")]
+----
+====
+
+We will add the created dictionary to the list of records and will return this list.
+
+
+=== processRecords.py / get_ratings_airlines
+
+The purpose of this function is to create a dictionary with
+
+* key = airline name
+* value = "Airline" object with all the records of that airline
+
+To do that, we can loop each element of list of record (the input) and
+
+* Create a new *Airline* if it does not exist in the dictionary
+(and store it in the dictionary)
+* Add the record in the Airline object stored in the dictionary
+
+TIP: To create an *Airline* object, we need the airline code
+that corresponds to the first 2 letters of the flight code.
+For example, a flight code `"AF123"` would give the airline code `"AF"`.
+
+
+=== processRecords.py / list_sorted_ratings
+
+This function parse the dictionary created by `get_rating_airlines` and returns 2 lists:
+
+* List of tuples `(<airline name>, <% late>, <average delay>)`
+sorted by `<% late>% (ascending order) for all airlines
+* List of tuples `(<flight code>, <% late>, <average delay>)`
+sorted by `<% late>% (ascending order) for all flights of all airlines
+
+We will do:
+
+* Create 2 empty lists (`rating_airlines` and `rating_flights`)
+* Loop on each airline
+- Use `<airline>.get_rating_airline` method to get the rating and append to `rating_airlines`
+- Loop on each flight of the airline: use `<airline>.get_rating_flight` method to get the rating and append to `rating_flights`
+* Sort `rating_airlines` and `rating_flights` based on probability to be late
+
+
+=== processRecords.py / get_first_last_elem
+
+The purpose of this function is to return 2 lists:
+
+* First `nb_elem` elements of `sorted_list`
+* Last `nb_elem` elements of `sorted_list` in reversed order
+
+To do that, we can use the list index `[...:...]` and the `<list>.reverse()` function.
+
+
+=== processRecords.py / main function
+
+For the arguments, we will use the module `argparse` with its class `argparse.ArgumentParser`.
+
+.argparse.ArgumentParser for main function
+[source]
+----
+include::Solution/level_FINAL/processRecords.py[tags=argpase]
+----
+
+We can then use arguments:
+
+* `cmd.input_path`: path of file with data to parse with `read_flight_records`
+* `cmd.nb_ranking`: number of elements to keep in `get_first_last_elem`
+* `cmd.report_path`: path of HTML file to generate
+
+We need to:
+
+* Call `read_flight_records` and store the result
+* Use this result in `get_ratings_airlines` and store the result
+* Use this result in `list_sorted_ratings` and store the resulting lists
+* Use these two lists with `get_first_last_elem` to extract `cmd.nb_ranking` best/worse elements (airlines and flights)
+* Read the template `"report_Template.html"` and save its content
++
+TIP: We shall replace `{` by `{{` and `}` by `}}`
+in the `<style>...</style>` blocks of the HTML template
+
+* Generate the content of the report based on the template (see below)
+* Write the content in `cmd.report_path`
+
+.Get content of the report
+[source]
+----
+include::Solution/level_FINAL/processRecords.py[tags=report_content]
+----
+
+== Final Solution
+
+=== airlines.py
+.airlines.py
+[source]
+----
+include::Solution/level_FINAL/airlines.py[]
+----
+
+=== processRecords.py
+.processRecords.py
+[source]
+----
+include::Solution/level_FINAL/processRecords.py[]
 ----

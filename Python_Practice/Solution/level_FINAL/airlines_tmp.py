@@ -5,6 +5,8 @@ from datetime import datetime
 
 
 # #-- CALCULATION OF TIME DELTA --##
+# tag::get_delay[]
+# tag::header[]
 def get_delay(expected:str, takeoff:str) -> int:
     """\
     Measure the time difference in minutes between two times
@@ -14,6 +16,7 @@ def get_delay(expected:str, takeoff:str) -> int:
         expected: expected departure time (e.g. 23:45)
         takeoff: real departure time (e.g. 23:55)
     """
+    # end::header[]
     time_fmt = "%H:%M"
     # We convert with strptime and calculate the difference
     # If "takeoff < expected", the result is {day = -1, sec = delta + 1 day} 
@@ -30,19 +33,23 @@ def get_delay(expected:str, takeoff:str) -> int:
         seconds = delta.seconds
     return int(seconds / 60)
 
+# end::get_delay[]
 
 
 
+# tag::header[]
 class Airline():
     """Class describing an airline with records"""
 
     def __init__(self, name, code):
         """Creation of an airline with records"""
+        # end::header[]
         self.name = name
         self.code = code
         self.flights = defaultdict(list)
         self.destination = dict()
 
+    # tag::header[]
     def add_info(self, record):
         """Add flight information, create flight if it does not exist
 
@@ -54,6 +61,7 @@ class Airline():
                 * 'destination'
                 * 'take-off': real take-off time, stored as a string
         """
+        # end::header[]
         code = record["code"]
 
         # Save destination
