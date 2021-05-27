@@ -1,0 +1,602 @@
+= Wrap-Up Session for Python
+Jeff Thuong @UnpackAI <jeff.thuong@gmail.com>
+:imagesdir: images
+:source-language: python
+:icons: font
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:pygments-style: manni
+:title-slide-background-image: 70s.jpg
+:title-slide-transition: zoom
+:title-slide-transition-speed: fast
+:revealjsdir: https://cdn.jsdelivr.net/npm/reveal.js@3.9.2
+:revealjs_history: true
+ifdef::backend-revealjs[:source-highlighter: highlightjs]
+ifndef::backend-revealjs[:sectnums:]
+ifndef::backend-revealjs[:toc: left]
+:revealjs_plugins: revealjs-plugins.js
+:revealjs_parallaxBackgroundImage: images/tech-green.jpg
+:revealjs_parallaxBackgroundSize: 2100px 1100px
+
+// cspell:word Colab, Jython, Miniconda, conda, Google, Jupyter, ifdef, ifndef
+
+
+== Different Python distributions
+
+1. CPython: the standard implementation (https://www.python.org)
+2. Anaconda: super-packed distribution for science (Data Science, ML, AI, NLP, ...)
+3. Miniconda: light version of Anaconda
+4. etc. (e.g. PyPy, Jython, IronPython)
+
+ifdef::backend-revealjs[]
+=== Anaconda vs Python
+https://www.differencebetween.com/difference-between-anaconda-and-vs-python/
+
+* Python is more agile than anaconda is.
+* Anaconda is heavier, but python is longer.
+* Anacondas are native to South America while
+  pythons are naturally found in Asian and African tropics icon:smile[].
+
+[.columns]
+=== Anaconda vs \(C)Python
+
+[.column]
+* Exclusively for Data Science, ML, AI, etc.
+* Heavy install (4 GB)
+* A bit slower
+* Packages in many languages
+
+[.column]
+* Versatile
+* Light installation
+* A bit faster +
+  _(PyPy even faster)_
+* Package only in CPython
+endif::[]
+
+ifndef::backend-revealjs[]
+*CPython*:
+
+* Usually the version you install (and the one you can find on python.org)
+* Implementation using compiled C code for implementing some core features
+* Very versatile (not only data science, ML, AI, etc.) and faster than Anaconda
+* Modules for data science or ML are not installed by default but you can install them manually
+* The installer is light
+* New modules installed via `pip` but modules only written in CPython
+
+
+*Anaconda*:
+
+* Distribution of the Python and R programming languages for
+scientific computing
+  - data science
+  - machine learning applications
+  - large-scale data processing
+  - predictive analytics
+  - etc.
+* Aims to simplify package management and deployment
+(i.e. everything is provided in the installer and can install easily packages)
+* Installer includes  many libraries essential to data science and ML (=> heavy: ~4GB)
+* Main package installer is `conda`, but `pip` is also provided
+* Support packages from multiple languages
+* Execution is a bit slower than CPython
+
+*In summary*: +
+Pick Anaconda if you run Machine Learning on your machine, and Python otherwise.
+
+You can find some details https://ssiddique.info/anaconda-vs-python.html[here]
+endif::[]
+
+=== How to install modules
+
+* `pip install <module>` (for CPython)
+*  `conda install <module>` (for Anaconda)
+
+[source,shell]
+----
+> pip install numpy
+Collecting numpy
+  Downloading numpy-1.20.2-cp37-cp37m-win32.whl (11.3 MB)
+     |████████████████████████████████| 11.3 MB 2.2 MB/s
+Installing collected packages: numpy
+Successfully installed numpy-1.20.2
+----
+
+ifdef::backend-revealjs[=== !]
+In Jupyter or Google Colab (e.g. `numpy`):
+
+*CPython*:
+```
+!pip install -Uqq numpy
+```
+
+*Anaconda*:
+```
+import sys
+!conda install --yes --prefix {sys.prefix} numpy
+```
+
+== Jupyter Notebooks (.ipynb)
+
+* Notebook-based code editor
+* Usually run online (but can aslo works offline)
+* Mix code + text + visualization (e.g. graphs or tables)
+* Useful when doing research (e.g. data science)
+
+NOTE: Google Colab is based on Jupyter
+
+=== Benefits of "IDE" (vs Jupyter)
+
+* Shortcut & easier navigation
+* Syntax highlight
+* Auto-completion and hints
+* Debugging
+* Linting (i.e. check)
+* Many plugins to improve experience
+
+TIP: VS Code is an IDE that can run Jupyter
+
+=== Demo of Google Colab
+
+https://colab.research.google.com/notebooks/intro.ipynb
+
+* Adding a cell (text / code), moving, or deleting
+* Running a cell _(Ctrl + ENTER)_
+* (Un)Commenting a line _(Ctrl + /)_
+* Scratch cells _(Ctrl + Alt + N)_
+* Command Palette _(Ctrl + Shift + P)_
+* Snippets _(Ctrl + Alt + P)_
+* Expanding / Collapsing sections
+
+ifndef::backend-revealjs[]
+
+TIP: 2 useful links about Colab:
+a https://www.tutorialspoint.com/google_colab/google_colab_quick_guide.htm[tutorial]
+and some https://amitness.com/2020/06/google-colaboratory-tips/[tips]
+
+
+=== A bit about Markdown
+
+Text in notebooks is formatted using *Markdown*.
+
+[source,Markdown]
+----
+# Main title
+
+## Sub-section
+
+**This is bold**
+*This is italics*
+
+Code on a single line: `print("Hello, unpackAI")`
+```python
+# code block
+print("this is some code")
+```
+----
+
+There are many tutorial available for Markdown, if you are interested.
+This is an interactive tutorial to learn it: https://www.markdowntutorial.com/
+
+TIP: Google Colab, Kaggle, etc. provides button to help formatting (like MS Word)
+so you don't necessarily need to learn it
+
+endif::[]
+
+== Syntax: List Comprehensions
+
+\... actually mainly about List comprehensions icon:list-ol[]
+
+Refer to https://www.kaggle.com/learn/python[Kaggle Training]
+for more syntax of Python
+
+=== A first example
+
+https://www.kaggle.com/colinmorris/loops-and-list-comprehensions?scriptVersionId=43798669&cellId=12[Kaggle Course on comprehensions]
+
+*Without List Comprehension*
+[source]
+----
+squares = []
+for number in range(10):
+    squares.append(number**2)
+----
+
+*With List Comprehension*
+[source]
+----
+squares = [n**2 for n in range(10)]
+----
+
+ifdef::backend-revealjs[=== "Smart filtering"]
+
+*Filter without List Comprehension*
+[source]
+----
+squares_even = []
+for number in range(10):
+    if number % 2 == 0:
+        squares_even.append(number**2)
+----
+
+*Filter with List Comprehension*
+[source]
+----
+squares = [n**2 for n in range(10) if n % 2 == 0]
+----
+
+=== Benefits of Comprehensions
+
+* *Short and clean*
+* *Flexible* (list elements, apply function, filter)
+* *Faster* (no need to append 1 by 1)
+* *Less memory* (only storing final list)
+* *Polyvalent* (list, set, dictionary, and generators)
+
+=== When to use for-loop then?
+
+*Rule of thumb*:
+
+* `For` loops when processing elements one by one
+* List comprehensions when returning a list
+
+[source]
+----
+for img in list_images:
+    download_img(img)
+    print(f"Image {img} downloaded")
+
+png = [img for img in list_images if ".png" in img]
+----
+
+=== Other Comprehensions
+
+[source, highlight=..|1..2|4..5]
+----
+first_letter = {name[0] for name in list_names}  # set <1>
+squares = {n:n**2 for n in range(10)}  # dictionaries <2>
+
+# Generators (useful when big list or big elements)
+sum_squares = sum(n**2 for n in range(1_000_000))  # <3>
+----
+<1> `{ ... }` instead of `[ ... ]`
+<2> `{ key:value ... }` instead of `[ ... ]`
+<3> Note that we don't have a `[ ... ]`
+
+ifndef::backend-revealjs[]
+=== Generator Expression
+
+* Take one item at a time ("lazy")
+* Nothing is stored in memory
+* Cannot go back (only moving forward)
+
+This is very useful when working with big data or with costly functions
+(that we want to run only when we needed).
+
+*Example:* Panda DataFrame from data on the web
+
+[source]
+----
+data = (parse_online_csv(csv_url) for url in list_urls)
+headers = ["column_1", "column_2", ...]
+df = pd.DataFrame(chain(*data), columns=headers)
+----
+
+You can refer to this post for usage of generator with `any` or `all` function:
+https://eklitzke.org/generator-comprehensions-and-using-any-and-all-in-python
+
+endif::[]
+
+== Using modules
+
+Import module
+```
+import sys
+```
+
+Import module with a little nickname
+```
+import numpy as np
+```
+
+Import part of the module
+```
+from <module> import func1, func2, class1, cst1
+```
+
+Import part of the module with a nickname
+```
+from matplotlib import pyplot as plt
+```
+
+ifndef::backend-revealjs[]
+=== Avoid import "star"
+
+Usually, it is recommended to *NEVER* do a "star import" (like for example, avoid doing `from sys import *`).
+
+The reasons are the following:
+
+* Hard to read
+* Mystery about what is imported
+* Where is a function coming from
+* Potential conflict of names (e.g. a function in your module will replace a core function of python)
+
+This post is talking about this:
+https://www.geeksforgeeks.org/why-import-star-in-python-is-a-bad-idea/
+
+*HOWEVER*, in few circumstances, you might have to use it.
+
+For example, you will see it during *fast.ai* bootcamp, when using `fastbook`:
+[source]
+----
+from fastbook import *
+from fastai.vision.all import *
+from nbdev.showdoc import *
+----
+
+Just follow the fast.ai tutorial: they have their reason to import it like that.
+
+NOTE: If you want to learn more, the following
+https://stackoverflow.com/questions/67232721/why-fastbook-fast-ai-is-using-a-star-import[question]
+in StackOverflow is trying to understand why it is like this
+endif::[]
+
+=== Example
+
+[source,highlight=..|1..3|6..7|9]
+----
+import sys
+import pandas as pd
+from datetime import datetime  # <1>
+
+values = [
+    ["John", datetime(2000, 1, 1)],
+    ["Jack", datetime(2021, 4, 24)]
+]
+df = pd.DataFrame(values, columns=["Name", "Birthday"])  # <2>
+print(df.dtypes)
+df
+----
+
+<1> First `datetime` is the module, +
+    Second one is a class for date & time
+<2> We use with `<module>.<element>`
+
+== Help & Debugging icon:bug[]
+
+* `help(<something>)`: print detailed help
+* `?<something>`: open help panel on this something
+* `??<something>`: same as `?` but more detailed
+
+NOTE: `help` is common to Python. +
+`?` and `??` are specific to notebooks.
+
+ifdef::backend-revealjs[DEMO!!]
+
+=== Errors and Exceptions
+
+[source,highlight=..|1..2|4..9]
+----
+my_list = [1, 2, 3, 4]
+val = my_list[4]
+--------------------------------------------
+Traceback (most recent call last)
+<ipython-input-5-e48a183ea1a4> in <module>
+      1 list = [1, 2, 3, 4]
+----> 2 val = list[4] <1>
+
+IndexError: list index out of range <2>
+----
+[%step]
+<1> Location of the exception
+<2> Type (IndexError) and detail of exception
+
+ifdef::backend-revealjs[=== !]
+
+.Some common error
+[source]
+----
+if True:
+print("aa")
+--------------------------------------------
+  File "<ipython-input-1-e0adb100d43c>", line 2
+    print("aa")
+        ^
+IndentationError: expected an indented block
+----
+
+WARNING: Be careful of putting tabs correctly in your code
+
+ifdef::backend-revealjs[=== How to solve exceptions?]
+ifndef::backend-revealjs[*How to solve exceptions?*]
+
+1. Do nothing and let it crash (it's the fault of the user!)
+2. Understand the issue and fix the code
+3. Add some check before
+4. Add a `try ... except`
+
+[source,highlight=..|1..2|4..8]
+----
+if len(my_list) >= 5:  # <3>
+    val = my_list[4]
+
+try:  # <4>
+    val = my_list[4]
+except IndexError as e:
+    print(f"WARNING: cannot get index: {e}")
+    val = -1  # or another default value
+----
+
+ifndef::backend-revealjs[]
+
+Useful links about Exceptions and Traceback:
+* Intro on Exceptions: https://realpython.com/lessons/exceptions-and-how-raise-them/
+* Understanding Traceback: https://realpython.com/python-traceback/
+* Understanding Traceback (bis): https://realpython.com/lessons/python-traceback-overview/
+
+endif::[]
+
+=== Using StackOverflow
+
+Best resource to get help when writing code.
+
+---
+
+_Example: searching how to use GPU with fast.ai_
+https://stackoverflow.com/search?q=fastai+how+to+GPU
+
+NOTE: You need to create an account to ask questions
+
+TIP: Colab adds a button "Search StackOverflow" button
+when an exception is raised. Youpee!!
+
+=== Live coding in Colab
+
+* Solving exception
+* Basic debugging
+
+https://colab.research.google.com/notebooks/empty.ipynb
+
+== How to manipulate paths
+
+* Python version 2.7 (deprecated): using `os.path`
+* Python version 3.x: using `pathlib.Path`
+
+https://docs.python.org/3/library/pathlib.html[*pathlib*]
+is the most convenient way to handle
+paths, files, and directories (e.g. reading a file)
+
+[source,highlight=..|1..3|5..]
+----
+import json
+from pathlib import Path
+data_dir = Path("C:/Data")
+
+json_path = data_dir / "students.json"
+if json_path.suffix == ".json":
+    data = json.loads(json_path.read_text())
+----
+
+=== Pathlib: constructing a path
+
+[source]
+----
+drive = Path("C:/")    # <1>
+data_dir = drive / "unpackAI" / "Data"  # <2>
+for csv_path in data_dir.glob("*.csv"):  # <3>
+    json_path = csv_path.with_suffix(".json")  # <4>
+    convert_csv_2_json(csv_path, json_path)
+----
+<1> Construction with `Path(...)`
+<2> Creating children path with `/`
+<3> List files with `glob` or `rglob` (recursive)
+<4> Replacing part of path with `with_suffix`, `with_name`, or `with_stem` (before extension)
+
+ifdef::backend-revealjs[]
+[.columns]
+=== Pathlib: most useful functions
+
+[.column]
+* path.parent
+* path.name
+* path.suffix
+* path.with_name(...)
+* dir_path.glob
+* dir_path.rglob
+* dir_path.mkdir(...)
+
+[.column]
+* path.exists()
+* path.is_file()
+* path.is_dir()
+* path.read_text()
+* path.write_text(...)
+* path.rename(...)
+* path.unlink()
+
+endif::[]
+
+ifndef::backend-revealjs[]
+=== Pathlib: useful functions
+
+```
+path = Path("C:/dir/killer_data.csv")
+```
+
+.List of most useful functions
+|===
+|function | Result
+
+|`path.name` | killer_data.csv
+|`path.suffix` | .csv
+|`path.stem` | killer_data
+|`path.parent` | Path("C:/dir")
+
+|`path.as_posix()` | C:/dir/killer_data.csv
+|`str(path)` | C:\\dir\\killer_data.csv
+|`path.with_suffix(".py")` | Path("C:/dir/killer_data.py")
+|`path.with_stem("toto")` | Path("C:/dir/toto.csv")
+|`path.with_name("toto.txt")` |  Path("C:/dir/toto.txt")
+
+|`path.glob("img*.png")` | "img..." PNG files
+|`path.rglob("data-*.csv")` | Recursive search
+|`path.with_stem("toto")` | Path("C:/dir/toto.csv")
+|`path.with_name("toto.txt")` |  Path("C:/dir/toto.txt")
+
+|`path.read_text()` | Content of file (for text)
+|`path.write_text(content)` | Write content to file
+
+|`path.read_text()` | Content of file (for text)
+|`path.write_text(content)` | Write content to file
+
+|`path.exists()` | True if path exists
+|`path.is_file()` | True if path exists and is a file
+|`path.is_dir()` | True if path exists and is a directory
+
+|`path.rename(new_path)` | Rename file
+|`path.replace(new_path)` | Move file (same thing actually)
+|`path.unlink()` | Delete file
+|`path.mkdir()` | Create a directory
+
+|===
+
+endif::[]
+
+=== Pathlib: creation of directory
+
+[source]
+----
+dir_path.mkdir(parents=True, exist_ok=True)  # <1><2>
+----
+<1> `parents=True`: create parents directory if needed
+<2> `exist_ok=True`: do nothing if directory already exists
+
+Click https://docs.python.org/3/library/pathlib.html#pathlib.Path.mkdir[here]
+for more details
+
+
+== Live Coding next Tuesday
+
+*Next Tuesday* (Mentoring Session)
+
+* Solving challenge live!! icon:laptop-code[]* (~5 minutes)
+* Sharing how you use Python at work (for Experienced Programmers)
+
+NOTE: Of course, you can prepare before if you want
+
+ifdef::backend-revealjs[]
+=== icon:code[] Demo of live-coding icon:code[]
+https://www.codewars.com/kata/555bfd6f9f9f52680f0000c5/python
+
+
+== !
+```
+
+  |\_/|        ****************************
+ / @ @ \       *                          *    (\_/)
+( > º < )      *      QUESTION TIME!      *   (='.'=)
+ `>>x<<´       *                          *   (")_(")
+ /  O  \       ****************************
+
+```
+endif::[]

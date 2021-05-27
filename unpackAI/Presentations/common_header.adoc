@@ -1,0 +1,17 @@
+:imagesdir: images
+:source-language: python
+:icons: font
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:pygments-style: manni
+:title-slide-background-image: 70s.jpg
+:title-slide-transition: zoom
+:title-slide-transition-speed: fast
+:revealjsdir: https://cdn.jsdelivr.net/npm/reveal.js@3.9.2
+:revealjs_history: true
+ifdef::backend-revealjs[:source-highlighter: highlightjs]
+ifndef::backend-revealjs[:sectnums:]
+ifndef::backend-revealjs[:toc: left]
+:revealjs_plugins: revealjs-plugins.js
+:revealjs_parallaxBackgroundImage: images/tech-green.jpg
+:revealjs_parallaxBackgroundSize: 2100px 1100px

@@ -1,0 +1,88 @@
+= Wrap-Up of Week #01 of Python Bootcamp
+Jeff Thuong @UnpackAI <jeff.thuong@gmail.com>
+include::common_header.adoc[]
+
+== Python Fundamentals (Lesson #1)
+
+=== Variables
+
+*variable* = nickname for a data (number, text, ...)
+
+We give a value ("*assignment*") like this:
+
+[source]
+----
+name = "Python Bootcamp"  # <1>
+nb_weeks = 4
+----
+<1> a "text" is called a *string*
+
+ifdef::backend-revealjs[=== !]
+
+Super Flexible!!
+
+[source]
+----
+a = 100
+a = 200  # <1>
+a = "123"  # <2>
+----
+<1> A variable can be replaced
+<2> The type of data can be changed
+
+ifdef::backend-revealjs[=== !]
+ifndef::backend-revealjs[==== Using variables]
+
+Variables can be used by writing the name
+
+[source]
+----
+nb = 1
+print(nb + 2)  # 3 <1>
+country = "China"
+print("My country: " + country)  # My country: China <2>
+print(1 + "2")  # => ERROR <3>
+----
+<1> `print` will display what's inside the parenthesis
+<2> Notice that we can also add strings
+<3> ... but we CANNOT add a number and a string
+(even it looks like a number) => it will be an error
+
+
+
+ifdef::backend-revealjs[=== !]
+ifndef::backend-revealjs[==== f-strings]
+
+*f-strings*: Best way to put variables in strings
+
+[source]
+----
+name = "Jeff"
+year = 2004
+print(f"My name is {name} and I have been in China since {year}")
+# My name is Jeff and I have been in China since 2004
+----
+
+1. `f` before the string: `f"..."`
+2. Variables in curly brackets (strings or numbers)
+
+NOTE: Appeared in Python version 3.4. +
+Before, people used something called `format`
+
+ifdef::backend-revealjs[=== !]
+ifndef::backend-revealjs[==== Asking user for value]
+
+You can store a value entered by someone to interact
+
+[source]
+----
+name = input("Please enter your name:")  # <1>
+print(f"Hello, {name}: how are you today?")
+----
+<1> The text after `input` is the question. +
+The answer is stored in `name`
+
+TIP: `input` is actually not used that much in real
+
+== Logics (Lesson #2)
+

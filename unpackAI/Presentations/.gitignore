@@ -1,0 +1,8 @@
+/*.zip
+/PythonCrashCourse-TA.html
+/PythonCrashCourse-TA_pres.html
+PythonCrashCourse-TA.adoc
+.mypy_cache/
+*.jpg
+*.pyc
+test-output.xml
