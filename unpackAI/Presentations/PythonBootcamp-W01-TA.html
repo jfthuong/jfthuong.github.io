@@ -1010,7 +1010,7 @@ Previous code is better written like this:
 <span class="tok-n">div</span> <span class="tok-o">=</span> <span class="tok-n">x</span> <span class="tok-o">/</span> <span class="tok-mi">4</span>  <span class="tok-c1"># 2.5</span>
 <span class="tok-n">int_div</span> <span class="tok-o">=</span> <span class="tok-n">x</span> <span class="tok-o">//</span> <span class="tok-mi">4</span>  <span class="tok-c1"># 2 </span><i class="conum" data-value="1"></i><b>(1)</b>
 <span class="tok-n">x</span> <span class="tok-o">**</span> <span class="tok-n">y</span>  <span class="tok-c1"># 10 power 2 =&gt; 100</span>
-<span class="tok-n">m</span> <span class="tok-o">=</span> <span class="tok-mi">10</span> <span class="tok-o">%</span> <span class="tok-mi">3</span>  <span class="tok-c1"># 10 modulo 3 =&gt; 1 (10 = 3 * ... + 1)</span>
+<span class="tok-n">m</span> <span class="tok-o">=</span> <span class="tok-mi">10</span> <span class="tok-o">%</span> <span class="tok-mi">3</span>  <span class="tok-c1"># 10 modulo 3 =&gt; 1 (remain of division by 3)</span>
 <span class="tok-nb">round</span><span class="tok-p">(</span><span class="tok-mf">10.5</span><span class="tok-p">)</span>  <span class="tok-c1"># 10</span>
 <span class="tok-nb">round</span><span class="tok-p">(</span><span class="tok-mf">10.6</span><span class="tok-p">)</span>  <span class="tok-c1"># 11</span></code></pre>
 </div>
@@ -1118,7 +1118,8 @@ and better (takes less memory and CPU)</td>
 <span class="tok-n">numbers</span><span class="tok-p">[:</span><span class="tok-mi">3</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;012&quot; </span><i class="conum" data-value="2"></i><b>(2)</b>
 <span class="tok-n">numbers</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">:]</span>  <span class="tok-c1"># &quot;23456789&quot; </span><i class="conum" data-value="3"></i><b>(3)</b>
 <span class="tok-n">numbers</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">:</span><span class="tok-mi">7</span><span class="tok-p">:</span><span class="tok-mi">2</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;135&quot; </span><i class="conum" data-value="4"></i><b>(4)</b>
-<span class="tok-n">numbers</span><span class="tok-p">[::</span><span class="tok-mi">2</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;02468&quot;</span></code></pre>
+<span class="tok-n">numbers</span><span class="tok-p">[::</span><span class="tok-mi">2</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;02468&quot;</span>
+<span class="tok-n">numbers</span><span class="tok-p">[::</span><span class="tok-o">-</span><span class="tok-mi">1</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;9876543210&quot;</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1137,7 +1138,7 @@ and better (takes less memory and CPU)</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>3rd index sets the step (every 2 characters)</td>
+<td>3rd index sets the step (here: every 2 characters)</td>
 </tr>
 </table>
 </div>
@@ -1275,7 +1276,7 @@ for more details</td>
 <pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">txt</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;Hello, how are you?&quot;</span>
 <span class="tok-n">pos_first_o</span> <span class="tok-o">=</span> <span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">index</span><span class="tok-p">(</span><span class="tok-s2">&quot;o&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 4</span>
 <span class="tok-n">pos_lo</span> <span class="tok-o">=</span> <span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">index</span><span class="tok-p">(</span><span class="tok-s2">&quot;lo&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 3</span>
-<span class="tok-n">pos_last_o_</span> <span class="tok-o">=</span> <span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">rindex</span><span class="tok-p">(</span><span class="tok-s2">&quot;o&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 16</span>
+<span class="tok-n">pos_last_o</span> <span class="tok-o">=</span> <span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">rindex</span><span class="tok-p">(</span><span class="tok-s2">&quot;o&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 16</span>
 
 <span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">count</span><span class="tok-p">(</span><span class="tok-s2">&quot;o&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 3</span>
 <span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">count</span><span class="tok-p">(</span><span class="tok-s2">&quot;h&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 1 (&quot;H&quot; does not count)</span>
@@ -1384,7 +1385,7 @@ when we are not sure if it is present (<code>-1</code> = not found)</td>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Be careful of putting tabs correctly in your code
+Be careful of putting correct indent in the code
 </td>
 </tr>
 </table>
@@ -1442,7 +1443,7 @@ Be careful of putting tabs correctly in your code
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-05-28 14:06:26 +0800
+Last updated 2021-05-28 21:43:48 +0800
 </div>
 </div>
 </body>

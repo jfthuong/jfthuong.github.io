@@ -485,7 +485,7 @@ z = x / y  # 5
 div = x / 4  # 2.5
 int_div = x // 4  # 2 <i class="conum" data-value="1"></i><b>(1)</b>
 x ** y  # 10 power 2 =&gt; 100
-m = 10 % 3  # 10 modulo 3 =&gt; 1 (10 = 3 * ... + 1)
+m = 10 % 3  # 10 modulo 3 =&gt; 1 (remain of division by 3)
 round(10.5)  # 10
 round(10.6)  # 11</code></pre></div></div>
 <div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>Integer division returns the "floor" integer</td></tr></table></div></div></section><section id="_changing_value_of_variable"><h2>Changing value of variable</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-python hljs" data-noescape="true" data-lang="python">x = x * 3  <i class="conum" data-value="1"></i><b>(1)</b>
@@ -512,8 +512,9 @@ numbers[1:3]  # "12" <i class="conum" data-value="1"></i><b>(1)</b>
 numbers[:3]  # "012" <i class="conum" data-value="2"></i><b>(2)</b>
 numbers[2:]  # "23456789" <i class="conum" data-value="3"></i><b>(3)</b>
 numbers[1:7:2]  # "135" <i class="conum" data-value="4"></i><b>(4)</b>
-numbers[::2]  # "02468"</code></pre></div></div>
-<div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>2nd index after the <code>:</code> is excluded</td></tr><tr><td><i class="conum" data-value="2"></i><b>2</b></td><td>If 1st index is omitted, it is from the start</td></tr><tr><td><i class="conum" data-value="3"></i><b>3</b></td><td>If 2nd index is omitted, it is until the end</td></tr><tr><td><i class="conum" data-value="4"></i><b>4</b></td><td>3rd index sets the step (every 2 characters)</td></tr></table></div></div></section><section id="_operations_on_strings"><h2>Operations on strings</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-python hljs" data-noescape="true" data-lang="python">letters = "ab" + "c"  # x = "abc"
+numbers[::2]  # "02468"
+numbers[::-1]  # "9876543210"</code></pre></div></div>
+<div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>2nd index after the <code>:</code> is excluded</td></tr><tr><td><i class="conum" data-value="2"></i><b>2</b></td><td>If 1st index is omitted, it is from the start</td></tr><tr><td><i class="conum" data-value="3"></i><b>3</b></td><td>If 2nd index is omitted, it is until the end</td></tr><tr><td><i class="conum" data-value="4"></i><b>4</b></td><td>3rd index sets the step (here: every 2 characters)</td></tr></table></div></div></section><section id="_operations_on_strings"><h2>Operations on strings</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-python hljs" data-noescape="true" data-lang="python">letters = "ab" + "c"  # x = "abc"
 letters += "def"  # x = "abcdef"
 n = len(letters)  # n = 6
 
@@ -557,7 +558,7 @@ See <a href="https://stackoverflow.com/questions/44891070/whats-the-difference-b
 for more details</td></tr></table></div></div></section><section id="_methods_to_search_in_text"><h2>Methods to search in text</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-python hljs" data-noescape="true" data-lang="python">txt = "Hello, how are you?"
 pos_first_o = txt.index("o")  # 4
 pos_lo = txt.index("lo")  # 3
-pos_last_o_ = txt.rindex("o")  # 16
+pos_last_o = txt.rindex("o")  # 16
 
 txt.count("o")  # 3
 txt.count("h")  # 1 ("H" does not count)
@@ -590,7 +591,7 @@ print("aa")
     print("aa")
         ^
 IndentationError: expected an indented block</code></pre></div></div>
-<div class="admonitionblock warning"><table><tr><td class="icon"><i class="fa fa-warning" title="Warning"></i></td><td class="content">Be careful of putting tabs correctly in your code</td></tr></table></div></div></section><section id="_how_to_solve_exceptions"><h2>How to solve exceptions?</h2><div class="slide-content"><div class="olist arabic"><ol class="arabic"><li><p>Do nothing and let it crash (it&#8217;s the fault of the user!)</p></li><li><p>Understand the issue and fix the code</p></li><li><p>Add some check before</p></li><li><p>Add a <code>try &#8230;&#8203; except</code></p></li></ol></div>
+<div class="admonitionblock warning"><table><tr><td class="icon"><i class="fa fa-warning" title="Warning"></i></td><td class="content">Be careful of putting correct indent in the code</td></tr></table></div></div></section><section id="_how_to_solve_exceptions"><h2>How to solve exceptions?</h2><div class="slide-content"><div class="olist arabic"><ol class="arabic"><li><p>Do nothing and let it crash (it&#8217;s the fault of the user!)</p></li><li><p>Understand the issue and fix the code</p></li><li><p>Add some check before</p></li><li><p>Add a <code>try &#8230;&#8203; except</code></p></li></ol></div>
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-python hljs" data-noescape="true" data-line-numbers="0,1,2,3,4,5,6,7,8|1,2|4,5,6,7,8" data-lang="python">if len(some_text) &gt;= 5:  <i class="conum" data-value="3"></i><b>(3)</b>
     char = some_text[4]
 
