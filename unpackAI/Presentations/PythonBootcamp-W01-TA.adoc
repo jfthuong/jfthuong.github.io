@@ -1,5 +1,5 @@
 = Wrap-Up of Week #01 of Python Bootcamp
-Jeff Thuong @UnpackAI <jeff.thuong@gmail.com>
+Jeff Thuong @UnpackAI <jeff.thuong[AT]gmail.com>
 include::common_header.adoc[]
 
 == Python Fundamentals (Lesson #1)
@@ -31,7 +31,6 @@ a = "123"  # <2>
 <2> The type of data can be changed
 
 ifdef::backend-revealjs[=== !]
-ifndef::backend-revealjs[==== Using variables]
 
 Variables can be used by writing the name
 
@@ -49,9 +48,30 @@ print(1 + "2")  # => ERROR <3>
 (even it looks like a number) => it will be an error
 
 
-
 ifdef::backend-revealjs[=== !]
-ifndef::backend-revealjs[==== f-strings]
+
+An error looks like this in Jupyter:
+
+[source]
+----
+x = 1
+y = '2'
+
+x + y
+----
+
+[source]
+----
+TypeError               Traceback (most recent call last)
+<ipython-input-33-3e7c08949ecc> in <module>
+      2 y = '2'
+      3 
+----> 4 x + y
+
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+----
+
+=== f-strings
 
 *f-strings*: Best way to put variables in strings
 
@@ -69,8 +89,7 @@ print(f"My name is {name} and I have been in China since {year}")
 NOTE: Appeared in Python version 3.4. +
 Before, people used something called `format`
 
-ifdef::backend-revealjs[=== !]
-ifndef::backend-revealjs[==== Asking user for value]
+=== Asking user for value
 
 You can store a value entered by someone to interact
 
@@ -86,3 +105,423 @@ TIP: `input` is actually not used that much in real
 
 == Logics (Lesson #2)
 
+=== "assign" vs "is equal to"
+
+[source]
+----
+x = 100  # => x has the value of 100 <1>
+x = 200
+x == 100  # => x is compared to 100 => False <2>
+x == 200  # => 200 is compared to 200 => True <3>
+----
+<1> one `=` sign means: +
+assign value on the right to variable on the left
+
+<2> two `=` signs mean: +
+compare left part to right part
+
+<3> Result of comparisons are `True` or `False`
+
+=== More Comparisons
+
+[source]
+----
+name = "IAkcapnu"
+name == "I Like Python"  # False
+name != "abcdef"  # True
+"Bob" < "Kim"  # True (alphabetical order) <1>
+100 == 4 * 25  # True
+200 < 100  # False
+200 <= 200  # True
+4_000_000 > 300  # True <2>
+3 >= 10  # False
+x = 10
+0 < x <= 100  # True <3>
+----
+<1> But upper case before lower case (i.e. "Z"<"a")
+<2> We can use `_` as a thousand separator
+<3> We can put several comparisons in sequence
+
+=== Combinations of conditions
+
+We can combine conditions
+[source]
+----
+a = 15
+(a != 10) and (a != 20)  # True <1>
+(a == 5) or (a == 15)  # True
+(a > 0) and (a == 10 or a == 20)  # False <2>
+a > 0 and a == 10 or a == 20 and a < 30   # ?? <3>
+
+----
+<1> Parentheses are not mandatory but it can help to make it clearer
+<2> We can combine `or` with `and`
+<3> Impossible to understand without parentheses
+
+
+ifdef::backend-revealjs[=== !]
+
+.Truth Table for OR
+[%header,cols="3"]
+|===
+^|`or` ^|True ^|False
+^|*True* ^|True ^|True
+^|*False* ^|True ^|False
+|===
+
+
+ifdef::backend-revealjs[=== !]
+
+.Truth Table for AND
+[%header,cols=""]
+|===
+^|`and` ^|True ^|False
+^|*True* ^|True ^|False
+^|*False* ^|False ^|False
+|===
+
+
+=== Setting up some logic
+
+[source]
+----
+if hour < 12:  # <1>
+    print("Have a good morning")  # <2>
+elif hour < 18:  # <3>
+    print("Have a good afternoon")
+else:  # <4>
+    print("Have a good evening")
+----
+<1> if _<condition>_: _<command to do something>_
+<2> Commands are indented (usually *4 spaces*)
+<3> Other condition if previous one not met +
+<4> What to do if no previous condition is met
+
+ifdef::backend-revealjs[=== !]
+
+TIP: We usually avoid typing the same code many times.
+Previous code is better written like this:
+
+[source]
+----
+if hour < 12:
+    time_of_day = "morning"
+elif hour < 14:
+    print("慢慢吃")  # <1>
+    time_of_day = "lunch"
+elif hour < 18:
+    time_of_day = "afternoon"
+else:
+    time_of_day = "evening"
+
+print(f"Have a good {time_of_day}")
+----
+<1> We cn have several `elif` and `commands`
+
+=== Conversion to Boolean
+
+All types of data can be converted to Booleans +
+(i.e. `True` / `False`):
+
+.Data to booleans
+[%header,cols="3"]
+|===
+^|Data ^|True ^|False
+
+^|number
+^|non null +
+(e.g. `13`)
+^|`0`
+
+^|string
+^|not empty +
+(e.g. `"Ahoy!"`)
+^|empty string (`""`)
+
+|===
+
+== Numbers (Lesson #3)
+
+=== Operations on integers
+
+[source]
+----
+x = 10
+y = 2
+z = x * y  # 20
+z = x / y  # 5
+div = x / 4  # 2.5
+int_div = x // 4  # 2 <1>
+x ** y  # 10 power 2 => 100
+m = 10 % 3  # 10 modulo 3 => 1 (10 = 3 * ... + 1)
+round(10.5)  # 10
+round(10.6)  # 11
+----
+<1> Integer division returns the "floor" integer
+
+=== Changing value of variable
+
+[source]
+----
+x = x * 3  # <1>
+
+x *= 3  # Multiply by 3 <2>
+x += 1  # Increment by 1
+x /= 2  # Divide by 2
+x //= 2  # Integer Divide by 2
+x **= 2  # Transform to square value
+x %= 2  # Get modulo of 2 (either 0 or 1)
+----
+<1> `=` is not the sign for equality :)
+<2> Same effect as `x = x * 3` but shorter
+and better (takes less memory and CPU)
+
+=== Other types of numbers
+
+* Complex number (e.g. `1 + 2.5j`)
+* Hexadecimal (e.g. `0xF`, equivalent to `15`)
+* Binary (e.g. `0x10` equivalent to `2` (2*1 + 1*0))
+
+=== Conversion of data
+
+[source]
+----
+int(12.5)  # 12
+float(3)  # 3.0
+int("10")  # 10
+float("3.14")  # 3.14
+str(12.5)  # "12.5"
+----
+
+
+== Strings (Lesson #4)
+
+=== Index of strings
+
+[source]
+----
+s = "abcdef"
+s[0]  # "a" <1>
+s[1]  # "b"
+s[-1]  # "f" <2>
+s[100]  # => Error
+----
+<1> Index always start at "0"
+<2> Negative index start from the end
+
+=== Slices of Strings
+
+[source]
+----
+numbers = "0123456789"
+numbers[1:3]  # "12" <1>
+numbers[:3]  # "012" <2>
+numbers[2:]  # "23456789" <3>
+numbers[1:7:2]  # "135" <4>
+numbers[::2]  # "02468"
+----
+<1> 2nd index after the `:` is excluded
+<2> If 1st index is omitted, it is from the start
+<3> If 2nd index is omitted, it is until the end
+<4> 3rd index sets the step (every 2 characters)
+
+=== Operations on strings
+
+[source]
+----
+letters = "ab" + "c"  # x = "abc"
+letters += "def"  # x = "abcdef"
+n = len(letters)  # n = 6
+
+char = "d"
+if char in letters:  # <1>
+    print(f"Letter {char} among {letters}")
+
+if letters[-1] in "aeiouy":
+    print(f"Text {letters} finishes by a vowel")
+----
+<1> Check if we have a substring: very useful!
+
+
+== Methods (Lesson #5)
+
+=== What are methods?
+
+Functions applied on objects (e.g. strings, integers, ...)
+```
+<object>.<method>(...)
+```
+
+=== Methods to remove spaces
+
+[source]
+----
+name = "   text with some spaces around       "
+name.strip()  # remove spaces on left and right
+name.strip("aeiouy")  # remove vowels on left and right
+name.lstrip()  # remove spaces on left
+name.rstrip()  # remove spaces on right
+
+name = name.strip() # <1>
+----
+<1> You should assign again if you want to modify
+
+IMPORTANT: The variable itself is not modified
+unless you re-assign it (e.g. `txt = txt.rstrip()`)!
+
+=== Methods to change text
+
+[source]
+----
+city = "bei hang"
+city = city.replace("hang", "Jing")  # city = "bei Jing"
+city.upper()  # "BEI JING"
+city.lower()  # "bei jing"
+city.title()  # "Bei Jing"
+city.capitalize()  # "Bei jing"
+
+"I am a cat, you are a cat".replace("cat", "man", 1)  # <1>
+# Only 1 replacement: "I am a man, you are a cat"
+----
+<1> We can apply methods directly on objects
+
+=== Methods to compare to patterns
+
+[source]
+----
+nb = "123"
+nb.isnumeric()  # True <1>
+
+txt = "unpackAI"
+txt.isalpha()  # True
+txt.isupper()  # False
+txt.islower()  # False
+txt.istitle()  # False
+----
+
+<1> Methods `str.isdigit()` and `str.isdecimal` are
+similar. +
+See https://stackoverflow.com/questions/44891070/whats-the-difference-between-str-isdigit-isnumeric-and-isdecimal-in-python[here]
+for more details
+
+=== Methods to search in text
+
+[source]
+----
+txt = "Hello, how are you?"
+pos_first_o = txt.index("o")  # 4
+pos_lo = txt.index("lo")  # 3
+pos_last_o_ = txt.rindex("o")  # 16
+
+txt.count("o")  # 3
+txt.count("h")  # 1 ("H" does not count)
+
+txt.index("Great!")  # => Error!
+txt.find("o")  # 3
+
+pos = txt.find("Great")  # <1>
+if pos != -1:
+    print(f"Found 'Great' in {txt}")
+----
+<1> It allows to look for position of a substring
+when we are not sure if it is present (`-1` = not found)
+
+
+== Help & Debugging icon:bug[]
+
+=== Help on Functions & Methods
+
+[source]
+----
+help(print)        # for functions
+help(str.replace)  # for methods
+----
+
+* `help(<something>)`: print detailed help
+* `?<something>`: open help panel on this something
+* `??<something>`: same as `?` but more detailed
+
+NOTE: `help` is common to Python. +
+`?` and `??` are specific to notebooks.
+
+
+=== Errors and Exceptions
+
+[source,highlight=..|1..2|4..9]
+----
+numbers = "1234"
+val = numbers[4]
+--------------------------------------------
+Traceback (most recent call last)
+<ipython-input-7-4a3d5111bc9a> in <module>
+      1 numbers = "1234"
+----> 2 val = numbers[4]  # <1>
+
+IndexError: string index out of range  <2>
+----
+[%step]
+<1> Location of the exception
+<2> Type (IndexError) and detail of exception
+
+ifdef::backend-revealjs[=== !]
+
+.Some common error
+[source]
+----
+if True:
+print("aa")
+--------------------------------------------
+  File "<ipython-input-1-e0adb100d43c>", line 2
+    print("aa")
+        ^
+IndentationError: expected an indented block
+----
+
+WARNING: Be careful of putting tabs correctly in your code
+
+ifdef::backend-revealjs[=== How to solve exceptions?]
+ifndef::backend-revealjs[*How to solve exceptions?*]
+
+1. Do nothing and let it crash (it's the fault of the user!)
+2. Understand the issue and fix the code
+3. Add some check before
+4. Add a `try ... except`
+
+[source,highlight=..|1..2|4..8]
+----
+if len(some_text) >= 5:  # <3>
+    char = some_text[4]
+
+try:  # <4>
+    char = some_text[4]
+except IndexError as e:
+    print(f"WARNING: cannot get index: {e}")
+    char = "!"  # or another default value
+----
+
+ifndef::backend-revealjs[]
+
+Useful links about Exceptions and Traceback:
+* Intro on Exceptions: https://realpython.com/lessons/exceptions-and-how-raise-them/
+* Understanding Traceback (video): https://realpython.com/lessons/python-traceback-overview/
+* Understanding Traceback (text): https://realpython.com/python-traceback/
+
+endif::[]
+
+
+ifdef::backend-revealjs[]
+== icon:code[] Demo of live-coding icon:code[]
+https://www.codewars.com/kata/555bfd6f9f9f52680f0000c5/python
+
+
+== !
+```
+
+  |\_/|        ****************************
+ / @ @ \       *                          *    (\_/)
+( > º < )      *      QUESTION TIME!      *   (='.'=)
+ `>>x<<´       *                          *   (")_(")
+ /  O  \       ****************************
+
+```
+endif::[]

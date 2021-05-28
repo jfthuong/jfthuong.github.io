@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.14">
-<meta name="author" content="Jeff Thuong @UnpackAI &lt;jeff.thuong@gmail.com&gt;">
+<meta name="author" content="Jeff Thuong @UnpackAI &lt;jeff.thuong[AT]gmail.com&gt;">
 <title>Wrap-Up of Week #01 of Python Bootcamp</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -512,7 +512,7 @@ pre.pygments .tok-il { color: #FF6600 } /* Literal.Number.Integer.Long */
 <div id="header">
 <h1>Wrap-Up of Week #01 of Python Bootcamp</h1>
 <div class="details">
-<span id="author" class="author">Jeff Thuong @UnpackAI &lt;jeff.thuong@gmail.com&gt;</span><br>
+<span id="author" class="author">Jeff Thuong @UnpackAI &lt;jeff.thuong[AT]gmail.com&gt;</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -520,9 +520,49 @@ pre.pygments .tok-il { color: #FF6600 } /* Literal.Number.Integer.Long */
 <li><a href="#_python_fundamentals_lesson_1">1. Python Fundamentals (Lesson #1)</a>
 <ul class="sectlevel2">
 <li><a href="#_variables">1.1. Variables</a></li>
+<li><a href="#_f_strings">1.2. f-strings</a></li>
+<li><a href="#_asking_user_for_value">1.3. Asking user for value</a></li>
 </ul>
 </li>
-<li><a href="#_logics_lesson_2">2. Logics (Lesson #2)</a></li>
+<li><a href="#_logics_lesson_2">2. Logics (Lesson #2)</a>
+<ul class="sectlevel2">
+<li><a href="#_assign_vs_is_equal_to">2.1. "assign" vs "is equal to"</a></li>
+<li><a href="#_more_comparisons">2.2. More Comparisons</a></li>
+<li><a href="#_combinations_of_conditions">2.3. Combinations of conditions</a></li>
+<li><a href="#_setting_up_some_logic">2.4. Setting up some logic</a></li>
+<li><a href="#_conversion_to_boolean">2.5. Conversion to Boolean</a></li>
+</ul>
+</li>
+<li><a href="#_numbers_lesson_3">3. Numbers (Lesson #3)</a>
+<ul class="sectlevel2">
+<li><a href="#_operations_on_integers">3.1. Operations on integers</a></li>
+<li><a href="#_changing_value_of_variable">3.2. Changing value of variable</a></li>
+<li><a href="#_other_types_of_numbers">3.3. Other types of numbers</a></li>
+<li><a href="#_conversion_of_data">3.4. Conversion of data</a></li>
+</ul>
+</li>
+<li><a href="#_strings_lesson_4">4. Strings (Lesson #4)</a>
+<ul class="sectlevel2">
+<li><a href="#_index_of_strings">4.1. Index of strings</a></li>
+<li><a href="#_slices_of_strings">4.2. Slices of Strings</a></li>
+<li><a href="#_operations_on_strings">4.3. Operations on strings</a></li>
+</ul>
+</li>
+<li><a href="#_methods_lesson_5">5. Methods (Lesson #5)</a>
+<ul class="sectlevel2">
+<li><a href="#_what_are_methods">5.1. What are methods?</a></li>
+<li><a href="#_methods_to_remove_spaces">5.2. Methods to remove spaces</a></li>
+<li><a href="#_methods_to_change_text">5.3. Methods to change text</a></li>
+<li><a href="#_methods_to_compare_to_patterns">5.4. Methods to compare to patterns</a></li>
+<li><a href="#_methods_to_search_in_text">5.5. Methods to search in text</a></li>
+</ul>
+</li>
+<li><a href="#_help_debugging">6. Help &amp; Debugging <span class="icon"><i class="fa fa-bug"></i></span></a>
+<ul class="sectlevel2">
+<li><a href="#_help_on_functions_methods">6.1. Help on Functions &amp; Methods</a></li>
+<li><a href="#_errors_and_exceptions">6.2. Errors and Exceptions</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -574,24 +614,23 @@ pre.pygments .tok-il { color: #FF6600 } /* Literal.Number.Integer.Long */
 </tr>
 </table>
 </div>
-<div class="sect3">
-<h4 id="_using_variables">1.1.1. Using variables</h4>
 <div class="paragraph">
-<p>Variables can be used directly, for example in <code>print</code></p>
+<p>Variables can be used by writing the name</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-mi">1</span> <span class="tok-o">+</span> <span class="tok-mi">2</span><span class="tok-p">)</span>  <span class="tok-c1"># 3 </span><i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">nb</span> <span class="tok-o">=</span> <span class="tok-mi">1</span>
+<span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-n">nb</span> <span class="tok-o">+</span> <span class="tok-mi">2</span><span class="tok-p">)</span>  <span class="tok-c1"># 3 </span><i class="conum" data-value="1"></i><b>(1)</b>
 <span class="tok-n">country</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;China&quot;</span>
-<span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-s2">&quot;I live in &quot;</span> <span class="tok-o">+</span> <span class="tok-n">country</span><span class="tok-p">)</span>  <span class="tok-c1"># I live in China </span><i class="conum" data-value="2"></i><b>(2)</b>
-<span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-mi">1</span> <span class="tok-o">+</span> <span class="tok-s2">&quot;2&quot;</span><span class="tok-p">)</span>  <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+<span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-s2">&quot;My country: &quot;</span> <span class="tok-o">+</span> <span class="tok-n">country</span><span class="tok-p">)</span>  <span class="tok-c1"># My country: China </span><i class="conum" data-value="2"></i><b>(2)</b>
+<span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-mi">1</span> <span class="tok-o">+</span> <span class="tok-s2">&quot;2&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># =&gt; ERROR </span><i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><code>print</code> will display what is inside the parenthesis</td>
+<td><code>print</code> will display what&#8217;s inside the parenthesis</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -604,9 +643,31 @@ pre.pygments .tok-il { color: #FF6600 } /* Literal.Number.Integer.Long */
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>An error looks like this in Jupyter:</p>
 </div>
-<div class="sect3">
-<h4 id="_f_strings">1.1.2. f-strings</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">x</span> <span class="tok-o">=</span> <span class="tok-mi">1</span>
+<span class="tok-n">y</span> <span class="tok-o">=</span> <span class="tok-s1">&#39;2&#39;</span>
+
+<span class="tok-n">x</span> <span class="tok-o">+</span> <span class="tok-n">y</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-ne">TypeError</span>               <span class="tok-n">Traceback</span> <span class="tok-p">(</span><span class="tok-n">most</span> <span class="tok-n">recent</span> <span class="tok-n">call</span> <span class="tok-n">last</span><span class="tok-p">)</span>
+<span class="tok-o">&lt;</span><span class="tok-n">ipython</span><span class="tok-o">-</span><span class="tok-nb">input</span><span class="tok-o">-</span><span class="tok-mi">33</span><span class="tok-o">-</span><span class="tok-mf">3e7</span><span class="tok-n">c08949ecc</span><span class="tok-o">&gt;</span> <span class="tok-ow">in</span> <span class="tok-o">&lt;</span><span class="tok-n">module</span><span class="tok-o">&gt;</span>
+      <span class="tok-mi">2</span> <span class="tok-n">y</span> <span class="tok-o">=</span> <span class="tok-s1">&#39;2&#39;</span>
+      <span class="tok-mi">3</span>
+<span class="tok-o">----&gt;</span> <span class="tok-mi">4</span> <span class="tok-n">x</span> <span class="tok-o">+</span> <span class="tok-n">y</span>
+
+<span class="tok-ne">TypeError</span><span class="tok-p">:</span> <span class="tok-n">unsupported</span> <span class="tok-n">operand</span> <span class="tok-nb">type</span><span class="tok-p">(</span><span class="tok-n">s</span><span class="tok-p">)</span> <span class="tok-k">for</span> <span class="tok-o">+</span><span class="tok-p">:</span> <span class="tok-s1">&#39;int&#39;</span> <span class="tok-ow">and</span> <span class="tok-s1">&#39;str&#39;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_f_strings">1.2. f-strings</h3>
 <div class="paragraph">
 <p><strong>f-strings</strong>: Best way to put variables in strings</p>
 </div>
@@ -642,8 +703,8 @@ Before, people used something called <code>format</code>
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_asking_user_for_value">1.1.3. Asking user for value</h4>
+<div class="sect2">
+<h3 id="_asking_user_for_value">1.3. Asking user for value</h3>
 <div class="paragraph">
 <p>You can store a value entered by someone to interact</p>
 </div>
@@ -677,17 +738,701 @@ The answer is stored in <code>name</code></td>
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
 <h2 id="_logics_lesson_2">2. Logics (Lesson #2)</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_assign_vs_is_equal_to">2.1. "assign" vs "is equal to"</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">x</span> <span class="tok-o">=</span> <span class="tok-mi">100</span>  <span class="tok-c1"># =&gt; x has the value of 100 </span><i class="conum" data-value="1"></i><b>(1)</b>
+<span class="tok-n">x</span> <span class="tok-o">=</span> <span class="tok-mi">200</span>
+<span class="tok-n">x</span> <span class="tok-o">==</span> <span class="tok-mi">100</span>  <span class="tok-c1"># =&gt; x is compared to 100 =&gt; False </span><i class="conum" data-value="2"></i><b>(2)</b>
+<span class="tok-n">x</span> <span class="tok-o">==</span> <span class="tok-mi">200</span>  <span class="tok-c1"># =&gt; 200 is compared to 200 =&gt; True </span><i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>one <code>=</code> sign means:<br>
+assign value on the right to variable on the left</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>two <code>=</code> signs mean:<br>
+compare left part to right part</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Result of comparisons are <code>True</code> or <code>False</code></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_more_comparisons">2.2. More Comparisons</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">name</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;IAkcapnu&quot;</span>
+<span class="tok-n">name</span> <span class="tok-o">==</span> <span class="tok-s2">&quot;I Like Python&quot;</span>  <span class="tok-c1"># False</span>
+<span class="tok-n">name</span> <span class="tok-o">!=</span> <span class="tok-s2">&quot;abcdef&quot;</span>  <span class="tok-c1"># True</span>
+<span class="tok-s2">&quot;Bob&quot;</span> <span class="tok-o">&lt;</span> <span class="tok-s2">&quot;Kim&quot;</span>  <span class="tok-c1"># True (alphabetical order) </span><i class="conum" data-value="1"></i><b>(1)</b>
+<span class="tok-mi">100</span> <span class="tok-o">==</span> <span class="tok-mi">4</span> <span class="tok-o">*</span> <span class="tok-mi">25</span>  <span class="tok-c1"># True</span>
+<span class="tok-mi">200</span> <span class="tok-o">&lt;</span> <span class="tok-mi">100</span>  <span class="tok-c1"># False</span>
+<span class="tok-mi">200</span> <span class="tok-o">&lt;=</span> <span class="tok-mi">200</span>  <span class="tok-c1"># True</span>
+<span class="tok-mi">4</span><span class="tok-n">_000_000</span> <span class="tok-o">&gt;</span> <span class="tok-mi">300</span>  <span class="tok-c1"># True </span><i class="conum" data-value="2"></i><b>(2)</b>
+<span class="tok-mi">3</span> <span class="tok-o">&gt;=</span> <span class="tok-mi">10</span>  <span class="tok-c1"># False</span>
+<span class="tok-n">x</span> <span class="tok-o">=</span> <span class="tok-mi">10</span>
+<span class="tok-mi">0</span> <span class="tok-o">&lt;</span> <span class="tok-n">x</span> <span class="tok-o">&lt;=</span> <span class="tok-mi">100</span>  <span class="tok-c1"># True </span><i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>But upper case before lower case (i.e. "Z"&lt;"a")</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We can use <code>_</code> as a thousand separator</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>We can put several comparisons in sequence</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_combinations_of_conditions">2.3. Combinations of conditions</h3>
+<div class="paragraph">
+<p>We can combine conditions</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">a</span> <span class="tok-o">=</span> <span class="tok-mi">15</span>
+<span class="tok-p">(</span><span class="tok-n">a</span> <span class="tok-o">!=</span> <span class="tok-mi">10</span><span class="tok-p">)</span> <span class="tok-ow">and</span> <span class="tok-p">(</span><span class="tok-n">a</span> <span class="tok-o">!=</span> <span class="tok-mi">20</span><span class="tok-p">)</span>  <span class="tok-c1"># True </span><i class="conum" data-value="1"></i><b>(1)</b>
+<span class="tok-p">(</span><span class="tok-n">a</span> <span class="tok-o">==</span> <span class="tok-mi">5</span><span class="tok-p">)</span> <span class="tok-ow">or</span> <span class="tok-p">(</span><span class="tok-n">a</span> <span class="tok-o">==</span> <span class="tok-mi">15</span><span class="tok-p">)</span>  <span class="tok-c1"># True</span>
+<span class="tok-p">(</span><span class="tok-n">a</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-p">)</span> <span class="tok-ow">and</span> <span class="tok-p">(</span><span class="tok-n">a</span> <span class="tok-o">==</span> <span class="tok-mi">10</span> <span class="tok-ow">or</span> <span class="tok-n">a</span> <span class="tok-o">==</span> <span class="tok-mi">20</span><span class="tok-p">)</span>  <span class="tok-c1"># False </span><i class="conum" data-value="2"></i><b>(2)</b>
+<span class="tok-n">a</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span> <span class="tok-ow">and</span> <span class="tok-n">a</span> <span class="tok-o">==</span> <span class="tok-mi">10</span> <span class="tok-ow">or</span> <span class="tok-n">a</span> <span class="tok-o">==</span> <span class="tok-mi">20</span> <span class="tok-ow">and</span> <span class="tok-n">a</span> <span class="tok-o">&lt;</span> <span class="tok-mi">30</span>   <span class="tok-c1"># ?? </span><i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Parentheses are not mandatory but it can help to make it clearer</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>We can combine <code>or</code> with <code>and</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Impossible to understand without parentheses</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Truth Table for OR</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><code>or</code></th>
+<th class="tableblock halign-center valign-top">True</th>
+<th class="tableblock halign-center valign-top">False</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>True</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">True</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>False</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">False</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Truth Table for AND</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><code>and</code></th>
+<th class="tableblock halign-center valign-top">True</th>
+<th class="tableblock halign-center valign-top">False</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>True</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">False</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>False</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">False</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_some_logic">2.4. Setting up some logic</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">if</span> <span class="tok-n">hour</span> <span class="tok-o">&lt;</span> <span class="tok-mi">12</span><span class="tok-p">:</span>  <i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-s2">&quot;Have a good morning&quot;</span><span class="tok-p">)</span>  <i class="conum" data-value="2"></i><b>(2)</b>
+<span class="tok-k">elif</span> <span class="tok-n">hour</span> <span class="tok-o">&lt;</span> <span class="tok-mi">18</span><span class="tok-p">:</span>  <i class="conum" data-value="3"></i><b>(3)</b>
+    <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-s2">&quot;Have a good afternoon&quot;</span><span class="tok-p">)</span>
+<span class="tok-k">else</span><span class="tok-p">:</span>  <i class="conum" data-value="4"></i><b>(4)</b>
+    <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-s2">&quot;Have a good evening&quot;</span><span class="tok-p">)</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>if <em>&lt;condition&gt;</em>: <em>&lt;command to do something&gt;</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Commands are indented (usually <strong>4 spaces</strong>)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Other condition if previous one not met<br></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>What to do if no previous condition is met</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+We usually avoid typing the same code many times.
+Previous code is better written like this:
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">if</span> <span class="tok-n">hour</span> <span class="tok-o">&lt;</span> <span class="tok-mi">12</span><span class="tok-p">:</span>
+    <span class="tok-n">time_of_day</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;morning&quot;</span>
+<span class="tok-k">elif</span> <span class="tok-n">hour</span> <span class="tok-o">&lt;</span> <span class="tok-mi">14</span><span class="tok-p">:</span>
+    <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-s2">&quot;慢慢吃&quot;</span><span class="tok-p">)</span>  <i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="tok-n">time_of_day</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;lunch&quot;</span>
+<span class="tok-k">elif</span> <span class="tok-n">hour</span> <span class="tok-o">&lt;</span> <span class="tok-mi">18</span><span class="tok-p">:</span>
+    <span class="tok-n">time_of_day</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;afternoon&quot;</span>
+<span class="tok-k">else</span><span class="tok-p">:</span>
+    <span class="tok-n">time_of_day</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;evening&quot;</span>
 
+<span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-n">f</span><span class="tok-s2">&quot;Have a good {time_of_day}&quot;</span><span class="tok-p">)</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We cn have several <code>elif</code> and <code>commands</code></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conversion_to_boolean">2.5. Conversion to Boolean</h3>
+<div class="paragraph">
+<p>All types of data can be converted to Booleans<br>
+(i.e. <code>True</code> / <code>False</code>):</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Data to booleans</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Data</th>
+<th class="tableblock halign-center valign-top">True</th>
+<th class="tableblock halign-center valign-top">False</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">non null<br>
+(e.g. <code>13</code>)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">not empty<br>
+(e.g. <code>"Ahoy!"</code>)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">empty string (<code>""</code>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_numbers_lesson_3">3. Numbers (Lesson #3)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_operations_on_integers">3.1. Operations on integers</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">x</span> <span class="tok-o">=</span> <span class="tok-mi">10</span>
+<span class="tok-n">y</span> <span class="tok-o">=</span> <span class="tok-mi">2</span>
+<span class="tok-n">z</span> <span class="tok-o">=</span> <span class="tok-n">x</span> <span class="tok-o">*</span> <span class="tok-n">y</span>  <span class="tok-c1"># 20</span>
+<span class="tok-n">z</span> <span class="tok-o">=</span> <span class="tok-n">x</span> <span class="tok-o">/</span> <span class="tok-n">y</span>  <span class="tok-c1"># 5</span>
+<span class="tok-n">div</span> <span class="tok-o">=</span> <span class="tok-n">x</span> <span class="tok-o">/</span> <span class="tok-mi">4</span>  <span class="tok-c1"># 2.5</span>
+<span class="tok-n">int_div</span> <span class="tok-o">=</span> <span class="tok-n">x</span> <span class="tok-o">//</span> <span class="tok-mi">4</span>  <span class="tok-c1"># 2 </span><i class="conum" data-value="1"></i><b>(1)</b>
+<span class="tok-n">x</span> <span class="tok-o">**</span> <span class="tok-n">y</span>  <span class="tok-c1"># 10 power 2 =&gt; 100</span>
+<span class="tok-n">m</span> <span class="tok-o">=</span> <span class="tok-mi">10</span> <span class="tok-o">%</span> <span class="tok-mi">3</span>  <span class="tok-c1"># 10 modulo 3 =&gt; 1 (10 = 3 * ... + 1)</span>
+<span class="tok-nb">round</span><span class="tok-p">(</span><span class="tok-mf">10.5</span><span class="tok-p">)</span>  <span class="tok-c1"># 10</span>
+<span class="tok-nb">round</span><span class="tok-p">(</span><span class="tok-mf">10.6</span><span class="tok-p">)</span>  <span class="tok-c1"># 11</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Integer division returns the "floor" integer</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_changing_value_of_variable">3.2. Changing value of variable</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">x</span> <span class="tok-o">=</span> <span class="tok-n">x</span> <span class="tok-o">*</span> <span class="tok-mi">3</span>  <i class="conum" data-value="1"></i><b>(1)</b>
+
+<span class="tok-n">x</span> <span class="tok-o">*=</span> <span class="tok-mi">3</span>  <span class="tok-c1"># Multiply by 3 </span><i class="conum" data-value="2"></i><b>(2)</b>
+<span class="tok-n">x</span> <span class="tok-o">+=</span> <span class="tok-mi">1</span>  <span class="tok-c1"># Increment by 1</span>
+<span class="tok-n">x</span> <span class="tok-o">/=</span> <span class="tok-mi">2</span>  <span class="tok-c1"># Divide by 2</span>
+<span class="tok-n">x</span> <span class="tok-o">//=</span> <span class="tok-mi">2</span>  <span class="tok-c1"># Integer Divide by 2</span>
+<span class="tok-n">x</span> <span class="tok-o">**=</span> <span class="tok-mi">2</span>  <span class="tok-c1"># Transform to square value</span>
+<span class="tok-n">x</span> <span class="tok-o">%=</span> <span class="tok-mi">2</span>  <span class="tok-c1"># Get modulo of 2 (either 0 or 1)</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>=</code> is not the sign for equality :)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Same effect as <code>x = x * 3</code> but shorter
+and better (takes less memory and CPU)</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_other_types_of_numbers">3.3. Other types of numbers</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Complex number (e.g. <code>1 + 2.5j</code>)</p>
+</li>
+<li>
+<p>Hexadecimal (e.g. <code>0xF</code>, equivalent to <code>15</code>)</p>
+</li>
+<li>
+<p>Binary (e.g. <code>0x10</code> equivalent to <code>2</code> (2*1 + 1*0))</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conversion_of_data">3.4. Conversion of data</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-mf">12.5</span><span class="tok-p">)</span>  <span class="tok-c1"># 12</span>
+<span class="tok-nb">float</span><span class="tok-p">(</span><span class="tok-mi">3</span><span class="tok-p">)</span>  <span class="tok-c1"># 3.0</span>
+<span class="tok-nb">int</span><span class="tok-p">(</span><span class="tok-s2">&quot;10&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 10</span>
+<span class="tok-nb">float</span><span class="tok-p">(</span><span class="tok-s2">&quot;3.14&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 3.14</span>
+<span class="tok-nb">str</span><span class="tok-p">(</span><span class="tok-mf">12.5</span><span class="tok-p">)</span>  <span class="tok-c1"># &quot;12.5&quot;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_strings_lesson_4">4. Strings (Lesson #4)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_index_of_strings">4.1. Index of strings</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">s</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;abcdef&quot;</span>
+<span class="tok-n">s</span><span class="tok-p">[</span><span class="tok-mi">0</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;a&quot; </span><i class="conum" data-value="1"></i><b>(1)</b>
+<span class="tok-n">s</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;b&quot;</span>
+<span class="tok-n">s</span><span class="tok-p">[</span><span class="tok-o">-</span><span class="tok-mi">1</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;f&quot; </span><i class="conum" data-value="2"></i><b>(2)</b>
+<span class="tok-n">s</span><span class="tok-p">[</span><span class="tok-mi">100</span><span class="tok-p">]</span>  <span class="tok-c1"># =&gt; Error</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Index always start at "0"</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Negative index start from the end</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_slices_of_strings">4.2. Slices of Strings</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">numbers</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;0123456789&quot;</span>
+<span class="tok-n">numbers</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">:</span><span class="tok-mi">3</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;12&quot; </span><i class="conum" data-value="1"></i><b>(1)</b>
+<span class="tok-n">numbers</span><span class="tok-p">[:</span><span class="tok-mi">3</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;012&quot; </span><i class="conum" data-value="2"></i><b>(2)</b>
+<span class="tok-n">numbers</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">:]</span>  <span class="tok-c1"># &quot;23456789&quot; </span><i class="conum" data-value="3"></i><b>(3)</b>
+<span class="tok-n">numbers</span><span class="tok-p">[</span><span class="tok-mi">1</span><span class="tok-p">:</span><span class="tok-mi">7</span><span class="tok-p">:</span><span class="tok-mi">2</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;135&quot; </span><i class="conum" data-value="4"></i><b>(4)</b>
+<span class="tok-n">numbers</span><span class="tok-p">[::</span><span class="tok-mi">2</span><span class="tok-p">]</span>  <span class="tok-c1"># &quot;02468&quot;</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>2nd index after the <code>:</code> is excluded</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>If 1st index is omitted, it is from the start</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>If 2nd index is omitted, it is until the end</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>3rd index sets the step (every 2 characters)</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_operations_on_strings">4.3. Operations on strings</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">letters</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;ab&quot;</span> <span class="tok-o">+</span> <span class="tok-s2">&quot;c&quot;</span>  <span class="tok-c1"># x = &quot;abc&quot;</span>
+<span class="tok-n">letters</span> <span class="tok-o">+=</span> <span class="tok-s2">&quot;def&quot;</span>  <span class="tok-c1"># x = &quot;abcdef&quot;</span>
+<span class="tok-n">n</span> <span class="tok-o">=</span> <span class="tok-nb">len</span><span class="tok-p">(</span><span class="tok-n">letters</span><span class="tok-p">)</span>  <span class="tok-c1"># n = 6</span>
+
+<span class="tok-n">char</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;d&quot;</span>
+<span class="tok-k">if</span> <span class="tok-n">char</span> <span class="tok-ow">in</span> <span class="tok-n">letters</span><span class="tok-p">:</span>  <i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-n">f</span><span class="tok-s2">&quot;Letter {char} among {letters}&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-k">if</span> <span class="tok-n">letters</span><span class="tok-p">[</span><span class="tok-o">-</span><span class="tok-mi">1</span><span class="tok-p">]</span> <span class="tok-ow">in</span> <span class="tok-s2">&quot;aeiouy&quot;</span><span class="tok-p">:</span>
+    <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-n">f</span><span class="tok-s2">&quot;Text {letters} finishes by a vowel&quot;</span><span class="tok-p">)</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Check if we have a substring: very useful!</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_methods_lesson_5">5. Methods (Lesson #5)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_what_are_methods">5.1. What are methods?</h3>
+<div class="paragraph">
+<p>Functions applied on objects (e.g. strings, integers, &#8230;&#8203;)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-o">&lt;</span><span class="tok-nb">object</span><span class="tok-o">&gt;.&lt;</span><span class="tok-n">method</span><span class="tok-o">&gt;</span><span class="tok-p">(</span><span class="tok-o">...</span><span class="tok-p">)</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_methods_to_remove_spaces">5.2. Methods to remove spaces</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">name</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;   text with some spaces around       &quot;</span>
+<span class="tok-n">name</span><span class="tok-o">.</span><span class="tok-n">strip</span><span class="tok-p">()</span>  <span class="tok-c1"># remove spaces on left and right</span>
+<span class="tok-n">name</span><span class="tok-o">.</span><span class="tok-n">strip</span><span class="tok-p">(</span><span class="tok-s2">&quot;aeiouy&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># remove vowels on left and right</span>
+<span class="tok-n">name</span><span class="tok-o">.</span><span class="tok-n">lstrip</span><span class="tok-p">()</span>  <span class="tok-c1"># remove spaces on left</span>
+<span class="tok-n">name</span><span class="tok-o">.</span><span class="tok-n">rstrip</span><span class="tok-p">()</span>  <span class="tok-c1"># remove spaces on right</span>
+
+<span class="tok-n">name</span> <span class="tok-o">=</span> <span class="tok-n">name</span><span class="tok-o">.</span><span class="tok-n">strip</span><span class="tok-p">()</span> <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>You should assign again if you want to modify</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The variable itself is not modified
+unless you re-assign it (e.g. <code>txt = txt.rstrip()</code>)!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_methods_to_change_text">5.3. Methods to change text</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">city</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;bei hang&quot;</span>
+<span class="tok-n">city</span> <span class="tok-o">=</span> <span class="tok-n">city</span><span class="tok-o">.</span><span class="tok-n">replace</span><span class="tok-p">(</span><span class="tok-s2">&quot;hang&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;Jing&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># city = &quot;bei Jing&quot;</span>
+<span class="tok-n">city</span><span class="tok-o">.</span><span class="tok-n">upper</span><span class="tok-p">()</span>  <span class="tok-c1"># &quot;BEI JING&quot;</span>
+<span class="tok-n">city</span><span class="tok-o">.</span><span class="tok-n">lower</span><span class="tok-p">()</span>  <span class="tok-c1"># &quot;bei jing&quot;</span>
+<span class="tok-n">city</span><span class="tok-o">.</span><span class="tok-n">title</span><span class="tok-p">()</span>  <span class="tok-c1"># &quot;Bei Jing&quot;</span>
+<span class="tok-n">city</span><span class="tok-o">.</span><span class="tok-n">capitalize</span><span class="tok-p">()</span>  <span class="tok-c1"># &quot;Bei jing&quot;</span>
+
+<span class="tok-s2">&quot;I am a cat, you are a cat&quot;</span><span class="tok-o">.</span><span class="tok-n">replace</span><span class="tok-p">(</span><span class="tok-s2">&quot;cat&quot;</span><span class="tok-p">,</span> <span class="tok-s2">&quot;man&quot;</span><span class="tok-p">,</span> <span class="tok-mi">1</span><span class="tok-p">)</span>  <i class="conum" data-value="1"></i><b>(1)</b>
+<span class="tok-c1"># Only 1 replacement: &quot;I am a man, you are a cat&quot;</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>We can apply methods directly on objects</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_methods_to_compare_to_patterns">5.4. Methods to compare to patterns</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">nb</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;123&quot;</span>
+<span class="tok-n">nb</span><span class="tok-o">.</span><span class="tok-n">isnumeric</span><span class="tok-p">()</span>  <span class="tok-c1"># True </span><i class="conum" data-value="1"></i><b>(1)</b>
+
+<span class="tok-n">txt</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;unpackAI&quot;</span>
+<span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">isalpha</span><span class="tok-p">()</span>  <span class="tok-c1"># True</span>
+<span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">isupper</span><span class="tok-p">()</span>  <span class="tok-c1"># False</span>
+<span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">islower</span><span class="tok-p">()</span>  <span class="tok-c1"># False</span>
+<span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">istitle</span><span class="tok-p">()</span>  <span class="tok-c1"># False</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Methods <code>str.isdigit()</code> and <code>str.isdecimal</code> are
+similar.<br>
+See <a href="https://stackoverflow.com/questions/44891070/whats-the-difference-between-str-isdigit-isnumeric-and-isdecimal-in-python">here</a>
+for more details</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_methods_to_search_in_text">5.5. Methods to search in text</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">txt</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;Hello, how are you?&quot;</span>
+<span class="tok-n">pos_first_o</span> <span class="tok-o">=</span> <span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">index</span><span class="tok-p">(</span><span class="tok-s2">&quot;o&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 4</span>
+<span class="tok-n">pos_lo</span> <span class="tok-o">=</span> <span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">index</span><span class="tok-p">(</span><span class="tok-s2">&quot;lo&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 3</span>
+<span class="tok-n">pos_last_o_</span> <span class="tok-o">=</span> <span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">rindex</span><span class="tok-p">(</span><span class="tok-s2">&quot;o&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 16</span>
+
+<span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">count</span><span class="tok-p">(</span><span class="tok-s2">&quot;o&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 3</span>
+<span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">count</span><span class="tok-p">(</span><span class="tok-s2">&quot;h&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 1 (&quot;H&quot; does not count)</span>
+
+<span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">index</span><span class="tok-p">(</span><span class="tok-s2">&quot;Great!&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># =&gt; Error!</span>
+<span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">find</span><span class="tok-p">(</span><span class="tok-s2">&quot;o&quot;</span><span class="tok-p">)</span>  <span class="tok-c1"># 3</span>
+
+<span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">txt</span><span class="tok-o">.</span><span class="tok-n">find</span><span class="tok-p">(</span><span class="tok-s2">&quot;Great&quot;</span><span class="tok-p">)</span>  <i class="conum" data-value="1"></i><b>(1)</b>
+<span class="tok-k">if</span> <span class="tok-n">pos</span> <span class="tok-o">!=</span> <span class="tok-o">-</span><span class="tok-mi">1</span><span class="tok-p">:</span>
+    <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-n">f</span><span class="tok-s2">&quot;Found &#39;Great&#39; in {txt}&quot;</span><span class="tok-p">)</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>It allows to look for position of a substring
+when we are not sure if it is present (<code>-1</code> = not found)</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_help_debugging">6. Help &amp; Debugging <span class="icon"><i class="fa fa-bug"></i></span></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_help_on_functions_methods">6.1. Help on Functions &amp; Methods</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">help</span><span class="tok-p">(</span><span class="tok-k">print</span><span class="tok-p">)</span>        <span class="tok-c1"># for functions</span>
+<span class="tok-n">help</span><span class="tok-p">(</span><span class="tok-nb">str</span><span class="tok-o">.</span><span class="tok-n">replace</span><span class="tok-p">)</span>  <span class="tok-c1"># for methods</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>help(&lt;something&gt;)</code>: print detailed help</p>
+</li>
+<li>
+<p><code>?&lt;something&gt;</code>: open help panel on this something</p>
+</li>
+<li>
+<p><code>??&lt;something&gt;</code>: same as <code>?</code> but more detailed</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>help</code> is common to Python.<br>
+<code>?</code> and <code>??</code> are specific to notebooks.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_errors_and_exceptions">6.2. Errors and Exceptions</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-n">numbers</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;1234&quot;</span>
+<span class="tok-n">val</span> <span class="tok-o">=</span> <span class="tok-n">numbers</span><span class="tok-p">[</span><span class="tok-mi">4</span><span class="tok-p">]</span>
+<span class="tok-o">--------------------------------------------</span>
+<span class="tok-n">Traceback</span> <span class="tok-p">(</span><span class="tok-n">most</span> <span class="tok-n">recent</span> <span class="tok-n">call</span> <span class="tok-n">last</span><span class="tok-p">)</span>
+<span class="tok-o">&lt;</span><span class="tok-n">ipython</span><span class="tok-o">-</span><span class="tok-nb">input</span><span class="tok-o">-</span><span class="tok-mi">7</span><span class="tok-o">-</span><span class="tok-mi">4</span><span class="tok-n">a3d5111bc9a</span><span class="tok-o">&gt;</span> <span class="tok-ow">in</span> <span class="tok-o">&lt;</span><span class="tok-n">module</span><span class="tok-o">&gt;</span>
+      <span class="tok-mi">1</span> <span class="tok-n">numbers</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;1234&quot;</span>
+<span class="tok-o">----&gt;</span> <span class="tok-mi">2</span> <span class="tok-n">val</span> <span class="tok-o">=</span> <span class="tok-n">numbers</span><span class="tok-p">[</span><span class="tok-mi">4</span><span class="tok-p">]</span>  <i class="conum" data-value="1"></i><b>(1)</b>
+
+<span class="tok-ne">IndexError</span><span class="tok-p">:</span> <span class="tok-n">string</span> <span class="tok-n">index</span> <span class="tok-n">out</span> <span class="tok-n">of</span> <span class="tok-nb">range</span>  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Location of the exception</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Type (IndexError) and detail of exception</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Some common error</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">if</span> <span class="tok-bp">True</span><span class="tok-p">:</span>
+<span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-s2">&quot;aa&quot;</span><span class="tok-p">)</span>
+<span class="tok-o">--------------------------------------------</span>
+  <span class="tok-n">File</span> <span class="tok-s2">&quot;&lt;ipython-input-1-e0adb100d43c&gt;&quot;</span><span class="tok-p">,</span> <span class="tok-n">line</span> <span class="tok-mi">2</span>
+    <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-s2">&quot;aa&quot;</span><span class="tok-p">)</span>
+        <span class="tok-o">^</span>
+<span class="tok-ne">IndentationError</span><span class="tok-p">:</span> <span class="tok-n">expected</span> <span class="tok-n">an</span> <span class="tok-n">indented</span> <span class="tok-n">block</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Be careful of putting tabs correctly in your code
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>How to solve exceptions?</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Do nothing and let it crash (it&#8217;s the fault of the user!)</p>
+</li>
+<li>
+<p>Understand the issue and fix the code</p>
+</li>
+<li>
+<p>Add some check before</p>
+</li>
+<li>
+<p>Add a <code>try &#8230;&#8203; except</code></p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><span></span><span class="tok-k">if</span> <span class="tok-nb">len</span><span class="tok-p">(</span><span class="tok-n">some_text</span><span class="tok-p">)</span> <span class="tok-o">&gt;=</span> <span class="tok-mi">5</span><span class="tok-p">:</span>  <i class="conum" data-value="3"></i><b>(3)</b>
+    <span class="tok-n">char</span> <span class="tok-o">=</span> <span class="tok-n">some_text</span><span class="tok-p">[</span><span class="tok-mi">4</span><span class="tok-p">]</span>
+
+<span class="tok-k">try</span><span class="tok-p">:</span>  <i class="conum" data-value="4"></i><b>(4)</b>
+    <span class="tok-n">char</span> <span class="tok-o">=</span> <span class="tok-n">some_text</span><span class="tok-p">[</span><span class="tok-mi">4</span><span class="tok-p">]</span>
+<span class="tok-k">except</span> <span class="tok-ne">IndexError</span> <span class="tok-k">as</span> <span class="tok-n">e</span><span class="tok-p">:</span>
+    <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-n">f</span><span class="tok-s2">&quot;WARNING: cannot get index: {e}&quot;</span><span class="tok-p">)</span>
+    <span class="tok-n">char</span> <span class="tok-o">=</span> <span class="tok-s2">&quot;!&quot;</span>  <span class="tok-c1"># or another default value</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Useful links about Exceptions and Traceback:
+* Intro on Exceptions: <a href="https://realpython.com/lessons/exceptions-and-how-raise-them/" class="bare">https://realpython.com/lessons/exceptions-and-how-raise-them/</a>
+* Understanding Traceback (video): <a href="https://realpython.com/lessons/python-traceback-overview/" class="bare">https://realpython.com/lessons/python-traceback-overview/</a>
+* Understanding Traceback (text): <a href="https://realpython.com/python-traceback/" class="bare">https://realpython.com/python-traceback/</a></p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-05-27 23:27:15 +0800
+Last updated 2021-05-28 13:30:08 +0800
 </div>
 </div>
 </body>

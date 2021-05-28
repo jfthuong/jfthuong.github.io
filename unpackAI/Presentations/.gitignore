@@ -1,7 +1,5 @@
 /*.zip
-/PythonCrashCourse-TA.html
-/PythonCrashCourse-TA_pres.html
-PythonCrashCourse-TA.adoc
+*.code-workspace
 .mypy_cache/
 *.jpg
 *.pyc
