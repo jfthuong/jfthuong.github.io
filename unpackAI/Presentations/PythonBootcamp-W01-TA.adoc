@@ -502,6 +502,7 @@ except IndexError as e:
 ifndef::backend-revealjs[]
 
 Useful links about Exceptions and Traceback:
+
 * Intro on Exceptions: https://realpython.com/lessons/exceptions-and-how-raise-them/
 * Understanding Traceback (video): https://realpython.com/lessons/python-traceback-overview/
 * Understanding Traceback (text): https://realpython.com/python-traceback/
