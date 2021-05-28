@@ -79,7 +79,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ----
 name = "Jeff"
 year = 2004
-print(f"My name is {name} and I have been in China since {year}")
+print(f"My name is {name} and I've been in China since {year}")
 # My name is Jeff and I have been in China since 2004
 ----
 
