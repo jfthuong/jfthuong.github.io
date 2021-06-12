@@ -116,3 +116,11 @@ You could actually get a huge string with all the information about the files th
 The only problem with that is that for a huge number of files (like several thousands), the string will start to be big.
 
 Therefore, it is much simpler to write one line at a time, each time we have found a file.
+
+=== Checking that it works
+
+Call your function with a directory that contains multiple files of different sizes, like your "Downloads" folder, or "My Documents".
+
+The CSV file can be opened directly in Microsoft Excel.
+
+Cheers
