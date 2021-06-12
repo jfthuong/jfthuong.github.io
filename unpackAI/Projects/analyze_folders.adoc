@@ -44,6 +44,14 @@ Once the CSV file is generated, the function `{function}` shall print the follow
 
 Where `nnn` is the number of files found and `xxx.csv` is the name of generated file
 
+An example of CSV file would be the following:
+
+.my_folder.csv
+[source, csv]
+Path,Extension,Size
+data/some_text.txt,.txt,1.23 KB
+crazy_program.py,.py,3.14 GB
+
 === Arguments of the function
 
 The function `{function}` shall have 2 arguments:
