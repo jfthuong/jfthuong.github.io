@@ -1,0 +1,118 @@
+= Mini-Project: Analyze Folders
+Jean-Francois Thuong
+:imagesdir: images
+:source-language: python
+:icons: font
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:pygments-style: manni
+:title-slide-background-image: 70s.jpg
+:title-slide-transition: zoom
+:title-slide-transition-speed: fast
+:sectnums:
+:toc: left
+
+:function: analyze_folder
+
+== Introduction
+
+This mini project for Python will help practice:
+
+* Listing files
+* Getting information on file
+* Writing in files
+* Creating a function
+
+Ideally, this can be done with `pathlib` module which will make things easier.
+
+You can learn about pathlib from the official documentation:
+https://docs.python.org/3/library/pathlib.html
+
+== Goal of project
+
+=== Purpose of the function
+
+The purpose of this project is to create a function `{function}` that will:
+
+* list all files in a folder (and its subfolder)
+* create a CSV file listing all files with their name, extension, and size
+
+
+Once the CSV file is generated, the function `{function}` shall print the following message:
+
+    Successfully listed nnn files and printed analysis in xxx.csv
+
+Where `nnn` is the number of files found and `xxx.csv` is the name of generated file
+
+=== Arguments of the function
+
+The function `{function}` shall have 2 arguments:
+
+1. `folder`: A string with the path of the directory to analyze
+2. `csv_path`: A string with the path of the CSV file to create, with a default value of `"analyze_folder.csv"`
+
+
+== How to start?
+
+If you use `pathlib`, then you will need to do the following:
+
+1. At the top of your notebook / program, load `Path` from the module: `from pathlib import Path`
+
+2. Inside your function, create a `Path` for your directory: `path = Path(folder)`
+
+3. Open the CSV file to write in it. Write a first line with the headers: +
++
+    Path,Extension,Size
+
+4. Do a loop for each of the files in the directory: you can check https://realpython.com/python-pathlib/#display-a-directory-tree[this tutorial]
+
+5. For each file:
+  * Get the extension the file
+  * Get the size of the file
+  * Write a line with path, extension, and size separated by a comma
+
+
+== TIPS
+
+=== Friendly display of size
+
+When getting the size of a file in Python, it is usually in bytes.
+To convert it to a more friendly format, you can use the following function that transform the size in bytes (integer) to a friendly size (as a string):
+
+```
+def convert_size(size):
+    """Convert a size in bytes (as integer) to a size with unit (as a string)"""
+    unit = "B"
+    # Reminder: 1 KB = 1024 B, and 1 MB = 1024 KB, ...
+    for letter in "KMG":
+        if size > 1024:
+            size /= 1024
+            unit = f"{letter}B"
+
+    # We want to keep 2 digits after floating point
+    # because it is a good balance and precision and concision
+    return f"{size:0.2f} {unit}"
+```
+
+For example, `convert_size(2000)` will return `"1.95 KB"`.
+
+=== But how to get the size of a file?
+
+You can use `pathlib` and use code here:
+https://docs.python.org/3/library/pathlib.html#pathlib.Path.stat
+
+```
+>>> p = Path('setup.py')
+>>> p.stat().st_mode
+33277
+```
+
+Note that if you already have a path (like for example when you have done a loop with `rglob`), then you don't need to do `Path(...)` again.
+
+=== Why do I need to first open the CSV file?
+
+You could actually get a huge string with all the information about the files that you will put later in the CSV file.
+
+The only problem with that is that for a huge number of files (like several thousands), the string will start to be big.
+
+Therefore, it is much simpler to write one line at a time, each time we have found a file.
